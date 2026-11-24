@@ -1,0 +1,228 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard General | Hidraulica del oeste A.B</title>
+  <link rel="icon" type="image/jpeg" href="/assets/logo.jpg">
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="/vendor/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/admin.css">
+  <link rel="stylesheet" href="/css/animations.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body class="admin-layout">
+
+  <!-- Sidebar Lateral -->
+  <aside class="admin-sidebar">
+    <div class="sidebar-header">
+      <a href="/admin/dashboard.html" class="sidebar-brand">
+        <img src="/assets/logo.jpg" alt="Logo">
+        <span class="sidebar-brand-name">Bengoechea</span>
+      </a>
+      <button id="sidebar-toggle" style="background: none; border: none; color: var(--gold-bright); cursor: pointer;" class="hidden" aria-label="Cerrar"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="nav-section-title">Principal</div>
+      <a href="/admin/dashboard.html" class="sidebar-link active"><i class="fa-solid fa-chart-line" aria-hidden="true"></i> <span>Dashboard</span></a>
+      <a href="/admin/reparaciones.html" class="sidebar-link"><i class="fa-solid fa-gears" aria-hidden="true"></i> <span>Reparaciones (OT)</span></a>
+      <a href="/admin/clientes.html" class="sidebar-link"><i class="fa-solid fa-users" aria-hidden="true"></i> <span>Clientes</span></a>
+      <a href="/admin/presupuestos.html" class="sidebar-link"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> <span>Presupuestos</span></a>
+
+      <div class="nav-section-title">Operaciones</div>
+      <a href="/admin/inventario.html" class="sidebar-link"><i class="fa-solid fa-boxes-stacked" aria-hidden="true"></i> <span>Inventario</span></a>
+      <a href="/admin/proveedores.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-industry" aria-hidden="true"></i> <span>Proveedores</span></a>
+      <a href="/admin/caja.html" class="sidebar-link role-finance-only"><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i> <span>Caja y Finanzas</span></a>
+
+      <div class="nav-section-title">AdministraciÃ³n</div>
+      <a href="/admin/cms.html" class="sidebar-link role-admin-only text-gold-bright" style="border: 1px dashed rgba(212, 175, 55, 0.4);">
+        <i class="fa-solid fa-globe" aria-hidden="true"></i> <span>Administrar Web (CMS)</span>
+      </a>
+      <a href="/admin/reportes.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-chart-column" aria-hidden="true"></i> <span>Reportes</span></a>
+      <a href="/admin/empleados.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-user-gear" aria-hidden="true"></i> <span>Equipo TÃ©cnico</span></a>
+      <a href="/admin/configuracion.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-gears" aria-hidden="true"></i> <span>ConfiguraciÃ³n</span></a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <a href="/" target="_blank" class="btn btn-outline btn-sm" style="width: 100%; margin-bottom: 0.5rem; font-size: 0.78rem;">
+        <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Ver Sitio PÃºblico
+      </a>
+      <button id="btn-logout" class="btn btn-secondary btn-sm" style="width: 100%; color: var(--color-danger); font-size: 0.78rem;">
+        Cerrar SesiÃ³n
+      </button>
+    </div>
+  </aside>
+
+  <!-- Contenido Principal -->
+  <main class="admin-main">
+    <!-- Header Superior -->
+    <header class="admin-header">
+      <div class="header-left">
+        <h2 class="page-title">Dashboard General</h2>
+      </div>
+
+      <div class="header-right">
+        <!-- Notificaciones Internas -->
+        <div style="position: relative;">
+          <button class="notification-bell" id="notif-bell" aria-label="Notificaciones">
+            <i class="fa-solid fa-bell" aria-hidden="true"></i>
+            <span class="notification-badge hidden" id="notif-badge">0</span>
+          </button>
+          <div class="notifications-dropdown" id="notif-dropdown">
+            <div class="notif-header">
+              <strong class="text-gold-bright" style="font-size: 0.9rem;">Notificaciones del Taller</strong>
+            </div>
+            <div class="notif-list" id="notif-list"></div>
+          </div>
+        </div>
+
+        <!-- Perfil Usuario -->
+        <div class="user-menu">
+          <div class="user-avatar" id="admin-user-avatar">AB</div>
+          <div class="user-info">
+            <span class="user-name" id="admin-user-name">Administrador</span>
+            <span class="user-role" id="admin-user-role">SUPERADMIN</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Contenido Dashboard -->
+    <div class="admin-content">
+      <!-- Grid de KPIs -->
+      <div class="kpi-grid">
+        <div class="kpi-card kpi-gold">
+          <div class="kpi-header">
+            <span class="kpi-label">Reparaciones Activas</span>
+            <span class="kpi-icon"><i class="fa-solid fa-gears" aria-hidden="true"></i></span>
+          </div>
+          <div class="kpi-value" id="kpi-active-repairs">0</div>
+          <span class="kpi-sub">En banco y diagnÃ³stico</span>
+        </div>
+
+        <div class="kpi-card kpi-success">
+          <div class="kpi-header">
+            <span class="kpi-label">Reparadas / Listas</span>
+            <span class="kpi-icon"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></span>
+          </div>
+          <div class="kpi-value" id="kpi-finished-repairs">0</div>
+          <span class="kpi-sub">Listas para entrega</span>
+        </div>
+
+        <div class="kpi-card kpi-warning">
+          <div class="kpi-header">
+            <span class="kpi-label">Solicitudes Nuevas</span>
+            <span class="kpi-icon">ðŸ“©</span>
+          </div>
+          <div class="kpi-value" id="kpi-new-quotes">0</div>
+          <span class="kpi-sub">Desde la web pÃºblica</span>
+        </div>
+
+        <div class="kpi-card kpi-gold">
+          <div class="kpi-header">
+            <span class="kpi-label">Presupuestos Pendientes</span>
+            <span class="kpi-icon"><i class="fa-solid fa-file-lines" aria-hidden="true"></i></span>
+          </div>
+          <div class="kpi-value" id="kpi-pending-budgets">0</div>
+          <span class="kpi-sub">Aguardando respuesta</span>
+        </div>
+
+        <div class="kpi-card kpi-success">
+          <div class="kpi-header">
+            <span class="kpi-label">Ingresos del Mes</span>
+            <span class="kpi-icon"><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i></span>
+          </div>
+          <div class="kpi-value" id="kpi-month-income">$ 0</div>
+          <span class="kpi-sub">Caja real cobrada</span>
+        </div>
+
+        <div class="kpi-card kpi-danger">
+          <div class="kpi-header">
+            <span class="kpi-label">Por Cobrar</span>
+            <span class="kpi-icon">â³</span>
+          </div>
+          <div class="kpi-value" id="kpi-pending-collections">$ 0</div>
+          <span class="kpi-sub">Saldos pendientes en OTs</span>
+        </div>
+      </div>
+
+      <!-- GrÃ¡ficos -->
+      <div class="charts-grid">
+        <div class="chart-card">
+          <div class="card-header">
+            <h3 class="card-title text-gold-bright">FacturaciÃ³n e Ingresos Recientes</h3>
+          </div>
+          <div class="chart-container">
+            <canvas id="revenueChart"></canvas>
+          </div>
+        </div>
+
+        <div class="chart-card">
+          <div class="card-header">
+            <h3 class="card-title text-gold-bright">Estado de Ã“rdenes</h3>
+          </div>
+          <div class="chart-container">
+            <canvas id="statusChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Paneles de Alertas y Ã“rdenes Recientes -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem;" class="charts-grid">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title" style="color: var(--color-warning);"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> Alertas de Stock CrÃ­tico</h3>
+            <a href="/admin/inventario.html" class="btn btn-outline btn-sm">Ver Todo</a>
+          </div>
+          <div id="dashboard-stock-alerts"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title" style="color: var(--color-danger);">ðŸš¨ Reparaciones Atrasadas</h3>
+            <a href="/admin/reparaciones.html" class="btn btn-outline btn-sm">Ver Todo</a>
+          </div>
+          <div id="dashboard-overdue-repairs"></div>
+        </div>
+      </div>
+
+      <!-- Ãšltimas Ã“rdenes de Trabajo -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title text-gold-bright">Ãšltimas Ã“rdenes de Trabajo Ingresadas</h3>
+          <a href="/admin/reparaciones.html" class="btn btn-primary btn-sm">+ Nueva Orden</a>
+        </div>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>NÃºmero OT</th>
+                <th>Cliente</th>
+                <th>Componente</th>
+                <th>Estado</th>
+                <th>TÃ©cnico</th>
+                <th class="text-right">AcciÃ³n</th>
+              </tr>
+            </thead>
+            <tbody id="dashboard-latest-repairs"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/notifications.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/admin.js"></script>
+  <script src="/js/modules/dashboard.js"></script>
+</body>
+</html>
+
+

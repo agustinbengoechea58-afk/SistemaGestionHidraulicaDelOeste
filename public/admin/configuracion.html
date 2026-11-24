@@ -1,0 +1,201 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ConfiguraciÃ³n de la Empresa | Hidraulica del oeste A.B</title>
+  <link rel="icon" type="image/jpeg" href="/assets/logo.jpg">
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="/vendor/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/admin.css">
+  <link rel="stylesheet" href="/css/animations.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body class="admin-layout">
+
+  <!-- Sidebar -->
+  <aside class="admin-sidebar">
+    <div class="sidebar-header">
+      <a href="/admin/dashboard.html" class="sidebar-brand">
+        <img src="/assets/logo.jpg" alt="Logo">
+        <span class="sidebar-brand-name">Bengoechea</span>
+      </a>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="nav-section-title">Principal</div>
+      <a href="/admin/dashboard.html" class="sidebar-link"><i class="fa-solid fa-chart-line" aria-hidden="true"></i> <span>Dashboard</span></a>
+      <a href="/admin/reparaciones.html" class="sidebar-link"><i class="fa-solid fa-gears" aria-hidden="true"></i> <span>Reparaciones (OT)</span></a>
+      <a href="/admin/clientes.html" class="sidebar-link"><i class="fa-solid fa-users" aria-hidden="true"></i> <span>Clientes</span></a>
+      <a href="/admin/presupuestos.html" class="sidebar-link"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> <span>Presupuestos</span></a>
+
+      <div class="nav-section-title">Operaciones</div>
+      <a href="/admin/inventario.html" class="sidebar-link"><i class="fa-solid fa-boxes-stacked" aria-hidden="true"></i> <span>Inventario</span></a>
+      <a href="/admin/proveedores.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-industry" aria-hidden="true"></i> <span>Proveedores</span></a>
+      <a href="/admin/caja.html" class="sidebar-link role-finance-only"><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i> <span>Caja y Finanzas</span></a>
+
+      <div class="nav-section-title">AdministraciÃ³n</div>
+      <a href="/admin/cms.html" class="sidebar-link role-admin-only text-gold-bright" style="border: 1px dashed rgba(212, 175, 55, 0.4);">
+        <i class="fa-solid fa-globe" aria-hidden="true"></i> <span>Administrar Web (CMS)</span>
+      </a>
+      <a href="/admin/reportes.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-chart-column" aria-hidden="true"></i> <span>Reportes</span></a>
+      <a href="/admin/empleados.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-user-gear" aria-hidden="true"></i> <span>Equipo TÃ©cnico</span></a>
+      <a href="/admin/configuracion.html" class="sidebar-link active role-admin-only"><i class="fa-solid fa-gears" aria-hidden="true"></i> <span>ConfiguraciÃ³n</span></a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <a href="/" target="_blank" class="btn btn-outline btn-sm" style="width: 100%; margin-bottom: 0.5rem; font-size: 0.78rem;">
+        <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Ver Sitio PÃºblico
+      </a>
+      <button id="btn-logout" class="btn btn-secondary btn-sm" style="width: 100%; color: var(--color-danger); font-size: 0.78rem;">
+        Cerrar SesiÃ³n
+      </button>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main class="admin-main">
+    <header class="admin-header">
+      <div class="header-left">
+        <h2 class="page-title">ConfiguraciÃ³n del Negocio</h2>
+      </div>
+      <div class="header-right">
+        <div style="position: relative;">
+          <button class="notification-bell" id="notif-bell"><i class="fa-solid fa-bell" aria-hidden="true"></i><span class="notification-badge hidden" id="notif-badge">0</span></button>
+          <div class="notifications-dropdown" id="notif-dropdown">
+            <div class="notif-header"><strong class="text-gold-bright">Notificaciones</strong></div>
+            <div class="notif-list" id="notif-list"></div>
+          </div>
+        </div>
+        <div class="user-menu">
+          <div class="user-avatar" id="admin-user-avatar">AB</div>
+          <div class="user-info">
+            <span class="user-name" id="admin-user-name">Admin</span>
+            <span class="user-role" id="admin-user-role">SUPERADMIN</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="admin-content">
+      <div class="card" style="max-width: 900px;">
+        <div class="card-header">
+          <h3 class="card-title text-gold-bright">Datos Comerciales, Fiscales y GarantÃ­a</h3>
+        </div>
+
+        <form id="business-settings-form">
+          <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1.25rem;">
+            <div class="form-group">
+              <label class="form-label">Nombre Comercial de la Empresa <span class="required">*</span></label>
+              <input type="text" id="set-businessName" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Moneda Inicial</label>
+              <select id="set-currency" class="form-select">
+                <option value="ARS">ARS (Pesos Argentinos)</option>
+                <option value="USD">USD (DÃ³lares)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Eslogan o SubtÃ­tulo Institucional</label>
+            <input type="text" id="set-tagline" class="form-control">
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label">SÃ­mbolo Monetario</label>
+              <input type="text" id="set-currencySymbol" class="form-control" value="$">
+            </div>
+            <div class="form-group">
+              <label class="form-label">AlÃ­cuota IVA Predeterminada (%)</label>
+              <input type="number" id="set-taxPercent" class="form-control" value="21">
+            </div>
+            <div class="form-group">
+              <label class="form-label">TelÃ©fono Fijo Taller</label>
+              <input type="text" id="set-phone" class="form-control">
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label">NÃºmero de WhatsApp (con cÃ³digo paÃ­s)</label>
+              <input type="text" id="set-whatsapp" class="form-control" placeholder="+5491123456789">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Correo ElectrÃ³nico de Contacto</label>
+              <input type="email" id="set-email" class="form-control">
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label">DirecciÃ³n FÃ­sica del Taller</label>
+              <input type="text" id="set-address" class="form-control">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Ciudad / Localidad</label>
+              <input type="text" id="set-city" class="form-control">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Provincia</label>
+              <input type="text" id="set-province" class="form-control">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Horarios de AtenciÃ³n</label>
+            <input type="text" id="set-hours" class="form-control" placeholder="Lunes a Viernes 8 a 18 hs">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">URL del Mapa (Google Maps Embed o Link)</label>
+            <input type="text" id="set-mapUrl" class="form-control" placeholder="https://maps.google.com/...">
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label">Facebook</label>
+              <input type="text" id="set-facebook" class="form-control">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Instagram</label>
+              <input type="text" id="set-instagram" class="form-control">
+            </div>
+            <div class="form-group">
+              <label class="form-label">TikTok</label>
+              <input type="text" id="set-tiktok" class="form-control">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Condiciones Generales de GarantÃ­a (Impresas en Presupuestos)</label>
+            <textarea id="set-warrantyConditions" class="form-control" rows="3"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">TÃ©rminos TÃ©cnicos y Advertencias de Purgado</label>
+            <textarea id="set-termsAndConditions" class="form-control" rows="2"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="margin-top: 1rem;">
+            Guardar ConfiguraciÃ³n
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/notifications.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/admin.js"></script>
+  <script src="/js/modules/settings.js"></script>
+</body>
+</html>
+
+

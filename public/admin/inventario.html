@@ -1,0 +1,263 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Control de Inventario y Repuestos | Hidraulica del oeste A.B</title>
+  <link rel="icon" type="image/jpeg" href="/assets/logo.jpg">
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="/vendor/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/admin.css">
+  <link rel="stylesheet" href="/css/animations.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body class="admin-layout">
+
+  <!-- Sidebar -->
+  <aside class="admin-sidebar">
+    <div class="sidebar-header">
+      <a href="/admin/dashboard.html" class="sidebar-brand">
+        <img src="/assets/logo.jpg" alt="Logo">
+        <span class="sidebar-brand-name">Bengoechea</span>
+      </a>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="nav-section-title">Principal</div>
+      <a href="/admin/dashboard.html" class="sidebar-link"><i class="fa-solid fa-chart-line" aria-hidden="true"></i> <span>Dashboard</span></a>
+      <a href="/admin/reparaciones.html" class="sidebar-link"><i class="fa-solid fa-gears" aria-hidden="true"></i> <span>Reparaciones (OT)</span></a>
+      <a href="/admin/clientes.html" class="sidebar-link"><i class="fa-solid fa-users" aria-hidden="true"></i> <span>Clientes</span></a>
+      <a href="/admin/presupuestos.html" class="sidebar-link"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> <span>Presupuestos</span></a>
+
+      <div class="nav-section-title">Operaciones</div>
+      <a href="/admin/inventario.html" class="sidebar-link active"><i class="fa-solid fa-boxes-stacked" aria-hidden="true"></i> <span>Inventario</span></a>
+      <a href="/admin/proveedores.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-industry" aria-hidden="true"></i> <span>Proveedores</span></a>
+      <a href="/admin/caja.html" class="sidebar-link role-finance-only"><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i> <span>Caja y Finanzas</span></a>
+
+      <div class="nav-section-title">AdministraciÃ³n</div>
+      <a href="/admin/cms.html" class="sidebar-link role-admin-only text-gold-bright" style="border: 1px dashed rgba(212, 175, 55, 0.4);">
+        <i class="fa-solid fa-globe" aria-hidden="true"></i> <span>Administrar Web (CMS)</span>
+      </a>
+      <a href="/admin/reportes.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-chart-column" aria-hidden="true"></i> <span>Reportes</span></a>
+      <a href="/admin/empleados.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-user-gear" aria-hidden="true"></i> <span>Equipo TÃ©cnico</span></a>
+      <a href="/admin/configuracion.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-gears" aria-hidden="true"></i> <span>ConfiguraciÃ³n</span></a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <a href="/" target="_blank" class="btn btn-outline btn-sm" style="width: 100%; margin-bottom: 0.5rem; font-size: 0.78rem;">
+        <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Ver Sitio PÃºblico
+      </a>
+      <button id="btn-logout" class="btn btn-secondary btn-sm" style="width: 100%; color: var(--color-danger); font-size: 0.78rem;">
+        Cerrar SesiÃ³n
+      </button>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main class="admin-main">
+    <header class="admin-header">
+      <div class="header-left">
+        <h2 class="page-title">Inventario de Repuestos y Materiales</h2>
+      </div>
+      <div class="header-right">
+        <div style="position: relative;">
+          <button class="notification-bell" id="notif-bell"><i class="fa-solid fa-bell" aria-hidden="true"></i><span class="notification-badge hidden" id="notif-badge">0</span></button>
+          <div class="notifications-dropdown" id="notif-dropdown">
+            <div class="notif-header"><strong class="text-gold-bright">Notificaciones</strong></div>
+            <div class="notif-list" id="notif-list"></div>
+          </div>
+        </div>
+        <div class="user-menu">
+          <div class="user-avatar" id="admin-user-avatar">AB</div>
+          <div class="user-info">
+            <span class="user-name" id="admin-user-name">Admin</span>
+            <span class="user-role" id="admin-user-role">SUPERADMIN</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="admin-content">
+      <!-- Toolbar -->
+      <div class="admin-toolbar">
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; flex-grow: 1; align-items: center;">
+          <div class="toolbar-search">
+            <span><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></span>
+            <input type="text" id="search-inventory" placeholder="Buscar por cÃ³digo, nombre, estante...">
+          </div>
+          <select id="filter-inventory-cat" class="form-select" style="max-width: 180px;">
+            <option value="">-- CategorÃ­as --</option>
+            <option value="Retenes">Retenes VitÃ³n</option>
+            <option value="Bujes">Bujes en TeflÃ³n</option>
+            <option value="Fluidos">Fluidos y QuÃ­micos</option>
+            <option value="Fuelles">Fuelles</option>
+            <option value="VÃ¡lvulas">VÃ¡lvulas y Pistones</option>
+            <option value="Barras">Barras Dentadas</option>
+          </select>
+          <label style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; color: var(--text-white); cursor: pointer;">
+            <input type="checkbox" id="filter-inventory-low">
+            <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> Solo Stock Bajo
+          </label>
+        </div>
+
+        <div class="toolbar-actions">
+          <button class="btn btn-primary btn-sm" onclick="openCreateItemModal()">
+            + Nuevo Repuesto
+          </button>
+        </div>
+      </div>
+
+      <!-- Tabla Inventario -->
+      <div class="card">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>CÃ³digo</th>
+                <th>Nombre del Repuesto</th>
+                <th>CategorÃ­a</th>
+                <th>Stock / MÃ­nimo</th>
+                <th>Costo</th>
+                <th>Precio Venta</th>
+                <th>UbicaciÃ³n</th>
+                <th class="text-right">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="inventory-table-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal Crear / Editar Repuesto -->
+  <div class="modal-backdrop" id="item-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="item-modal-title">Nuevo Repuesto</h3>
+        <button class="modal-close" onclick="document.getElementById('item-modal').classList.remove('active')">&times;</button>
+      </div>
+      <form id="item-form">
+        <div class="modal-body">
+          <input type="hidden" id="item-id">
+          <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label">CÃ³digo SKU</label>
+              <input type="text" id="item-code" class="form-control" placeholder="Ej: RET-VIT-2840">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Nombre del Repuesto <span class="required">*</span></label>
+              <input type="text" id="item-name" class="form-control" required placeholder="Ej: Kit Retenes Cremallera Ford Ranger">
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label">CategorÃ­a</label>
+              <select id="item-category" class="form-select">
+                <option value="Retenes">Retenes</option>
+                <option value="Bujes">Bujes</option>
+                <option value="Fluidos">Fluidos y QuÃ­micos</option>
+                <option value="Fuelles">Fuelles</option>
+                <option value="VÃ¡lvulas">VÃ¡lvulas y Pistones</option>
+                <option value="Barras">Barras Dentadas</option>
+                <option value="Kits">Kits de ReparaciÃ³n</option>
+                <option value="General">Otros</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">UbicaciÃ³n en Taller</label>
+              <input type="text" id="item-location" class="form-control" placeholder="Ej: Estante A-2">
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label">Costo de Compra ($)</label>
+              <input type="number" id="item-cost" class="form-control" min="0" value="0">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Precio de Venta ($)</label>
+              <input type="number" id="item-salePrice" class="form-control" min="0" value="0">
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label">Stock Actual (Unidades)</label>
+              <input type="number" id="item-stock" class="form-control" min="0" value="0">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Stock MÃ­nimo de Alerta</label>
+              <input type="number" id="item-minStock" class="form-control" min="0" value="2">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">DescripciÃ³n TÃ©cnica / Medidas</label>
+            <textarea id="item-description" class="form-control" rows="2" placeholder="DiÃ¡metros interior/exterior, material, compatibilidades..."></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="document.getElementById('item-modal').classList.remove('active')">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Guardar Repuesto</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Registrar Movimiento (Entrada/Salida/Ajuste) -->
+  <div class="modal-backdrop" id="movement-modal">
+    <div class="modal-content" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3 class="modal-title">Movimiento de AlmacÃ©n</h3>
+        <button class="modal-close" onclick="document.getElementById('movement-modal').classList.remove('active')">&times;</button>
+      </div>
+      <form id="movement-form">
+        <div class="modal-body">
+          <div style="background: var(--bg-primary); padding: 0.85rem; border-radius: var(--radius-md); margin-bottom: 1.25rem;">
+            <div style="font-weight: 700; color: var(--gold-bright);" id="movement-item-name"></div>
+            <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">
+              Existencia actual: <strong class="text-white" id="movement-current-stock"></strong>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Tipo de OperaciÃ³n <span class="required">*</span></label>
+            <select id="movement-type" class="form-select">
+              <option value="entrada">Entrada (Compra / ReposiciÃ³n)</option>
+              <option value="salida">ðŸ“¤ Salida (Venta directa / Descarte)</option>
+              <option value="ajuste">Ajuste de Inventario (Conteo fÃ­sico)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Cantidad <span class="required">*</span></label>
+            <input type="number" id="movement-quantity" class="form-control text-center" min="1" value="1" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Motivo u ObservaciÃ³n</label>
+            <input type="text" id="movement-reason" class="form-control" placeholder="Ej: Factura compra NÂ° 8492">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="document.getElementById('movement-modal').classList.remove('active')">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Registrar Movimiento</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/notifications.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/admin.js"></script>
+  <script src="/js/modules/inventory.js"></script>
+</body>
+</html>
+
+

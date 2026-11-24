@@ -1,0 +1,257 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Presupuestos de ReparaciÃ³n | Hidraulica del oeste A.B</title>
+  <link rel="icon" type="image/jpeg" href="/assets/logo.jpg">
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="/vendor/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/admin.css">
+  <link rel="stylesheet" href="/css/animations.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body class="admin-layout">
+
+  <!-- Sidebar -->
+  <aside class="admin-sidebar">
+    <div class="sidebar-header">
+      <a href="/admin/dashboard.html" class="sidebar-brand">
+        <img src="/assets/logo.jpg" alt="Logo">
+        <span class="sidebar-brand-name">Bengoechea</span>
+      </a>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="nav-section-title">Principal</div>
+      <a href="/admin/dashboard.html" class="sidebar-link"><i class="fa-solid fa-chart-line" aria-hidden="true"></i> <span>Dashboard</span></a>
+      <a href="/admin/reparaciones.html" class="sidebar-link"><i class="fa-solid fa-gears" aria-hidden="true"></i> <span>Reparaciones (OT)</span></a>
+      <a href="/admin/clientes.html" class="sidebar-link"><i class="fa-solid fa-users" aria-hidden="true"></i> <span>Clientes</span></a>
+      <a href="/admin/presupuestos.html" class="sidebar-link active"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> <span>Presupuestos</span></a>
+
+      <div class="nav-section-title">Operaciones</div>
+      <a href="/admin/inventario.html" class="sidebar-link"><i class="fa-solid fa-boxes-stacked" aria-hidden="true"></i> <span>Inventario</span></a>
+      <a href="/admin/proveedores.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-industry" aria-hidden="true"></i> <span>Proveedores</span></a>
+      <a href="/admin/caja.html" class="sidebar-link role-finance-only"><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i> <span>Caja y Finanzas</span></a>
+
+      <div class="nav-section-title">AdministraciÃ³n</div>
+      <a href="/admin/cms.html" class="sidebar-link role-admin-only text-gold-bright" style="border: 1px dashed rgba(212, 175, 55, 0.4);">
+        <i class="fa-solid fa-globe" aria-hidden="true"></i> <span>Administrar Web (CMS)</span>
+      </a>
+      <a href="/admin/reportes.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-chart-column" aria-hidden="true"></i> <span>Reportes</span></a>
+      <a href="/admin/empleados.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-user-gear" aria-hidden="true"></i> <span>Equipo TÃ©cnico</span></a>
+      <a href="/admin/configuracion.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-gears" aria-hidden="true"></i> <span>ConfiguraciÃ³n</span></a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <a href="/" target="_blank" class="btn btn-outline btn-sm" style="width: 100%; margin-bottom: 0.5rem; font-size: 0.78rem;">
+        <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Ver Sitio PÃºblico
+      </a>
+      <button id="btn-logout" class="btn btn-secondary btn-sm" style="width: 100%; color: var(--color-danger); font-size: 0.78rem;">
+        Cerrar SesiÃ³n
+      </button>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main class="admin-main">
+    <header class="admin-header">
+      <div class="header-left">
+        <h2 class="page-title">Presupuestos y Cotizaciones</h2>
+      </div>
+      <div class="header-right">
+        <div style="position: relative;">
+          <button class="notification-bell" id="notif-bell"><i class="fa-solid fa-bell" aria-hidden="true"></i><span class="notification-badge hidden" id="notif-badge">0</span></button>
+          <div class="notifications-dropdown" id="notif-dropdown">
+            <div class="notif-header"><strong class="text-gold-bright">Notificaciones</strong></div>
+            <div class="notif-list" id="notif-list"></div>
+          </div>
+        </div>
+        <div class="user-menu">
+          <div class="user-avatar" id="admin-user-avatar">AB</div>
+          <div class="user-info">
+            <span class="user-name" id="admin-user-name">Admin</span>
+            <span class="user-role" id="admin-user-role">SUPERADMIN</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="admin-content">
+      <!-- Toolbar -->
+      <div class="admin-toolbar">
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; flex-grow: 1;">
+          <div class="toolbar-search">
+            <span><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></span>
+            <input type="text" id="search-budgets" placeholder="Buscar por nÃºmero PRE, cliente o componente...">
+          </div>
+          <select id="filter-budget-status" class="form-select" style="max-width: 200px;">
+            <option value="">-- Todos los Estados --</option>
+            <option value="Pendiente">Pendiente</option>
+            <option value="Aprobado">Aprobado</option>
+            <option value="Rechazado">Rechazado</option>
+            <option value="Anulado">Anulado</option>
+          </select>
+        </div>
+
+        <div class="toolbar-actions">
+          <button class="btn btn-primary btn-sm" onclick="openCreateBudgetModal()">
+            + Nuevo Presupuesto
+          </button>
+        </div>
+      </div>
+
+      <!-- Tabla de Presupuestos -->
+      <div class="card">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>NÃºmero</th>
+                <th>Cliente</th>
+                <th>Componente</th>
+                <th>Importe Total</th>
+                <th>Estado</th>
+                <th>Fecha EmisiÃ³n</th>
+                <th class="text-right">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="budgets-table-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal Crear / Editar Presupuesto -->
+  <div class="modal-backdrop" id="budget-modal">
+    <div class="modal-content" style="max-width: 780px;">
+      <div class="modal-header">
+        <h3 class="modal-title" id="budget-modal-title">Nuevo Presupuesto TÃ©cnico</h3>
+        <button class="modal-close" onclick="document.getElementById('budget-modal').classList.remove('active')">&times;</button>
+      </div>
+      <form id="budget-form">
+        <div class="modal-body">
+          <input type="hidden" id="budget-id">
+          
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label">Cliente <span class="required">*</span></label>
+              <select id="budget-clientId" class="form-select" required></select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Orden de Trabajo (Opcional)</label>
+              <select id="budget-repairId" class="form-select"></select>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label">Componente / Pieza</label>
+              <input type="text" id="budget-componentType" class="form-control" value="Bomba / Cremallera HidrÃ¡ulica">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Marca</label>
+              <input type="text" id="budget-brand" class="form-control" placeholder="Ej: Ford">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Modelo</label>
+              <input type="text" id="budget-model" class="form-control" placeholder="Ej: Ranger">
+            </div>
+          </div>
+
+          <!-- Tabla DinÃ¡mica de Ãtems -->
+          <div style="margin: 1rem 0; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1rem; background: var(--bg-primary);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+              <strong class="text-gold-bright" style="font-size: 0.95rem;">Detalle de Trabajos y Repuestos</strong>
+              <button type="button" class="btn btn-outline btn-sm" onclick="addItemRow()">+ Agregar Ãtem</button>
+            </div>
+            
+            <div id="budget-items-container"></div>
+
+            <!-- Descuento y Totales -->
+            <div style="display: flex; justify-content: flex-end; margin-top: 1.25rem;">
+              <div style="width: 280px; display: flex; flex-direction: column; gap: 0.5rem;">
+                <div style="display: flex; justify-content: space-between; font-size: 0.9rem;">
+                  <span class="text-muted">Subtotal:</span>
+                  <strong id="budget-subtotal-disp" class="text-white">$ 0</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem;">
+                  <span class="text-muted">Descuento ($):</span>
+                  <input type="number" id="budget-discount" class="form-control form-control-sm text-right" style="width: 100px;" value="0" min="0">
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem;">
+                  <span class="text-muted">IVA (%):</span>
+                  <input type="number" id="budget-taxPercent" class="form-control form-control-sm text-right" style="width: 100px;" value="21" min="0">
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 1.2rem; font-weight: 700; border-top: 1px solid var(--border-color); padding-top: 0.5rem;">
+                  <span class="text-gold">TOTAL:</span>
+                  <strong id="budget-total-disp" class="text-gold-bright">$ 0</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label">Validez de la Oferta</label>
+              <select id="budget-validDays" class="form-select">
+                <option value="15">15 DÃ­as corridos</option>
+                <option value="30">30 DÃ­as corridos</option>
+                <option value="7">7 DÃ­as corridos</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Condiciones Particulares u Observaciones</label>
+              <input type="text" id="budget-notes" class="form-control" placeholder="Ej: Sujeto a que la barra no requiera cromado duro adicional.">
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="document.getElementById('budget-modal').classList.remove('active')">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Emitir Presupuesto</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Estado de Presupuesto -->
+  <div class="modal-backdrop" id="budget-status-modal">
+    <div class="modal-content" style="max-width: 440px;">
+      <div class="modal-header">
+        <h3 class="modal-title" id="budget-status-title">Estado de Presupuesto</h3>
+        <button class="modal-close" onclick="document.getElementById('budget-status-modal').classList.remove('active')">&times;</button>
+      </div>
+      <form id="budget-status-form">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label">Seleccionar Estado</label>
+            <select id="budget-status-select" class="form-select">
+              <option value="Pendiente">Pendiente (Enviado al cliente)</option>
+              <option value="Aprobado">Aprobado (Conformidad para reparar)</option>
+              <option value="Rechazado">Rechazado por el cliente</option>
+              <option value="Anulado">Anulado</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="document.getElementById('budget-status-modal').classList.remove('active')">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Actualizar Estado</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/notifications.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/admin.js"></script>
+  <script src="/js/modules/budgets.js"></script>
+</body>
+</html>
+
+

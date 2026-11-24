@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acceso al Sistema ERP | Hidraulica del oeste A.B</title>
+  <link rel="icon" type="image/jpeg" href="/assets/logo.jpg">
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="/vendor/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/admin.css">
+  <link rel="stylesheet" href="/css/animations.css">
+</head>
+<body style="display: flex; align-items: center; justify-content: center; min-height: 100vh; background: radial-gradient(circle at center, #181818 0%, #090909 100%); padding: 1.5rem;">
+
+  <div class="card" style="width: 100%; max-width: 440px; padding: 2.5rem; border-color: rgba(212, 175, 55, 0.4); box-shadow: var(--shadow-lg), var(--gold-glow-subtle);">
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <img src="/assets/logo.jpg" alt="Logo" style="height: 64px; margin: 0 auto 1rem; border-radius: var(--radius-sm); border: 1.5px solid var(--gold-primary);">
+      <h2 class="text-gold-bright" style="font-size: 1.5rem; letter-spacing: 0.5px;">Hidraulica del oeste A.B</h2>
+      <div style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 0.2rem;">Panel Administrativo & ERP</div>
+    </div>
+
+    <form id="admin-login-form">
+      <div class="form-group">
+        <label class="form-label">Correo ElectrÃ³nico</label>
+        <input type="email" id="login-email" class="form-control" required placeholder="admin@hidraulicabengoechea.com" autofocus>
+      </div>
+
+      <div class="form-group" style="margin-bottom: 1.75rem;">
+        <label class="form-label">ContraseÃ±a</label>
+        <input type="password" id="login-password" class="form-control" required placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢">
+      </div>
+
+      <button type="submit" id="btn-login-submit" class="btn btn-primary" style="width: 100%;">
+        Iniciar SesiÃ³n
+      </button>
+
+      <div style="text-align: center; margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border-color); font-size: 0.8rem; color: var(--text-dim);">
+        Credencial inicial: <code>admin@hidraulicabengoechea.com</code><br>
+        ContraseÃ±a: <code>AdminHidraulica2026!</code>
+      </div>
+    </form>
+  </div>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/notifications.js"></script>
+  <script src="/js/auth.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Si ya estÃ¡ autenticado, redirigir a dashboard
+      if (Auth.isAuthenticated()) {
+        window.location.href = '/admin/dashboard.html';
+      }
+
+      const form = document.getElementById('admin-login-form');
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = document.getElementById('btn-login-submit');
+        const email = document.getElementById('login-email').value.trim();
+        const password = document.getElementById('login-password').value;
+
+        btn.disabled = true;
+        btn.innerHTML = `<span class="spinner"></span> Verificando...`;
+
+        try {
+          const res = await Auth.login(email, password);
+          if (res.success) {
+            Toast.success('Bienvenido al sistema.');
+            setTimeout(() => {
+              window.location.href = '/admin/dashboard.html';
+            }, 600);
+          }
+        } catch (err) {
+          Toast.error(err.message || 'Error al iniciar sesiÃ³n');
+          btn.disabled = false;
+          btn.innerHTML = 'Iniciar SesiÃ³n';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+
+

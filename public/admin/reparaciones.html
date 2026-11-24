@@ -1,0 +1,346 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ã“rdenes de Trabajo | Hidraulica del oeste A.B</title>
+  <link rel="icon" type="image/jpeg" href="/assets/logo.jpg">
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="/vendor/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/admin.css">
+  <link rel="stylesheet" href="/css/animations.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body class="admin-layout">
+
+  <!-- Sidebar -->
+  <aside class="admin-sidebar">
+    <div class="sidebar-header">
+      <a href="/admin/dashboard.html" class="sidebar-brand">
+        <img src="/assets/logo.jpg" alt="Logo">
+        <span class="sidebar-brand-name">Bengoechea</span>
+      </a>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="nav-section-title">Principal</div>
+      <a href="/admin/dashboard.html" class="sidebar-link"><i class="fa-solid fa-chart-line" aria-hidden="true"></i> <span>Dashboard</span></a>
+      <a href="/admin/reparaciones.html" class="sidebar-link active"><i class="fa-solid fa-gears" aria-hidden="true"></i> <span>Reparaciones (OT)</span></a>
+      <a href="/admin/clientes.html" class="sidebar-link"><i class="fa-solid fa-users" aria-hidden="true"></i> <span>Clientes</span></a>
+      <a href="/admin/presupuestos.html" class="sidebar-link"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> <span>Presupuestos</span></a>
+
+      <div class="nav-section-title">Operaciones</div>
+      <a href="/admin/inventario.html" class="sidebar-link"><i class="fa-solid fa-boxes-stacked" aria-hidden="true"></i> <span>Inventario</span></a>
+      <a href="/admin/proveedores.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-industry" aria-hidden="true"></i> <span>Proveedores</span></a>
+      <a href="/admin/caja.html" class="sidebar-link role-finance-only"><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i> <span>Caja y Finanzas</span></a>
+
+      <div class="nav-section-title">AdministraciÃ³n</div>
+      <a href="/admin/cms.html" class="sidebar-link role-admin-only text-gold-bright" style="border: 1px dashed rgba(212, 175, 55, 0.4);">
+        <i class="fa-solid fa-globe" aria-hidden="true"></i> <span>Administrar Web (CMS)</span>
+      </a>
+      <a href="/admin/reportes.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-chart-column" aria-hidden="true"></i> <span>Reportes</span></a>
+      <a href="/admin/empleados.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-user-gear" aria-hidden="true"></i> <span>Equipo TÃ©cnico</span></a>
+      <a href="/admin/configuracion.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-gears" aria-hidden="true"></i> <span>ConfiguraciÃ³n</span></a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <a href="/" target="_blank" class="btn btn-outline btn-sm" style="width: 100%; margin-bottom: 0.5rem; font-size: 0.78rem;">
+        <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Ver Sitio PÃºblico
+      </a>
+      <button id="btn-logout" class="btn btn-secondary btn-sm" style="width: 100%; color: var(--color-danger); font-size: 0.78rem;">
+        Cerrar SesiÃ³n
+      </button>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="admin-main">
+    <header class="admin-header">
+      <div class="header-left">
+        <h2 class="page-title">Ã“rdenes de Trabajo y Reparaciones</h2>
+      </div>
+      <div class="header-right">
+        <div style="position: relative;">
+          <button class="notification-bell" id="notif-bell"><i class="fa-solid fa-bell" aria-hidden="true"></i><span class="notification-badge hidden" id="notif-badge">0</span></button>
+          <div class="notifications-dropdown" id="notif-dropdown">
+            <div class="notif-header"><strong class="text-gold-bright">Notificaciones</strong></div>
+            <div class="notif-list" id="notif-list"></div>
+          </div>
+        </div>
+        <div class="user-menu">
+          <div class="user-avatar" id="admin-user-avatar">AB</div>
+          <div class="user-info">
+            <span class="user-name" id="admin-user-name">Admin</span>
+            <span class="user-role" id="admin-user-role">SUPERADMIN</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="admin-content">
+      <!-- Toolbar -->
+      <div class="admin-toolbar">
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; flex-grow: 1;">
+          <div class="toolbar-search">
+            <span><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></span>
+            <input type="text" id="search-repairs" placeholder="Buscar por OT, cliente, telÃ©fono o componente...">
+          </div>
+          <select id="filter-repair-status" class="form-select" style="max-width: 230px;">
+            <option value="">-- Todos los Estados (11) --</option>
+            <option value="Recibido">1. Recibido</option>
+            <option value="En diagnÃ³stico">2. En diagnÃ³stico</option>
+            <option value="Esperando aprobaciÃ³n">3. Esperando aprobaciÃ³n</option>
+            <option value="Aprobado">4. Aprobado</option>
+            <option value="Esperando repuestos">5. Esperando repuestos</option>
+            <option value="En reparaciÃ³n">6. En reparaciÃ³n</option>
+            <option value="En pruebas">7. En pruebas</option>
+            <option value="Reparado">8. Reparado</option>
+            <option value="Listo para entregar">9. Listo para entregar</option>
+            <option value="Entregado">10. Entregado</option>
+            <option value="Cancelado">11. Cancelado</option>
+          </select>
+        </div>
+
+        <div class="toolbar-actions">
+          <button class="btn btn-primary btn-sm" onclick="openCreateRepairModal()">
+            + Nueva Orden de Trabajo
+          </button>
+        </div>
+      </div>
+
+      <!-- Tabla de Reparaciones -->
+      <div class="card">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>NÃºmero OT</th>
+                <th>Cliente</th>
+                <th>Componente</th>
+                <th>Estado Actual</th>
+                <th>TÃ©cnico</th>
+                <th>Ingreso</th>
+                <th>Seguimiento</th>
+                <th class="text-right">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="repairs-table-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal Crear / Editar Orden de Trabajo -->
+  <div class="modal-backdrop" id="repair-modal">
+    <div class="modal-content" style="max-width: 700px;">
+      <div class="modal-header">
+        <h3 class="modal-title" id="repair-modal-title">Nueva Orden de Trabajo</h3>
+        <button class="modal-close" onclick="document.getElementById('repair-modal').classList.remove('active')">&times;</button>
+      </div>
+      <form id="repair-form">
+        <div class="modal-body">
+          <input type="hidden" id="repair-id">
+          <div class="form-group">
+            <label class="form-label">Cliente Asociado <span class="required">*</span></label>
+            <select id="repair-clientId" class="form-select" required></select>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label">Tipo de Componente <span class="required">*</span></label>
+              <select id="repair-componentType" class="form-select" required>
+                <option value="Bomba HidrÃ¡ulica">Bomba HidrÃ¡ulica</option>
+                <option value="Cremallera de DirecciÃ³n">Cremallera de DirecciÃ³n</option>
+                <option value="Caja de DirecciÃ³n Asistida">Caja de DirecciÃ³n Asistida</option>
+                <option value="Cilindro HidrÃ¡ulico">Cilindro HidrÃ¡ulico</option>
+                <option value="VÃ¡lvula Rotativa">VÃ¡lvula Rotativa</option>
+                <option value="ElectrohidrÃ¡ulica">Bomba / Cremallera ElectrohidrÃ¡ulica</option>
+                <option value="Otro">Otro Componente</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">TÃ©cnico Responsable</label>
+              <select id="repair-technicianId" class="form-select"></select>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label">Marca</label>
+              <input type="text" id="repair-brand" class="form-control" placeholder="Ej: ZF, TRW, Ford">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Modelo / VehÃ­culo</label>
+              <input type="text" id="repair-model" class="form-control" placeholder="Ej: Ranger, Kangoo">
+            </div>
+            <div class="form-group">
+              <label class="form-label">NÂ° Serie / CÃ³digo</label>
+              <input type="text" id="repair-serialNumber" class="form-control" placeholder="Opcional">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Fecha Estimada de Entrega</label>
+            <input type="date" id="repair-estimatedDeliveryDate" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">DescripciÃ³n de la Falla del Cliente</label>
+            <textarea id="repair-description" class="form-control" rows="2" placeholder="Zumbido, fuga por retÃ©n, juego axial..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">DiagnÃ³stico TÃ©cnico Preliminar</label>
+            <textarea id="repair-diagnosis" class="form-control" rows="2" placeholder="Desgaste en rotor, barra con Ã³xido picada..."></textarea>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="document.getElementById('repair-modal').classList.remove('active')">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Guardar Orden</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Cambio de Estado (11 Estados) -->
+  <div class="modal-backdrop" id="status-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="status-repair-title">Cambiar Estado de la Orden</h3>
+        <button class="modal-close" onclick="document.getElementById('status-modal').classList.remove('active')">&times;</button>
+      </div>
+      <form id="status-form">
+        <div class="modal-body">
+          <div style="background: var(--bg-primary); padding: 0.75rem 1rem; border-radius: var(--radius-md); margin-bottom: 1rem;">
+            <span class="text-muted" style="font-size: 0.8rem;">Estado Actual:</span>
+            <span class="badge badge-gold" id="status-current" style="margin-left: 0.5rem;">Recibido</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Nuevo Estado Operativo <span class="required">*</span></label>
+            <select id="status-new-select" class="form-select" required>
+              <option value="Recibido">1. Recibido (Ingreso a taller)</option>
+              <option value="En diagnÃ³stico">2. En diagnÃ³stico (Despiece y banco)</option>
+              <option value="Esperando aprobaciÃ³n">3. Esperando aprobaciÃ³n (Presupuesto enviado)</option>
+              <option value="Aprobado">4. Aprobado (Cliente dio conformidad)</option>
+              <option value="Esperando repuestos">5. Esperando repuestos (Aguardando proveedor)</option>
+              <option value="En reparaciÃ³n">6. En reparaciÃ³n (Mecanizado y armado)</option>
+              <option value="En pruebas">7. En pruebas (Control de estanqueidad y presiÃ³n)</option>
+              <option value="Reparado">8. Reparado (SuperÃ³ controles tÃ©cnicos)</option>
+              <option value="Listo para entregar">9. Listo para entregar (Aviso a cliente)</option>
+              <option value="Entregado">10. Entregado (Retirado con garantÃ­a)</option>
+              <option value="Cancelado">11. Cancelado</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Nota TÃ©cnica Interna (Para el equipo)</label>
+            <input type="text" id="status-note" class="form-control" placeholder="Ej: Rectificado de barra finalizado, sin poros.">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Comentario PÃºblico (Visible en portal de seguimiento del cliente)</label>
+            <input type="text" id="status-public-comment" class="form-control" placeholder="Ej: Su pieza pasÃ³ con Ã©xito la prueba de presiÃ³n en banco.">
+          </div>
+
+          <h4 class="text-white" style="margin-top: 1.25rem; font-size: 0.95rem;">Historial de Avance:</h4>
+          <div id="status-history-list" style="max-height: 160px; overflow-y: auto; margin-top: 0.5rem;"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="document.getElementById('status-modal').classList.remove('active')">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Actualizar Estado</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Asignar Repuestos (Deduce Stock) -->
+  <div class="modal-backdrop" id="parts-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="parts-repair-title">Repuestos Asignados</h3>
+        <button class="modal-close" onclick="document.getElementById('parts-modal').classList.remove('active')">&times;</button>
+      </div>
+      <form id="part-form">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label">Seleccionar Repuesto desde Inventario</label>
+            <select id="part-inventoryId" class="form-select"></select>
+            <span class="form-hint">DescontarÃ¡ automÃ¡ticamente las unidades del stock general.</span>
+          </div>
+          <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label">O Ingrese DescripciÃ³n Manual</label>
+              <input type="text" id="part-description" class="form-control" placeholder="Ej: RetÃ©n vitÃ³n especial 28mm">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Cantidad <span class="required">*</span></label>
+              <input type="number" id="part-quantity" class="form-control text-center" min="1" value="1" required>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-outline btn-sm" style="width: 100%; margin-top: 0.5rem;">
+            + Asignar Repuesto a la Orden
+          </button>
+
+          <h4 class="text-white" style="margin-top: 1.5rem; font-size: 0.95rem;">Repuestos Utilizados en esta Orden:</h4>
+          <div id="parts-used-list" style="margin-top: 0.5rem;"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="document.getElementById('parts-modal').classList.remove('active')">Cerrar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Fotos de la ReparaciÃ³n -->
+  <div class="modal-backdrop" id="photos-modal">
+    <div class="modal-content" style="max-width: 650px;">
+      <div class="modal-header">
+        <h3 class="modal-title" id="photos-repair-title">FotografÃ­as del Proceso</h3>
+        <button class="modal-close" onclick="document.getElementById('photos-modal').classList.remove('active')">&times;</button>
+      </div>
+      <form id="photo-form">
+        <div class="modal-body">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label">Etapa de la FotografÃ­a</label>
+              <select id="repair-photo-phase" class="form-select">
+                <option value="receptionPhotos">1. RecepciÃ³n (Pieza desarmada)</option>
+                <option value="processPhotos">2. Proceso (Mecanizado y ajuste)</option>
+                <option value="finalPhotos">3. Final (Terminada y en banco)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Seleccionar Fotos (JPG, PNG)</label>
+              <input type="file" id="repair-photo-files" multiple accept="image/*" class="form-control">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-sm" style="width: 100%;">
+            Subir FotografÃ­as a la Orden
+          </button>
+
+          <div style="margin-top: 1.5rem;">
+            <div id="repair-photos-gallery" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 0.75rem;"></div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="document.getElementById('photos-modal').classList.remove('active')">Cerrar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/notifications.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/admin.js"></script>
+  <script src="/js/modules/repairs.js"></script>
+</body>
+</html>
+
+
