@@ -32,6 +32,9 @@ const settingsRoutes = require('./routes/settings.routes');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+// Configuración para Render
+app.set('trust proxy', 1);
+
 
 // Middlewares de Seguridad y Rendimiento
 app.use(helmet({
