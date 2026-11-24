@@ -1,0 +1,18 @@
+{
+  "main": {
+    "title": "Nuestra Trayectoria y Precisión Industrial",
+    "history": "Fundada hace más de dos décadas, nuestra empresa nació con la misión de brindar un estándar de diagnóstico y reconstrucción hidráulica superior, utilizando banco de pruebas de tecnología de punta y repuestos legítimos.",
+    "mission": "Garantizar el óptimo rendimiento y seguridad de los sistemas de dirección y circuitos hidráulicos de nuestros clientes con máxima precisión técnica y honestidad.",
+    "vision": "Ser el laboratorio de referencia nacional en reparación y diagnóstico de componentes hidráulicos y cremalleras de dirección de vehículos livianos, utilitarios y maquinaria.",
+    "values": [
+      "Precisión técnica milimétrica en cada ajuste y mecanizado.",
+      "Transparencia y presupuestos claros sin sorpresas.",
+      "Control de calidad riguroso en banco de pruebas antes de cada entrega.",
+      "Compromiso y respuesta ágil a talleres mecánicos y clientes particulares."
+    ],
+    "image": "/assets/foto1.jpg",
+    "updatedAt": "2026-11-18T23:34:10.837Z",
+    "createdAt": "2026-11-18T23:34:10.837Z",
+    "id": "main"
+  }
+}

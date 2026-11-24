@@ -1,0 +1,58 @@
+{
+  "1795045826562-dfg4boq": {
+    "orderNumber": "OT-2026-0001",
+    "trackingCode": "BH-826561",
+    "verificationCode": "9900",
+    "clientId": "1795045826549-742sdyt",
+    "clientName": "Transportes Logísticos del Norte S.R.L.",
+    "clientPhone": "+54 11 4488-9900",
+    "clientEmail": "flota@transnorte.com",
+    "componentType": "Cremallera de Dirección",
+    "brand": "Ford",
+    "model": "Ranger 3.2 TDCi",
+    "serialNumber": "CR-2019-983",
+    "description": "Pérdida abundante de líquido hidráulico y dirección pesada en caliente.",
+    "diagnosis": "Retén izquierdo reventado y barra con picadura leve.",
+    "receivedDate": "2026-11-18T23:50:26.561Z",
+    "estimatedDeliveryDate": "",
+    "technicianId": "",
+    "technicianName": "Martín Gómez (Técnico)",
+    "status": "Cancelado",
+    "receptionPhotos": [],
+    "processPhotos": [],
+    "finalPhotos": [],
+    "partsUsed": [],
+    "laborHours": 0,
+    "internalCosts": 0,
+    "warrantyMonths": 6,
+    "notes": "",
+    "statusHistory": [
+      {
+        "status": "Recibido",
+        "date": "2026-11-18T23:50:26.561Z",
+        "user": "Agustín Bengoechea (Administrador)",
+        "userRole": "SUPERADMIN",
+        "note": "Ingreso del componente al taller para diagnóstico."
+      },
+      {
+        "status": "Cancelado",
+        "date": "2026-11-18T23:56:33.152Z",
+        "user": "Agustín Bengoechea (Administrador)",
+        "userRole": "SUPERADMIN",
+        "note": "Cambio de estado a Cancelado",
+        "publicComment": ""
+      }
+    ],
+    "createdAt": "2026-11-18T23:56:33.152Z",
+    "updatedAt": "2026-11-18T23:56:33.152Z",
+    "id": "1795045826562-dfg4boq",
+    "budgetId": "1795045826593-mq02muq",
+    "budgetNumber": "PRE-2026-0001",
+    "budgetTotal": 145200,
+    "budgetSummary": {
+      "number": "PRE-2026-0001",
+      "total": 145200,
+      "status": "Pendiente"
+    }
+  }
+}

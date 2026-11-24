@@ -1,0 +1,134 @@
+{
+  "srv-bombas-hidraulicas": {
+    "id": "srv-bombas-hidraulicas",
+    "name": "Reparación de Bombas Hidráulicas",
+    "slug": "reparacion-de-bombas-hidraulicas",
+    "shortDescription": "Desarme completo, rectificado de rotor, cambio de paletas, retenes vitón y prueba de presión en banco.",
+    "fullDescription": "Reparamos bombas de dirección asistida de todas las marcas automotrices e industriales. Reemplazamos kits de retenes de alta presión, rodamientos, válvulas reguladoras y pistones.",
+    "price": "Desde $85.000",
+    "priceMode": "desde",
+    "image": "/assets/imagen3.jpg",
+    "category": "Bombas",
+    "features": [
+      "Prueba de caudal en banco hidráulico",
+      "Sustitución de retenes vitón de alta temperatura",
+      "Control de válvula reguladora de presión",
+      "Garantía 6 meses"
+    ],
+    "order": 1,
+    "active": true,
+    "featured": true,
+    "updatedAt": "2026-11-18T23:34:10.844Z",
+    "createdAt": "2026-11-18T23:34:10.844Z"
+  },
+  "srv-cremalleras-direccion": {
+    "id": "srv-cremalleras-direccion",
+    "name": "Reparación de Cremalleras de Dirección",
+    "slug": "reparacion-de-cremalleras-de-direccion",
+    "shortDescription": "Rectificado de barra dentada, cambio de bujes en teflón maquinado, retenes axiales y eliminación de juegos.",
+    "fullDescription": "Servicio integral para cremalleras hidráulicas, mecánicas y electroasistidas. Solucionamos pérdidas de fluido por los fuelles, dirección dura y golpes o ruidos metálicos en empedrado.",
+    "price": "Desde $110.000",
+    "priceMode": "desde",
+    "image": "/assets/foto2.jpg",
+    "category": "Cremalleras",
+    "features": [
+      "Mecanizado de bujes de teflón antivibración",
+      "Pulido y rectificado de barra con precisión centesimal",
+      "Retenes de alta presión originales",
+      "Prueba de estanqueidad"
+    ],
+    "order": 2,
+    "active": true,
+    "featured": true,
+    "updatedAt": "2026-11-18T23:34:10.848Z",
+    "createdAt": "2026-11-18T23:34:10.848Z"
+  },
+  "srv-diagnostico-hidraulico": {
+    "id": "srv-diagnostico-hidraulico",
+    "name": "Diagnóstico Hidráulico en Banco",
+    "slug": "diagnostico-hidraulico",
+    "shortDescription": "Verificación computarizada y manométrica de presión de trabajo, caudal y fugas internas en circuito cerrado.",
+    "fullDescription": "Contamos con banco de pruebas de motor trifásico con variación de RPM y temperatura controlada, simulando las condiciones reales de funcionamiento del vehículo.",
+    "price": "Presupuesto según diagnóstico",
+    "priceMode": "diagnostico",
+    "image": "/assets/imagen4.jpg",
+    "category": "Diagnóstico",
+    "features": [
+      "Medición de presión hasta 180 BAR",
+      "Curva de caudal a distintas RPM",
+      "Detección de cavitación y turbulencia",
+      "Informe técnico detallado"
+    ],
+    "order": 3,
+    "active": true,
+    "featured": true,
+    "updatedAt": "2026-11-18T23:34:10.854Z",
+    "createdAt": "2026-11-18T23:34:10.854Z"
+  },
+  "srv-mantenimiento-preventivo": {
+    "id": "srv-mantenimiento-preventivo",
+    "name": "Mantenimiento Preventivo y Flushing",
+    "slug": "mantenimiento-preventivo",
+    "shortDescription": "Vaciado, limpieza del circuito con fluido limpiador técnico, purgado y recambio de fluido hidráulico sintético homologado.",
+    "fullDescription": "El 80% de las fallas en bombas y cremalleras son producidas por fluido contaminado con virutas metálicas. Nuestro servicio de flushing prolonga la vida útil del sistema.",
+    "price": "Precio fijo: $45.000",
+    "priceMode": "fijo",
+    "image": "/assets/foto1.jpg",
+    "category": "Mantenimiento",
+    "features": [
+      "Flushing integral del circuito",
+      "Eliminación de depósitos y virutas",
+      "Fluido hidráulico sintético premium",
+      "Reemplazo de abrazaderas y fuelles"
+    ],
+    "order": 4,
+    "active": true,
+    "featured": false,
+    "updatedAt": "2026-11-18T23:34:10.858Z",
+    "createdAt": "2026-11-18T23:34:10.858Z"
+  },
+  "srv-reparacion-componentes": {
+    "id": "srv-reparacion-componentes",
+    "name": "Reparación de Componentes y Válvulas",
+    "slug": "reparacion-de-componentes",
+    "shortDescription": "Acondicionamiento de cajas de dirección asistidas, válvulas rotativas, cilindros y cañerías de alta presión.",
+    "fullDescription": "Reparamos distribuidores rotativos, cilindros de dirección y mangueras armadas para alta presión para líneas pesadas y utilitarios.",
+    "price": "A consultar",
+    "priceMode": "consultar",
+    "image": "/assets/foto2.jpg",
+    "category": "Componentes",
+    "features": [
+      "Tornería y rectificado propio",
+      "Prensado de mangueras de alta presión",
+      "Sustitución de sellos tóricos vitón",
+      "Inspección de tolerancias"
+    ],
+    "order": 5,
+    "active": true,
+    "featured": false,
+    "updatedAt": "2026-11-18T23:34:10.862Z",
+    "createdAt": "2026-11-18T23:34:10.862Z"
+  },
+  "srv-control-pruebas": {
+    "id": "srv-control-pruebas",
+    "name": "Control y Pruebas de Funcionamiento",
+    "slug": "control-y-pruebas",
+    "shortDescription": "Verificación final de 100% de los trabajos en banco antes de la entrega al cliente.",
+    "fullDescription": "Ningún componente sale de nuestras instalaciones sin haber superado el protocolo de ensayo de fugas externas y presión sostenida.",
+    "price": "Incluido en reparación",
+    "priceMode": "fijo",
+    "image": "/assets/imagen4.jpg",
+    "category": "Diagnóstico",
+    "features": [
+      "Certificado de prueba en banco",
+      "Control de temperatura de operación",
+      "Cero fugas garantizado",
+      "Sello de garantía Bengoechea"
+    ],
+    "order": 6,
+    "active": true,
+    "featured": false,
+    "updatedAt": "2026-11-18T23:34:10.866Z",
+    "createdAt": "2026-11-18T23:34:10.866Z"
+  }
+}

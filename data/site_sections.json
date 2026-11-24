@@ -1,0 +1,49 @@
+{
+  "main": {
+    "order": [
+      {
+        "id": "hero",
+        "name": "Inicio",
+        "active": true
+      },
+      {
+        "id": "nosotros",
+        "name": "Nosotros",
+        "active": true
+      },
+      {
+        "id": "servicios",
+        "name": "Servicios Especializados",
+        "active": true
+      },
+      {
+        "id": "proceso",
+        "name": "Proceso de Trabajo",
+        "active": true
+      },
+      {
+        "id": "precios",
+        "name": "Tarifas y Presupuestos",
+        "active": true
+      },
+      {
+        "id": "galeria",
+        "name": "Galería de Trabajos",
+        "active": true
+      },
+      {
+        "id": "faq",
+        "name": "Preguntas Frecuentes",
+        "active": true
+      },
+      {
+        "id": "contacto",
+        "name": "Contacto y Ubicación",
+        "active": true
+      }
+    ],
+    "updatedAt": "2026-11-18T23:34:10.840Z",
+    "createdAt": "2026-11-18T23:34:10.840Z",
+    "id": "main"
+  }
+}

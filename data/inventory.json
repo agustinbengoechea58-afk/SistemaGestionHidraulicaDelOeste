@@ -1,0 +1,62 @@
+{
+  "inv-ret-01": {
+    "id": "inv-ret-01",
+    "code": "RET-VIT-2840",
+    "name": "Kit Retenes Vitón Alta Presión para Cremallera 28x40x7",
+    "category": "Retenes",
+    "supplierName": "Sellos Hidráulicos Industriales S.A.",
+    "cost": 4500,
+    "salePrice": 12500,
+    "stock": 14,
+    "minStock": 4,
+    "location": "Estante A-2",
+    "description": "Retén reforzado con doble labio y resorte inoxidable para cremalleras livianas.",
+    "updatedAt": "2026-11-18T23:34:10.888Z",
+    "createdAt": "2026-11-18T23:34:10.888Z"
+  },
+  "inv-buj-02": {
+    "id": "inv-buj-02",
+    "code": "BUJ-TEF-30",
+    "name": "Buje de Cremallera en Teflón Virgen Mecanizado 30mm",
+    "category": "Bujes",
+    "supplierName": "Mecanizados Bengoechea",
+    "cost": 3200,
+    "salePrice": 8900,
+    "stock": 18,
+    "minStock": 5,
+    "location": "Estante B-1",
+    "description": "Buje de guía autolubricado para anular holgura axial y golpeteo.",
+    "updatedAt": "2026-11-18T23:34:10.889Z",
+    "createdAt": "2026-11-18T23:34:10.889Z"
+  },
+  "inv-flu-03": {
+    "id": "inv-flu-03",
+    "code": "FLU-ATF-SYN",
+    "name": "Fluido Hidráulico Sintético Dirección Asistida 1 Litro",
+    "category": "Fluidos",
+    "supplierName": "Distribuidora Lubricantes Centro",
+    "cost": 8500,
+    "salePrice": 19500,
+    "stock": 22,
+    "minStock": 6,
+    "location": "Depósito Líquidos L-1",
+    "description": "Fluido de alta viscosidad y resistencia a la cavitación para bombas hidráulicas.",
+    "updatedAt": "2026-11-18T23:34:10.890Z",
+    "createdAt": "2026-11-18T23:34:10.890Z"
+  },
+  "inv-fue-04": {
+    "id": "inv-fue-04",
+    "code": "FUE-CREM-UNIV",
+    "name": "Fuelle Guardapolvo Cremallera Termoplástico Reforzado",
+    "category": "Fuelles",
+    "supplierName": "Gomas y Partes Automotrices",
+    "cost": 2100,
+    "salePrice": 5800,
+    "stock": 3,
+    "minStock": 5,
+    "location": "Estante C-3",
+    "description": "Fuelle resistente a hidrocarburos y temperatura con abrazaderas metálicas.",
+    "updatedAt": "2026-11-18T23:34:10.891Z",
+    "createdAt": "2026-11-18T23:34:10.891Z"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "main": {
+    "title": "Especialistas en Bombas Hidráulicas y Cremalleras de Dirección",
+    "subtitle": "Diagnóstico computarizado de alta presión, banco de calibración industrial y garantía escrita de 6 meses.",
+    "description": "Más de 20 años de experiencia solucionando fallas de dirección dura, zumbidos en bombas, pérdidas de fluido y juegos en cremalleras mecánicas, hidráulicas y electrohidráulicas.",
+    "heroImage": "/assets/foto1.jpg",
+    "primaryButtonText": "Solicitar Presupuesto",
+    "primaryButtonLink": "#presupuesto",
+    "secondaryButtonText": "Consultar por WhatsApp",
+    "secondaryButtonLink": "whatsapp",
+    "stats": [
+      {
+        "label": "Años de Trayectoria",
+        "value": "+20"
+      },
+      {
+        "label": "Bombas y Cremalleras Reparadas",
+        "value": "+8.500"
+      },
+      {
+        "label": "Calibración en Banco de Pruebas",
+        "value": "100%"
+      },
+      {
+        "label": "Garantía Escrita",
+        "value": "6 Meses"
+      }
+    ],
+    "updatedAt": "2026-11-18T23:34:10.831Z",
+    "createdAt": "2026-11-18T23:34:10.831Z",
+    "id": "main"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "gal-1": {
+    "id": "gal-1",
+    "title": "Calibración de Bomba Hidráulica en Banco",
+    "category": "bombas",
+    "categoryName": "Bombas Hidráulicas",
+    "description": "Diagnóstico de caudal y presión en banco de pruebas industrial.",
+    "image": "/assets/imagen3.jpg",
+    "featured": true,
+    "active": true,
+    "order": 1,
+    "updatedAt": "2026-11-18T23:34:10.869Z",
+    "createdAt": "2026-11-18T23:34:10.869Z"
+  },
+  "gal-2": {
+    "id": "gal-2",
+    "title": "Reparación Integral de Cremallera Asistida",
+    "category": "cremalleras",
+    "categoryName": "Cremalleras de Dirección",
+    "description": "Sustitución de retenes de alta presión, bujes de teflón y rectificado de barra.",
+    "image": "/assets/foto2.jpg",
+    "featured": true,
+    "active": true,
+    "order": 2,
+    "updatedAt": "2026-11-18T23:34:10.873Z",
+    "createdAt": "2026-11-18T23:34:10.873Z"
+  },
+  "gal-3": {
+    "id": "gal-3",
+    "title": "Laboratorio y Maquinaria Especializada",
+    "category": "instalaciones",
+    "categoryName": "Laboratorio Hidráulico",
+    "description": "Instalaciones equipadas con instrumental de precisión micrométrica.",
+    "image": "/assets/foto1.jpg",
+    "featured": true,
+    "active": true,
+    "order": 3,
+    "updatedAt": "2026-11-18T23:34:10.876Z",
+    "createdAt": "2026-11-18T23:34:10.876Z"
+  },
+  "gal-4": {
+    "id": "gal-4",
+    "title": "Control de Presión y Estanqueidad",
+    "category": "diagnostico",
+    "categoryName": "Diagnóstico y Pruebas",
+    "description": "Verificación de cero fugas y curva de presiones según especificaciones de fábrica.",
+    "image": "/assets/imagen4.jpg",
+    "featured": true,
+    "active": true,
+    "order": 4,
+    "updatedAt": "2026-11-18T23:34:10.879Z",
+    "createdAt": "2026-11-18T23:34:10.879Z"
+  }
+}

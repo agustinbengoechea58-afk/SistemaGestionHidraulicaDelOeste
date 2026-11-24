@@ -1,0 +1,16 @@
+{
+  "main": {
+    "businessName": "Hidraulica del oeste A.B",
+    "tagline": "Laboratorio de Alta Precisión en Bombas Hidráulicas y Cremalleras de Dirección",
+    "currency": "ARS",
+    "currencySymbol": "$",
+    "taxPercent": 21,
+    "logo": "/assets/logo.jpg",
+    "logoBanner": "/assets/logo2.jpg",
+    "warrantyConditions": "Garantía oficial escrita de 6 meses en todas las reparaciones hidráulicas calibradas en banco de pruebas con fluidos homologados.",
+    "termsAndConditions": "Todas las piezas reparadas son sometidas a control de caudal, presión y estanqueidad a temperatura de régimen de trabajo.",
+    "updatedAt": "2026-11-19T00:00:45.208Z",
+    "createdAt": "2026-11-19T00:00:45.208Z",
+    "id": "main"
+  }
+}

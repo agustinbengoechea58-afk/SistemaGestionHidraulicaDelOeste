@@ -1,0 +1,42 @@
+{
+  "faq-1": {
+    "id": "faq-1",
+    "question": "¿Qué síntomas indican que la bomba hidráulica está fallando?",
+    "answer": "Los síntomas más habituales son zumbido o chillido agudo al girar el volante (especialmente en maniobras de estacionamiento), endurecimiento intermitente de la dirección y presencia de espuma en el depósito de fluido.",
+    "category": "Bombas",
+    "order": 1,
+    "active": true,
+    "updatedAt": "2026-11-18T23:34:10.880Z",
+    "createdAt": "2026-11-18T23:34:10.880Z"
+  },
+  "faq-2": {
+    "id": "faq-2",
+    "question": "¿Por qué pierde líquido hidráulico la cremallera de dirección?",
+    "answer": "Generalmente se debe al desgaste o rotura de los fuelles de protección, lo que permite el ingreso de agua y tierra que oxida la barra dentada y destruye los retenes de alta presión. En nuestro taller rectificamos la barra a medida y colocamos retenes nuevos.",
+    "category": "Cremalleras",
+    "order": 2,
+    "active": true,
+    "updatedAt": "2026-11-18T23:34:10.882Z",
+    "createdAt": "2026-11-18T23:34:10.882Z"
+  },
+  "faq-3": {
+    "id": "faq-3",
+    "question": "¿Cuánto tiempo demora la reparación de un componente?",
+    "answer": "El diagnóstico en banco se realiza en el día. Una reparación integral de bomba o cremallera suele demorar habitualmente entre 24 y 48 horas hábiles, según la disponibilidad de repuestos específicos.",
+    "category": "Tiempos y Plazos",
+    "order": 3,
+    "active": true,
+    "updatedAt": "2026-11-18T23:34:10.883Z",
+    "createdAt": "2026-11-18T23:34:10.883Z"
+  },
+  "faq-4": {
+    "id": "faq-4",
+    "question": "¿Qué garantía tienen las reparaciones?",
+    "answer": "Brindamos una garantía escrita de 6 meses en todas las reparaciones, respaldada por la prueba previa en banco hidráulico y la utilización de componentes de sellado de primera calidad.",
+    "category": "Garantía",
+    "order": 4,
+    "active": true,
+    "updatedAt": "2026-11-18T23:34:10.884Z",
+    "createdAt": "2026-11-18T23:34:10.884Z"
+  }
+}

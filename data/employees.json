@@ -1,0 +1,26 @@
+{
+  "admin-root": {
+    "id": "admin-root",
+    "email": "admin@hidraulicabengoechea.com",
+    "password": "AdminHidraulica2026!",
+    "name": "Agustín Bengoechea (Administrador)",
+    "role": "SUPERADMIN",
+    "phone": "+54 9 11 2345-6789",
+    "specialty": "Dirección Técnica y Diagnóstico",
+    "active": true,
+    "createdAt": "2026-11-18T23:34:10.896Z",
+    "updatedAt": "2026-11-18T23:34:10.896Z"
+  },
+  "tech-martin": {
+    "id": "tech-martin",
+    "email": "martin.tecnico@hidraulicabengoechea.com",
+    "password": "Tecnico2026!",
+    "name": "Martín Gómez (Técnico)",
+    "role": "TECNICO",
+    "phone": "+54 9 11 5555-1234",
+    "specialty": "Cremalleras y Cajas Asistidas",
+    "active": true,
+    "createdAt": "2026-11-18T23:34:10.897Z",
+    "updatedAt": "2026-11-18T23:34:10.897Z"
+  }
+}

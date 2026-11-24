@@ -1,0 +1,22 @@
+{
+  "1795045826571-bcvq3fm": {
+    "title": "Nueva Orden de Trabajo",
+    "message": "Creada OT-2026-0001 para Transportes Logísticos del Norte S.R.L. (Cremallera de Dirección).",
+    "type": "info",
+    "link": "/admin/reparaciones.html",
+    "read": false,
+    "createdAt": "2026-11-18T23:50:26.571Z",
+    "updatedAt": "2026-11-18T23:50:26.571Z",
+    "id": "1795045826571-bcvq3fm"
+  },
+  "1795045826622-8k24gpn": {
+    "title": "Nuevo Presupuesto Creado",
+    "message": "Presupuesto PRE-2026-0001 emitido para Transportes Logísticos del Norte S.R.L. por $145.200.",
+    "type": "info",
+    "link": "/admin/presupuestos.html",
+    "read": true,
+    "createdAt": "2026-11-24T19:29:59.089Z",
+    "updatedAt": "2026-11-24T19:29:59.089Z",
+    "id": "1795045826622-8k24gpn"
+  }
+}

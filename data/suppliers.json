@@ -1,0 +1,24 @@
+{
+  "sup-1": {
+    "id": "sup-1",
+    "name": "Sellos Hidráulicos Industriales S.A.",
+    "contactPerson": "Roberto Martínez",
+    "phone": "+54 11 4789-1122",
+    "email": "ventas@selloshidraulicos.com",
+    "category": "Retenes y O-Rings",
+    "address": "Zona Industrial San Martín",
+    "updatedAt": "2026-11-18T23:34:10.892Z",
+    "createdAt": "2026-11-18T23:34:10.892Z"
+  },
+  "sup-2": {
+    "id": "sup-2",
+    "name": "Distribuidora Lubricantes Centro",
+    "contactPerson": "Carlos Rossi",
+    "phone": "+54 11 4333-8899",
+    "email": "pedidos@lubricantescentro.com",
+    "category": "Fluidos y Químicos",
+    "address": "Av. Juan B. Justo 3200",
+    "updatedAt": "2026-11-18T23:34:10.895Z",
+    "createdAt": "2026-11-18T23:34:10.895Z"
+  }
+}
