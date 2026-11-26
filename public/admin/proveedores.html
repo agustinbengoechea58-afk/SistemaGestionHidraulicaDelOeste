@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +15,7 @@
   <link rel="stylesheet" href="/css/animations.css">
   <link rel="stylesheet" href="/css/responsive.css">
 </head>
+
 <body class="admin-layout">
   <aside class="admin-sidebar">
     <div class="sidebar-header">
@@ -24,34 +26,51 @@
     </div>
     <nav class="sidebar-nav">
       <div class="nav-section-title">Principal</div>
-      <a href="/admin/dashboard.html" class="sidebar-link"><i class="fa-solid fa-chart-line" aria-hidden="true"></i> <span>Dashboard</span></a>
-      <a href="/admin/reparaciones.html" class="sidebar-link"><i class="fa-solid fa-gears" aria-hidden="true"></i> <span>Reparaciones (OT)</span></a>
-      <a href="/admin/clientes.html" class="sidebar-link"><i class="fa-solid fa-users" aria-hidden="true"></i> <span>Clientes</span></a>
-      <a href="/admin/presupuestos.html" class="sidebar-link"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> <span>Presupuestos</span></a>
+      <a href="/admin/dashboard.html" class="sidebar-link"><i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+        <span>Dashboard</span></a>
+      <a href="/admin/reparaciones.html" class="sidebar-link"><i class="fa-solid fa-gears" aria-hidden="true"></i>
+        <span>Reparaciones (OT)</span></a>
+      <a href="/admin/clientes.html" class="sidebar-link"><i class="fa-solid fa-users" aria-hidden="true"></i>
+        <span>Clientes</span></a>
+      <a href="/admin/presupuestos.html" class="sidebar-link"><i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+        <span>Presupuestos</span></a>
       <div class="nav-section-title">Operaciones</div>
-      <a href="/admin/inventario.html" class="sidebar-link"><i class="fa-solid fa-boxes-stacked" aria-hidden="true"></i> <span>Inventario</span></a>
-      <a href="/admin/proveedores.html" class="sidebar-link active role-admin-only"><i class="fa-solid fa-industry" aria-hidden="true"></i> <span>Proveedores</span></a>
-      <a href="/admin/caja.html" class="sidebar-link role-finance-only"><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i> <span>Caja y Finanzas</span></a>
-      <div class="nav-section-title">AdministraciÃ³n</div>
-      <a href="/admin/cms.html" class="sidebar-link role-admin-only text-gold-bright" style="border: 1px dashed rgba(212, 175, 55, 0.4);">
+      <a href="/admin/inventario.html" class="sidebar-link"><i class="fa-solid fa-boxes-stacked" aria-hidden="true"></i>
+        <span>Inventario</span></a>
+      <a href="/admin/proveedores.html" class="sidebar-link active role-admin-only"><i class="fa-solid fa-industry"
+          aria-hidden="true"></i> <span>Proveedores</span></a>
+      <a href="/admin/caja.html" class="sidebar-link role-finance-only"><i class="fa-solid fa-money-bill-wave"
+          aria-hidden="true"></i> <span>Caja y Finanzas</span></a>
+      <div class="nav-section-title">Administracion</div>
+      <a href="/admin/cms.html" class="sidebar-link role-admin-only text-gold-bright"
+        style="border: 1px dashed rgba(212, 175, 55, 0.4);">
         <i class="fa-solid fa-globe" aria-hidden="true"></i> <span>Administrar Web (CMS)</span>
       </a>
-      <a href="/admin/reportes.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-chart-column" aria-hidden="true"></i> <span>Reportes</span></a>
-      <a href="/admin/empleados.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-user-gear" aria-hidden="true"></i> <span>Equipo TÃ©cnico</span></a>
-      <a href="/admin/configuracion.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-gears" aria-hidden="true"></i> <span>ConfiguraciÃ³n</span></a>
+      <a href="/admin/reportes.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-chart-column"
+          aria-hidden="true"></i> <span>Reportes</span></a>
+      <a href="/admin/empleados.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-user-gear"
+          aria-hidden="true"></i> <span>Equipo Tecnico</span></a>
+      <a href="/admin/configuracion.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-gears"
+          aria-hidden="true"></i> <span>Configuracion</span></a>
     </nav>
     <div class="sidebar-footer">
-      <a href="/" target="_blank" class="btn btn-outline btn-sm" style="width: 100%; margin-bottom: 0.5rem; font-size: 0.78rem;"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Ver Sitio PÃºblico</a>
-      <button id="btn-logout" class="btn btn-secondary btn-sm" style="width: 100%; color: var(--color-danger); font-size: 0.78rem;">Cerrar SesiÃ³n</button>
+      <a href="/" target="_blank" class="btn btn-outline btn-sm"
+        style="width: 100%; margin-bottom: 0.5rem; font-size: 0.78rem;"><i
+          class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Ver Sitio Publico</a>
+      <button id="btn-logout" class="btn btn-secondary btn-sm"
+        style="width: 100%; color: var(--color-danger); font-size: 0.78rem;">Cerrar Sesion</button>
     </div>
   </aside>
 
   <main class="admin-main">
     <header class="admin-header">
-      <div class="header-left"><h2 class="page-title">Proveedores de Insumos</h2></div>
+      <div class="header-left">
+        <h2 class="page-title">Proveedores de Insumos</h2>
+      </div>
       <div class="header-right">
         <div style="position: relative;">
-          <button class="notification-bell" id="notif-bell"><i class="fa-solid fa-bell" aria-hidden="true"></i><span class="notification-badge hidden" id="notif-badge">0</span></button>
+          <button class="notification-bell" id="notif-bell"><i class="fa-solid fa-bell" aria-hidden="true"></i><span
+              class="notification-badge hidden" id="notif-badge">0</span></button>
           <div class="notifications-dropdown" id="notif-dropdown">
             <div class="notif-header"><strong class="text-gold-bright">Notificaciones</strong></div>
             <div class="notif-list" id="notif-list"></div>
@@ -83,9 +102,9 @@
           <table class="table">
             <thead>
               <tr>
-                <th>RazÃ³n Social</th>
+                <th>Razon Social</th>
                 <th>Contacto</th>
-                <th>TelÃ©fono</th>
+                <th>Telefono</th>
                 <th>Correo</th>
                 <th>Rubro</th>
                 <th class="text-right">Acciones</th>
@@ -102,14 +121,16 @@
     <div class="modal-content">
       <div class="modal-header">
         <h3 class="modal-title" id="supplier-modal-title">Nuevo Proveedor</h3>
-        <button class="modal-close" onclick="document.getElementById('supplier-modal').classList.remove('active')">&times;</button>
+        <button class="modal-close"
+          onclick="document.getElementById('supplier-modal').classList.remove('active')">&times;</button>
       </div>
       <form id="supplier-form">
         <div class="modal-body">
           <input type="hidden" id="supplier-id">
           <div class="form-group">
-            <label class="form-label">Nombre / RazÃ³n Social <span class="required">*</span></label>
-            <input type="text" id="supplier-name" class="form-control" required placeholder="Ej: Sellos HidrÃ¡ulicos S.A.">
+            <label class="form-label">Nombre / Razon Social <span class="required">*</span></label>
+            <input type="text" id="supplier-name" class="form-control" required
+              placeholder="Ej: Sellos HidrÃ¡ulicos S.A.">
           </div>
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
             <div class="form-group">
@@ -123,7 +144,7 @@
           </div>
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
             <div class="form-group">
-              <label class="form-label">TelÃ©fono</label>
+              <label class="form-label">Telefono</label>
               <input type="tel" id="supplier-phone" class="form-control" placeholder="11 4455-6677">
             </div>
             <div class="form-group">
@@ -132,16 +153,18 @@
             </div>
           </div>
           <div class="form-group">
-            <label class="form-label">DirecciÃ³n</label>
-            <input type="text" id="supplier-address" class="form-control" placeholder="DirecciÃ³n del depÃ³sito">
+            <label class="form-label">Direccion</label>
+            <input type="text" id="supplier-address" class="form-control" placeholder="Direccion del deposito">
           </div>
           <div class="form-group">
             <label class="form-label">Observaciones</label>
-            <textarea id="supplier-notes" class="form-control" rows="2" placeholder="Condiciones comerciales, plazos de entrega..."></textarea>
+            <textarea id="supplier-notes" class="form-control" rows="2"
+              placeholder="Condiciones comerciales, plazos de entrega..."></textarea>
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" onclick="document.getElementById('supplier-modal').classList.remove('active')">Cancelar</button>
+          <button type="button" class="btn btn-secondary"
+            onclick="document.getElementById('supplier-modal').classList.remove('active')">Cancelar</button>
           <button type="submit" class="btn btn-primary">Guardar Proveedor</button>
         </div>
       </form>
@@ -154,6 +177,5 @@
   <script src="/js/admin.js"></script>
   <script src="/js/modules/suppliers.js"></script>
 </body>
+
 </html>
-
-

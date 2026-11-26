@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +15,7 @@
   <link rel="stylesheet" href="/css/animations.css">
   <link rel="stylesheet" href="/css/responsive.css">
 </head>
+
 <body class="admin-layout">
 
   <!-- Sidebar -->
@@ -27,31 +29,44 @@
 
     <nav class="sidebar-nav">
       <div class="nav-section-title">Principal</div>
-      <a href="/admin/dashboard.html" class="sidebar-link"><i class="fa-solid fa-chart-line" aria-hidden="true"></i> <span>Dashboard</span></a>
-      <a href="/admin/reparaciones.html" class="sidebar-link"><i class="fa-solid fa-gears" aria-hidden="true"></i> <span>Reparaciones (OT)</span></a>
-      <a href="/admin/clientes.html" class="sidebar-link"><i class="fa-solid fa-users" aria-hidden="true"></i> <span>Clientes</span></a>
-      <a href="/admin/presupuestos.html" class="sidebar-link"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> <span>Presupuestos</span></a>
+      <a href="/admin/dashboard.html" class="sidebar-link"><i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+        <span>Dashboard</span></a>
+      <a href="/admin/reparaciones.html" class="sidebar-link"><i class="fa-solid fa-gears" aria-hidden="true"></i>
+        <span>Reparaciones (OT)</span></a>
+      <a href="/admin/clientes.html" class="sidebar-link"><i class="fa-solid fa-users" aria-hidden="true"></i>
+        <span>Clientes</span></a>
+      <a href="/admin/presupuestos.html" class="sidebar-link"><i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+        <span>Presupuestos</span></a>
 
       <div class="nav-section-title">Operaciones</div>
-      <a href="/admin/inventario.html" class="sidebar-link"><i class="fa-solid fa-boxes-stacked" aria-hidden="true"></i> <span>Inventario</span></a>
-      <a href="/admin/proveedores.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-industry" aria-hidden="true"></i> <span>Proveedores</span></a>
-      <a href="/admin/caja.html" class="sidebar-link role-finance-only"><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i> <span>Caja y Finanzas</span></a>
+      <a href="/admin/inventario.html" class="sidebar-link"><i class="fa-solid fa-boxes-stacked" aria-hidden="true"></i>
+        <span>Inventario</span></a>
+      <a href="/admin/proveedores.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-industry"
+          aria-hidden="true"></i> <span>Proveedores</span></a>
+      <a href="/admin/caja.html" class="sidebar-link role-finance-only"><i class="fa-solid fa-money-bill-wave"
+          aria-hidden="true"></i> <span>Caja y Finanzas</span></a>
 
-      <div class="nav-section-title">AdministraciÃ³n</div>
-      <a href="/admin/cms.html" class="sidebar-link role-admin-only text-gold-bright" style="border: 1px dashed rgba(212, 175, 55, 0.4);">
+      <div class="nav-section-title">Administracion</div>
+      <a href="/admin/cms.html" class="sidebar-link role-admin-only text-gold-bright"
+        style="border: 1px dashed rgba(212, 175, 55, 0.4);">
         <i class="fa-solid fa-globe" aria-hidden="true"></i> <span>Administrar Web (CMS)</span>
       </a>
-      <a href="/admin/reportes.html" class="sidebar-link active role-admin-only"><i class="fa-solid fa-chart-column" aria-hidden="true"></i> <span>Reportes</span></a>
-      <a href="/admin/empleados.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-user-gear" aria-hidden="true"></i> <span>Equipo TÃ©cnico</span></a>
-      <a href="/admin/configuracion.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-gears" aria-hidden="true"></i> <span>ConfiguraciÃ³n</span></a>
+      <a href="/admin/reportes.html" class="sidebar-link  active role-admin-only"><i class="fa-solid fa-chart-column"
+          aria-hidden="true"></i> <span>Reportes</span></a>
+      <a href="/admin/empleados.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-user-gear"
+          aria-hidden="true"></i> <span>Equipo Técnico</span></a>
+      <a href="/admin/configuracion.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-gears"
+          aria-hidden="true"></i> <span>Configuración</span></a>
     </nav>
 
     <div class="sidebar-footer">
-      <a href="/" target="_blank" class="btn btn-outline btn-sm" style="width: 100%; margin-bottom: 0.5rem; font-size: 0.78rem;">
-        <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Ver Sitio PÃºblico
+      <a href="/" target="_blank" class="btn btn-outline btn-sm"
+        style="width: 100%; margin-bottom: 0.5rem; font-size: 0.78rem;">
+        <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Ver Sitio Público
       </a>
-      <button id="btn-logout" class="btn btn-secondary btn-sm" style="width: 100%; color: var(--color-danger); font-size: 0.78rem;">
-        Cerrar SesiÃ³n
+      <button id="btn-logout" class="btn btn-secondary btn-sm"
+        style="width: 100%; color: var(--color-danger); font-size: 0.78rem;">
+        Cerrar Sesión
       </button>
     </div>
   </aside>
@@ -60,11 +75,12 @@
   <main class="admin-main">
     <header class="admin-header">
       <div class="header-left">
-        <h2 class="page-title">Reportes y MÃ©tricas Operativas</h2>
+        <h2 class="page-title">Reportes y Metricas Operativas</h2>
       </div>
       <div class="header-right">
         <div style="position: relative;">
-          <button class="notification-bell" id="notif-bell"><i class="fa-solid fa-bell" aria-hidden="true"></i><span class="notification-badge hidden" id="notif-badge">0</span></button>
+          <button class="notification-bell" id="notif-bell"><i class="fa-solid fa-bell" aria-hidden="true"></i><span
+              class="notification-badge hidden" id="notif-badge">0</span></button>
           <div class="notifications-dropdown" id="notif-dropdown">
             <div class="notif-header"><strong class="text-gold-bright">Notificaciones</strong></div>
             <div class="notif-list" id="notif-list"></div>
@@ -81,10 +97,10 @@
     </header>
 
     <div class="admin-content">
-      <!-- Filtros de Fecha para ExportaciÃ³n -->
+      <!-- Filtros de Fecha para Exportación -->
       <div class="card" style="margin-bottom: 2rem;">
         <div class="card-header">
-          <h3 class="card-title text-gold-bright">ExportaciÃ³n Oficial de Datos (CSV / Excel)</h3>
+          <h3 class="card-title text-gold-bright">Exportación Oficial de Datos (CSV / Excel)</h3>
         </div>
         <div style="display: flex; gap: 1rem; align-items: flex-end; flex-wrap: wrap;">
           <div class="form-group" style="margin-bottom: 0;">
@@ -112,17 +128,17 @@
       <!-- Resumen de MÃ©tricas -->
       <div class="kpi-grid">
         <div class="kpi-card kpi-success">
-          <div class="kpi-header"><span class="kpi-label">Ingresos del Mes</span><span class="kpi-icon">â–²</span></div>
+          <div class="kpi-header"><span class="kpi-label">Ingresos del Mes</span><span class="kpi-icon"></span></div>
           <div class="kpi-value" id="rep-income-month">$ 0</div>
           <span class="kpi-sub">Cobrado efectivamente</span>
         </div>
         <div class="kpi-card kpi-danger">
-          <div class="kpi-header"><span class="kpi-label">Egresos del Mes</span><span class="kpi-icon">â–¼</span></div>
+          <div class="kpi-header"><span class="kpi-label">Egresos del Mes</span><span class="kpi-icon"></span></div>
           <div class="kpi-value" id="rep-expense-month">$ 0</div>
           <span class="kpi-sub">Gastos y compras</span>
         </div>
         <div class="kpi-card kpi-gold">
-          <div class="kpi-header"><span class="kpi-label">Ganancia Neta Mes</span><span class="kpi-icon"><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i></span></div>
+          <div class="kpi-header"><span class="kpi-label">Ganancia Neta Mes</span><span class="kpi-icon"></span></div>
           <div class="kpi-value text-gold-bright" id="rep-profit-month">$ 0</div>
           <span class="kpi-sub">Resultado operativo</span>
         </div>
@@ -135,11 +151,13 @@
             <h3 class="card-title text-gold-bright">Volumen de Reparaciones</h3>
           </div>
           <div style="display: flex; flex-direction: column; gap: 1rem; padding: 0.5rem 0;">
-            <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+            <div
+              style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
               <span class="text-white">Reparaciones en Curso (Activas):</span>
               <strong class="text-gold" id="rep-active-repairs">0</strong>
             </div>
-            <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+            <div
+              style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
               <span class="text-white">Reparaciones Terminadas y Entregadas:</span>
               <strong class="text-gold" id="rep-finished-repairs">0</strong>
             </div>
@@ -152,7 +170,7 @@
 
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title text-gold-bright">Componentes MÃ¡s Reparados</h3>
+            <h3 class="card-title text-gold-bright">Componentes Mas Reparados</h3>
           </div>
           <div id="top-components-list"></div>
         </div>
@@ -166,6 +184,5 @@
   <script src="/js/admin.js"></script>
   <script src="/js/modules/reports.js"></script>
 </body>
+
 </html>
-
-

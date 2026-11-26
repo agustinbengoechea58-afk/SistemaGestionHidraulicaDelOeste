@@ -1,9 +1,10 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Equipo TÃ©cnico y Usuarios | Hidraulica del oeste A.B</title>
+  <title>Equipo Tecnico y Usuarios | Hidraulica del oeste A.B</title>
   <link rel="icon" type="image/jpeg" href="/assets/logo.jpg">
   <link rel="stylesheet" href="/css/variables.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -14,6 +15,7 @@
   <link rel="stylesheet" href="/css/animations.css">
   <link rel="stylesheet" href="/css/responsive.css">
 </head>
+
 <body class="admin-layout">
 
   <!-- Sidebar -->
@@ -27,31 +29,44 @@
 
     <nav class="sidebar-nav">
       <div class="nav-section-title">Principal</div>
-      <a href="/admin/dashboard.html" class="sidebar-link"><i class="fa-solid fa-chart-line" aria-hidden="true"></i> <span>Dashboard</span></a>
-      <a href="/admin/reparaciones.html" class="sidebar-link"><i class="fa-solid fa-gears" aria-hidden="true"></i> <span>Reparaciones (OT)</span></a>
-      <a href="/admin/clientes.html" class="sidebar-link"><i class="fa-solid fa-users" aria-hidden="true"></i> <span>Clientes</span></a>
-      <a href="/admin/presupuestos.html" class="sidebar-link"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> <span>Presupuestos</span></a>
+      <a href="/admin/dashboard.html" class="sidebar-link"><i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+        <span>Dashboard</span></a>
+      <a href="/admin/reparaciones.html" class="sidebar-link"><i class="fa-solid fa-gears" aria-hidden="true"></i>
+        <span>Reparaciones (OT)</span></a>
+      <a href="/admin/clientes.html" class="sidebar-link"><i class="fa-solid fa-users" aria-hidden="true"></i>
+        <span>Clientes</span></a>
+      <a href="/admin/presupuestos.html" class="sidebar-link"><i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+        <span>Presupuestos</span></a>
 
       <div class="nav-section-title">Operaciones</div>
-      <a href="/admin/inventario.html" class="sidebar-link"><i class="fa-solid fa-boxes-stacked" aria-hidden="true"></i> <span>Inventario</span></a>
-      <a href="/admin/proveedores.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-industry" aria-hidden="true"></i> <span>Proveedores</span></a>
-      <a href="/admin/caja.html" class="sidebar-link role-finance-only"><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i> <span>Caja y Finanzas</span></a>
+      <a href="/admin/inventario.html" class="sidebar-link"><i class="fa-solid fa-boxes-stacked" aria-hidden="true"></i>
+        <span>Inventario</span></a>
+      <a href="/admin/proveedores.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-industry"
+          aria-hidden="true"></i> <span>Proveedores</span></a>
+      <a href="/admin/caja.html" class="sidebar-link role-finance-only"><i class="fa-solid fa-money-bill-wave"
+          aria-hidden="true"></i> <span>Caja y Finanzas</span></a>
 
-      <div class="nav-section-title">AdministraciÃ³n</div>
-      <a href="/admin/cms.html" class="sidebar-link role-admin-only text-gold-bright" style="border: 1px dashed rgba(212, 175, 55, 0.4);">
+      <div class="nav-section-title">Administracion</div>
+      <a href="/admin/cms.html" class="sidebar-link role-admin-only text-gold-bright"
+        style="border: 1px dashed rgba(212, 175, 55, 0.4);">
         <i class="fa-solid fa-globe" aria-hidden="true"></i> <span>Administrar Web (CMS)</span>
       </a>
-      <a href="/admin/reportes.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-chart-column" aria-hidden="true"></i> <span>Reportes</span></a>
-      <a href="/admin/empleados.html" class="sidebar-link active role-admin-only"><i class="fa-solid fa-user-gear" aria-hidden="true"></i> <span>Equipo TÃ©cnico</span></a>
-      <a href="/admin/configuracion.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-gears" aria-hidden="true"></i> <span>ConfiguraciÃ³n</span></a>
+      <a href="/admin/reportes.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-chart-column"
+          aria-hidden="true"></i> <span>Reportes</span></a>
+      <a href="/admin/empleados.html" class="sidebar-link active role-admin-only"><i class="fa-solid fa-user-gear"
+          aria-hidden="true"></i> <span>Equipo Técnico</span></a>
+      <a href="/admin/configuracion.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-gears"
+          aria-hidden="true"></i> <span>Configuración</span></a>
     </nav>
 
     <div class="sidebar-footer">
-      <a href="/" target="_blank" class="btn btn-outline btn-sm" style="width: 100%; margin-bottom: 0.5rem; font-size: 0.78rem;">
-        <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Ver Sitio PÃºblico
+      <a href="/" target="_blank" class="btn btn-outline btn-sm"
+        style="width: 100%; margin-bottom: 0.5rem; font-size: 0.78rem;">
+        <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Ver Sitio Público
       </a>
-      <button id="btn-logout" class="btn btn-secondary btn-sm" style="width: 100%; color: var(--color-danger); font-size: 0.78rem;">
-        Cerrar SesiÃ³n
+      <button id="btn-logout" class="btn btn-secondary btn-sm"
+        style="width: 100%; color: var(--color-danger); font-size: 0.78rem;">
+        Cerrar Sesión
       </button>
     </div>
   </aside>
@@ -60,11 +75,12 @@
   <main class="admin-main">
     <header class="admin-header">
       <div class="header-left">
-        <h2 class="page-title">Personal TÃ©cnico y Usuarios del Sistema</h2>
+        <h2 class="page-title">Personal Técnico y Usuarios del Sistema</h2>
       </div>
       <div class="header-right">
         <div style="position: relative;">
-          <button class="notification-bell" id="notif-bell"><i class="fa-solid fa-bell" aria-hidden="true"></i><span class="notification-badge hidden" id="notif-badge">0</span></button>
+          <button class="notification-bell" id="notif-bell"><i class="fa-solid fa-bell" aria-hidden="true"></i><span
+              class="notification-badge hidden" id="notif-badge">0</span></button>
           <div class="notifications-dropdown" id="notif-dropdown">
             <div class="notif-header"><strong class="text-gold-bright">Notificaciones</strong></div>
             <div class="notif-list" id="notif-list"></div>
@@ -83,10 +99,12 @@
     <div class="admin-content">
       <!-- Toolbar -->
       <div class="admin-toolbar">
-        <div><p class="text-muted">Control de accesos segÃºn roles: SUPERADMIN, ADMIN, RECEPCIONISTA, TECNICO, CONTADOR.</p></div>
+        <div>
+          <p class="text-muted">Control de accesos según roles: SUPERADMIN, ADMIN, RECEPCIONISTA, TÉCNICO, CONTADOR.</p>
+        </div>
         <div class="toolbar-actions">
           <button class="btn btn-primary btn-sm" onclick="openCreateEmployeeModal()">
-            + Nuevo Usuario / TÃ©cnico
+            + Nuevo Usuario / Técnico
           </button>
         </div>
       </div>
@@ -98,8 +116,8 @@
             <thead>
               <tr>
                 <th>Nombre</th>
-                <th>Correo ElectrÃ³nico</th>
-                <th>TelÃ©fono</th>
+                <th>Correo Electronico</th>
+                <th>Telefono</th>
                 <th>Rol</th>
                 <th>Especialidad</th>
                 <th>Estado</th>
@@ -118,22 +136,23 @@
     <div class="modal-content">
       <div class="modal-header">
         <h3 class="modal-title" id="employee-modal-title">Nuevo Empleado</h3>
-        <button class="modal-close" onclick="document.getElementById('employee-modal').classList.remove('active')">&times;</button>
+        <button class="modal-close"
+          onclick="document.getElementById('employee-modal').classList.remove('active')">&times;</button>
       </div>
       <form id="employee-form">
         <div class="modal-body">
           <input type="hidden" id="employee-id">
           <div class="form-group">
             <label class="form-label">Nombre y Apellido <span class="required">*</span></label>
-            <input type="text" id="employee-name" class="form-control" required placeholder="Ej: MartÃ­n GÃ³mez">
+            <input type="text" id="employee-name" class="form-control" required placeholder="Ej: Martín Gómez">
           </div>
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
             <div class="form-group">
-              <label class="form-label">Correo ElectrÃ³nico <span class="required">*</span></label>
+              <label class="form-label">Correo Electronico <span class="required">*</span></label>
               <input type="email" id="employee-email" class="form-control" required placeholder="martin@hidraulica.com">
             </div>
             <div class="form-group">
-              <label class="form-label">TelÃ©fono</label>
+              <label class="form-label">Telefono</label>
               <input type="tel" id="employee-phone" class="form-control" placeholder="11 5555-1234">
             </div>
           </div>
@@ -142,27 +161,29 @@
             <div class="form-group">
               <label class="form-label">Rol en el Sistema <span class="required">*</span></label>
               <select id="employee-role" class="form-select" required>
-                <option value="TECNICO">TECNICO (Reparaciones y diagnÃ³sticos)</option>
+                <option value="TECNICO">TECNICO (Reparaciones y diagnosticos)</option>
                 <option value="RECEPCIONISTA">RECEPCIONISTA (Clientes y solicitudes)</option>
                 <option value="CONTADOR">CONTADOR (Caja y finanzas)</option>
-                <option value="ADMIN">ADMIN (GestiÃ³n total sin usuarios)</option>
+                <option value="ADMIN">ADMIN (Gestion total sin usuarios)</option>
                 <option value="SUPERADMIN">SUPERADMIN (Control total)</option>
               </select>
             </div>
             <div class="form-group">
-              <label class="form-label">Especialidad TÃ©cnica</label>
-              <input type="text" id="employee-specialty" class="form-control" placeholder="Ej: Cremalleras de DirecciÃ³n, Banco">
+              <label class="form-label">Especialidad Técnica</label>
+              <input type="text" id="employee-specialty" class="form-control"
+                placeholder="Ej: Cremalleras de Dirección, Banco">
             </div>
           </div>
 
           <div class="form-group">
-            <label class="form-label">ContraseÃ±a de Acceso</label>
-            <input type="password" id="employee-password" class="form-control" placeholder="MÃ­nimo 6 caracteres">
+            <label class="form-label">Contraseña de Acceso</label>
+            <input type="password" id="employee-password" class="form-control" placeholder="Mínimo 6 caracteres">
           </div>
         </div>
 
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" onclick="document.getElementById('employee-modal').classList.remove('active')">Cancelar</button>
+          <button type="button" class="btn btn-secondary"
+            onclick="document.getElementById('employee-modal').classList.remove('active')">Cancelar</button>
           <button type="submit" class="btn btn-primary">Guardar Usuario</button>
         </div>
       </form>
@@ -175,6 +196,5 @@
   <script src="/js/admin.js"></script>
   <script src="/js/modules/employees.js"></script>
 </body>
+
 </html>
-
-

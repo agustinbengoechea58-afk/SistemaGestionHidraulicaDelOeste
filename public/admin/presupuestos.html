@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +15,7 @@
   <link rel="stylesheet" href="/css/animations.css">
   <link rel="stylesheet" href="/css/responsive.css">
 </head>
+
 <body class="admin-layout">
 
   <!-- Sidebar -->
@@ -27,31 +29,44 @@
 
     <nav class="sidebar-nav">
       <div class="nav-section-title">Principal</div>
-      <a href="/admin/dashboard.html" class="sidebar-link"><i class="fa-solid fa-chart-line" aria-hidden="true"></i> <span>Dashboard</span></a>
-      <a href="/admin/reparaciones.html" class="sidebar-link"><i class="fa-solid fa-gears" aria-hidden="true"></i> <span>Reparaciones (OT)</span></a>
-      <a href="/admin/clientes.html" class="sidebar-link"><i class="fa-solid fa-users" aria-hidden="true"></i> <span>Clientes</span></a>
-      <a href="/admin/presupuestos.html" class="sidebar-link active"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> <span>Presupuestos</span></a>
+      <a href="/admin/dashboard.html" class="sidebar-link"><i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+        <span>Dashboard</span></a>
+      <a href="/admin/reparaciones.html" class="sidebar-link"><i class="fa-solid fa-gears" aria-hidden="true"></i>
+        <span>Reparaciones (OT)</span></a>
+      <a href="/admin/clientes.html" class="sidebar-link"><i class="fa-solid fa-users" aria-hidden="true"></i>
+        <span>Clientes</span></a>
+      <a href="/admin/presupuestos.html" class="sidebar-link active"><i class="fa-solid fa-file-lines"
+          aria-hidden="true"></i> <span>Presupuestos</span></a>
 
       <div class="nav-section-title">Operaciones</div>
-      <a href="/admin/inventario.html" class="sidebar-link"><i class="fa-solid fa-boxes-stacked" aria-hidden="true"></i> <span>Inventario</span></a>
-      <a href="/admin/proveedores.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-industry" aria-hidden="true"></i> <span>Proveedores</span></a>
-      <a href="/admin/caja.html" class="sidebar-link role-finance-only"><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i> <span>Caja y Finanzas</span></a>
+      <a href="/admin/inventario.html" class="sidebar-link"><i class="fa-solid fa-boxes-stacked" aria-hidden="true"></i>
+        <span>Inventario</span></a>
+      <a href="/admin/proveedores.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-industry"
+          aria-hidden="true"></i> <span>Proveedores</span></a>
+      <a href="/admin/caja.html" class="sidebar-link role-finance-only"><i class="fa-solid fa-money-bill-wave"
+          aria-hidden="true"></i> <span>Caja y Finanzas</span></a>
 
-      <div class="nav-section-title">AdministraciÃ³n</div>
-      <a href="/admin/cms.html" class="sidebar-link role-admin-only text-gold-bright" style="border: 1px dashed rgba(212, 175, 55, 0.4);">
+      <div class="nav-section-title">Administracion</div>
+      <a href="/admin/cms.html" class="sidebar-link role-admin-only text-gold-bright"
+        style="border: 1px dashed rgba(212, 175, 55, 0.4);">
         <i class="fa-solid fa-globe" aria-hidden="true"></i> <span>Administrar Web (CMS)</span>
       </a>
-      <a href="/admin/reportes.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-chart-column" aria-hidden="true"></i> <span>Reportes</span></a>
-      <a href="/admin/empleados.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-user-gear" aria-hidden="true"></i> <span>Equipo TÃ©cnico</span></a>
-      <a href="/admin/configuracion.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-gears" aria-hidden="true"></i> <span>ConfiguraciÃ³n</span></a>
+      <a href="/admin/reportes.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-chart-column"
+          aria-hidden="true"></i> <span>Reportes</span></a>
+      <a href="/admin/empleados.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-user-gear"
+          aria-hidden="true"></i> <span>Equipo Tecnico</span></a>
+      <a href="/admin/configuracion.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-gears"
+          aria-hidden="true"></i> <span>Configuracion</span></a>
     </nav>
 
     <div class="sidebar-footer">
-      <a href="/" target="_blank" class="btn btn-outline btn-sm" style="width: 100%; margin-bottom: 0.5rem; font-size: 0.78rem;">
-        <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Ver Sitio PÃºblico
+      <a href="/" target="_blank" class="btn btn-outline btn-sm"
+        style="width: 100%; margin-bottom: 0.5rem; font-size: 0.78rem;">
+        <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Ver Sitio Publico
       </a>
-      <button id="btn-logout" class="btn btn-secondary btn-sm" style="width: 100%; color: var(--color-danger); font-size: 0.78rem;">
-        Cerrar SesiÃ³n
+      <button id="btn-logout" class="btn btn-secondary btn-sm"
+        style="width: 100%; color: var(--color-danger); font-size: 0.78rem;">
+        Cerrar Sesion
       </button>
     </div>
   </aside>
@@ -64,7 +79,8 @@
       </div>
       <div class="header-right">
         <div style="position: relative;">
-          <button class="notification-bell" id="notif-bell"><i class="fa-solid fa-bell" aria-hidden="true"></i><span class="notification-badge hidden" id="notif-badge">0</span></button>
+          <button class="notification-bell" id="notif-bell"><i class="fa-solid fa-bell" aria-hidden="true"></i><span
+              class="notification-badge hidden" id="notif-badge">0</span></button>
           <div class="notifications-dropdown" id="notif-dropdown">
             <div class="notif-header"><strong class="text-gold-bright">Notificaciones</strong></div>
             <div class="notif-list" id="notif-list"></div>
@@ -130,13 +146,14 @@
   <div class="modal-backdrop" id="budget-modal">
     <div class="modal-content" style="max-width: 780px;">
       <div class="modal-header">
-        <h3 class="modal-title" id="budget-modal-title">Nuevo Presupuesto TÃ©cnico</h3>
-        <button class="modal-close" onclick="document.getElementById('budget-modal').classList.remove('active')">&times;</button>
+        <h3 class="modal-title" id="budget-modal-title">Nuevo Presupuesto Tecnico</h3>
+        <button class="modal-close"
+          onclick="document.getElementById('budget-modal').classList.remove('active')">&times;</button>
       </div>
       <form id="budget-form">
         <div class="modal-body">
           <input type="hidden" id="budget-id">
-          
+
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
             <div class="form-group">
               <label class="form-label">Cliente <span class="required">*</span></label>
@@ -163,13 +180,14 @@
             </div>
           </div>
 
-          <!-- Tabla DinÃ¡mica de Ãtems -->
-          <div style="margin: 1rem 0; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1rem; background: var(--bg-primary);">
+          <!-- Tabla DinÃ¡mica de Ã tems -->
+          <div
+            style="margin: 1rem 0; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1rem; background: var(--bg-primary);">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
               <strong class="text-gold-bright" style="font-size: 0.95rem;">Detalle de Trabajos y Repuestos</strong>
-              <button type="button" class="btn btn-outline btn-sm" onclick="addItemRow()">+ Agregar Ãtem</button>
+              <button type="button" class="btn btn-outline btn-sm" onclick="addItemRow()">+ Agregar item</button>
             </div>
-            
+
             <div id="budget-items-container"></div>
 
             <!-- Descuento y Totales -->
@@ -181,13 +199,16 @@
                 </div>
                 <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem;">
                   <span class="text-muted">Descuento ($):</span>
-                  <input type="number" id="budget-discount" class="form-control form-control-sm text-right" style="width: 100px;" value="0" min="0">
+                  <input type="number" id="budget-discount" class="form-control form-control-sm text-right"
+                    style="width: 100px;" value="0" min="0">
                 </div>
                 <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem;">
                   <span class="text-muted">IVA (%):</span>
-                  <input type="number" id="budget-taxPercent" class="form-control form-control-sm text-right" style="width: 100px;" value="21" min="0">
+                  <input type="number" id="budget-taxPercent" class="form-control form-control-sm text-right"
+                    style="width: 100px;" value="21" min="0">
                 </div>
-                <div style="display: flex; justify-content: space-between; font-size: 1.2rem; font-weight: 700; border-top: 1px solid var(--border-color); padding-top: 0.5rem;">
+                <div
+                  style="display: flex; justify-content: space-between; font-size: 1.2rem; font-weight: 700; border-top: 1px solid var(--border-color); padding-top: 0.5rem;">
                   <span class="text-gold">TOTAL:</span>
                   <strong id="budget-total-disp" class="text-gold-bright">$ 0</strong>
                 </div>
@@ -199,20 +220,22 @@
             <div class="form-group">
               <label class="form-label">Validez de la Oferta</label>
               <select id="budget-validDays" class="form-select">
-                <option value="15">15 DÃ­as corridos</option>
-                <option value="30">30 DÃ­as corridos</option>
-                <option value="7">7 DÃ­as corridos</option>
+                <option value="15">15 Dias corridos</option>
+                <option value="30">30 Dias corridos</option>
+                <option value="7">7 Dias corridos</option>
               </select>
             </div>
             <div class="form-group">
               <label class="form-label">Condiciones Particulares u Observaciones</label>
-              <input type="text" id="budget-notes" class="form-control" placeholder="Ej: Sujeto a que la barra no requiera cromado duro adicional.">
+              <input type="text" id="budget-notes" class="form-control"
+                placeholder="Ej: Sujeto a que la barra no requiera cromado duro adicional.">
             </div>
           </div>
         </div>
 
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" onclick="document.getElementById('budget-modal').classList.remove('active')">Cancelar</button>
+          <button type="button" class="btn btn-secondary"
+            onclick="document.getElementById('budget-modal').classList.remove('active')">Cancelar</button>
           <button type="submit" class="btn btn-primary">Emitir Presupuesto</button>
         </div>
       </form>
@@ -224,7 +247,8 @@
     <div class="modal-content" style="max-width: 440px;">
       <div class="modal-header">
         <h3 class="modal-title" id="budget-status-title">Estado de Presupuesto</h3>
-        <button class="modal-close" onclick="document.getElementById('budget-status-modal').classList.remove('active')">&times;</button>
+        <button class="modal-close"
+          onclick="document.getElementById('budget-status-modal').classList.remove('active')">&times;</button>
       </div>
       <form id="budget-status-form">
         <div class="modal-body">
@@ -239,7 +263,8 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" onclick="document.getElementById('budget-status-modal').classList.remove('active')">Cancelar</button>
+          <button type="button" class="btn btn-secondary"
+            onclick="document.getElementById('budget-status-modal').classList.remove('active')">Cancelar</button>
           <button type="submit" class="btn btn-primary">Actualizar Estado</button>
         </div>
       </form>
@@ -252,6 +277,5 @@
   <script src="/js/admin.js"></script>
   <script src="/js/modules/budgets.js"></script>
 </body>
+
 </html>
-
-

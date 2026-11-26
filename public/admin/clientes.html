@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +15,7 @@
   <link rel="stylesheet" href="/css/animations.css">
   <link rel="stylesheet" href="/css/responsive.css">
 </head>
+
 <body class="admin-layout">
 
   <!-- Sidebar -->
@@ -27,31 +29,44 @@
 
     <nav class="sidebar-nav">
       <div class="nav-section-title">Principal</div>
-      <a href="/admin/dashboard.html" class="sidebar-link"><i class="fa-solid fa-chart-line" aria-hidden="true"></i> <span>Dashboard</span></a>
-      <a href="/admin/reparaciones.html" class="sidebar-link"><i class="fa-solid fa-gears" aria-hidden="true"></i> <span>Reparaciones (OT)</span></a>
-      <a href="/admin/clientes.html" class="sidebar-link active"><i class="fa-solid fa-users" aria-hidden="true"></i> <span>Clientes</span></a>
-      <a href="/admin/presupuestos.html" class="sidebar-link"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> <span>Presupuestos</span></a>
+      <a href="/admin/dashboard.html" class="sidebar-link"><i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+        <span>Dashboard</span></a>
+      <a href="/admin/reparaciones.html" class="sidebar-link"><i class="fa-solid fa-gears" aria-hidden="true"></i>
+        <span>Reparaciones (OT)</span></a>
+      <a href="/admin/clientes.html" class="sidebar-link active"><i class="fa-solid fa-users" aria-hidden="true"></i>
+        <span>Clientes</span></a>
+      <a href="/admin/presupuestos.html" class="sidebar-link"><i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+        <span>Presupuestos</span></a>
 
       <div class="nav-section-title">Operaciones</div>
-      <a href="/admin/inventario.html" class="sidebar-link"><i class="fa-solid fa-boxes-stacked" aria-hidden="true"></i> <span>Inventario</span></a>
-      <a href="/admin/proveedores.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-industry" aria-hidden="true"></i> <span>Proveedores</span></a>
-      <a href="/admin/caja.html" class="sidebar-link role-finance-only"><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i> <span>Caja y Finanzas</span></a>
+      <a href="/admin/inventario.html" class="sidebar-link"><i class="fa-solid fa-boxes-stacked" aria-hidden="true"></i>
+        <span>Inventario</span></a>
+      <a href="/admin/proveedores.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-industry"
+          aria-hidden="true"></i> <span>Proveedores</span></a>
+      <a href="/admin/caja.html" class="sidebar-link role-finance-only"><i class="fa-solid fa-money-bill-wave"
+          aria-hidden="true"></i> <span>Caja y Finanzas</span></a>
 
-      <div class="nav-section-title">AdministraciÃ³n</div>
-      <a href="/admin/cms.html" class="sidebar-link role-admin-only text-gold-bright" style="border: 1px dashed rgba(212, 175, 55, 0.4);">
+      <div class="nav-section-title">Administracion</div>
+      <a href="/admin/cms.html" class="sidebar-link role-admin-only text-gold-bright"
+        style="border: 1px dashed rgba(212, 175, 55, 0.4);">
         <i class="fa-solid fa-globe" aria-hidden="true"></i> <span>Administrar Web (CMS)</span>
       </a>
-      <a href="/admin/reportes.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-chart-column" aria-hidden="true"></i> <span>Reportes</span></a>
-      <a href="/admin/empleados.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-user-gear" aria-hidden="true"></i> <span>Equipo TÃ©cnico</span></a>
-      <a href="/admin/configuracion.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-gears" aria-hidden="true"></i> <span>ConfiguraciÃ³n</span></a>
+      <a href="/admin/reportes.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-chart-column"
+          aria-hidden="true"></i> <span>Reportes</span></a>
+      <a href="/admin/empleados.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-user-gear"
+          aria-hidden="true"></i> <span>Equipo Técnico</span></a>
+      <a href="/admin/configuracion.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-gears"
+          aria-hidden="true"></i> <span>Configuracion</span></a>
     </nav>
 
     <div class="sidebar-footer">
-      <a href="/" target="_blank" class="btn btn-outline btn-sm" style="width: 100%; margin-bottom: 0.5rem; font-size: 0.78rem;">
-        <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Ver Sitio PÃºblico
+      <a href="/" target="_blank" class="btn btn-outline btn-sm"
+        style="width: 100%; margin-bottom: 0.5rem; font-size: 0.78rem;">
+        <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Ver Sitio Publico
       </a>
-      <button id="btn-logout" class="btn btn-secondary btn-sm" style="width: 100%; color: var(--color-danger); font-size: 0.78rem;">
-        Cerrar SesiÃ³n
+      <button id="btn-logout" class="btn btn-secondary btn-sm"
+        style="width: 100%; color: var(--color-danger); font-size: 0.78rem;">
+        Cerrar Sesión
       </button>
     </div>
   </aside>
@@ -64,7 +79,8 @@
       </div>
       <div class="header-right">
         <div style="position: relative;">
-          <button class="notification-bell" id="notif-bell"><i class="fa-solid fa-bell" aria-hidden="true"></i><span class="notification-badge hidden" id="notif-badge">0</span></button>
+          <button class="notification-bell" id="notif-bell"><i class="fa-solid fa-bell" aria-hidden="true"></i><span
+              class="notification-badge hidden" id="notif-badge">0</span></button>
           <div class="notifications-dropdown" id="notif-dropdown">
             <div class="notif-header"><strong class="text-gold-bright">Notificaciones</strong></div>
             <div class="notif-list" id="notif-list"></div>
@@ -100,9 +116,9 @@
           <table class="table">
             <thead>
               <tr>
-                <th>Nombre / RazÃ³n Social</th>
+                <th>Nombre / Razon Social</th>
                 <th>DNI / CUIT</th>
-                <th>TelÃ©fono</th>
+                <th>Telefono</th>
                 <th>Correo</th>
                 <th>Localidad</th>
                 <th>Registrado</th>
@@ -121,46 +137,50 @@
     <div class="modal-content">
       <div class="modal-header">
         <h3 class="modal-title" id="client-modal-title">Nuevo Cliente</h3>
-        <button class="modal-close" onclick="document.getElementById('client-modal').classList.remove('active')">&times;</button>
+        <button class="modal-close"
+          onclick="document.getElementById('client-modal').classList.remove('active')">&times;</button>
       </div>
       <form id="client-form">
         <div class="modal-body">
           <input type="hidden" id="client-id">
           <div class="form-group">
-            <label class="form-label">Nombre y Apellido / RazÃ³n Social <span class="required">*</span></label>
-            <input type="text" id="client-name" class="form-control" required placeholder="Ej: Talleres MecÃ¡nicos San Jorge">
+            <label class="form-label">Nombre y Apellido / Razon Social <span class="required">*</span></label>
+            <input type="text" id="client-name" class="form-control" required
+              placeholder="Ej: Talleres Mecánicos San Jorge">
           </div>
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
             <div class="form-group">
-              <label class="form-label">TelÃ©fono / WhatsApp <span class="required">*</span></label>
+              <label class="form-label">Telefono / WhatsApp <span class="required">*</span></label>
               <input type="tel" id="client-phone" class="form-control" required placeholder="11 4455-6677">
             </div>
             <div class="form-group">
-              <label class="form-label">DNI / IdentificaciÃ³n</label>
+              <label class="form-label">DNI / Identificacion</label>
               <input type="text" id="client-dni" class="form-control" placeholder="Opcional">
             </div>
           </div>
           <div class="form-group">
-            <label class="form-label">Correo ElectrÃ³nico</label>
+            <label class="form-label">Correo Electronico</label>
             <input type="email" id="client-email" class="form-control" placeholder="cliente@ejemplo.com">
           </div>
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
             <div class="form-group">
-              <label class="form-label">DirecciÃ³n</label>
-              <input type="text" id="client-address" class="form-control" placeholder="Calle y nÃºmero">
+              <label class="form-label">Direccion</label>
+              <input type="text" id="client-address" class="form-control" placeholder="Calle y número">
             </div>
             <div class="form-group">
               <label class="form-label">Localidad / Zona</label>
-              <input type="text" id="client-city" class="form-control" placeholder="Ej: San MartÃ­n, Ramos MejÃ­a">
+              <input type="text" id="client-city" class="form-control" placeholder="Ej: San Martín, Ramos Mejía">
             </div>
           </div>
           <div class="form-group">
             <label class="form-label">Observaciones</label>
-            <textarea id="client-notes" class="form-control" rows="2" placeholder="Datos de facturaciÃ³n, condiciones especiales..."></textarea>
+            <textarea id="client-notes" class="form-control" rows="2"
+              placeholder="Datos de facturaciÃ³n, condiciones especiales..."></textarea>
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" onclick="document.getElementById('client-modal').classList.remove('active')">Cancelar</button>
+          <button type="button" class="btn btn-secondary"
+            onclick="document.getElementById('client-modal').classList.remove('active')">Cancelar</button>
           <button type="submit" class="btn btn-primary">Guardar Cliente</button>
         </div>
       </form>
@@ -172,11 +192,13 @@
     <div class="modal-content" style="max-width: 800px;">
       <div class="modal-header">
         <h3 class="modal-title">Historial Completo del Cliente</h3>
-        <button class="modal-close" onclick="document.getElementById('client-history-modal').classList.remove('active')">&times;</button>
+        <button class="modal-close"
+          onclick="document.getElementById('client-history-modal').classList.remove('active')">&times;</button>
       </div>
       <div class="modal-body" id="client-history-body"></div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" onclick="document.getElementById('client-history-modal').classList.remove('active')">Cerrar</button>
+        <button type="button" class="btn btn-secondary"
+          onclick="document.getElementById('client-history-modal').classList.remove('active')">Cerrar</button>
       </div>
     </div>
   </div>
@@ -187,6 +209,5 @@
   <script src="/js/admin.js"></script>
   <script src="/js/modules/clients.js"></script>
 </body>
+
 </html>
-
-

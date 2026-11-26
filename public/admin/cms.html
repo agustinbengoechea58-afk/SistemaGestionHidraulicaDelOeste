@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,6 +23,7 @@
       overflow-x: auto;
       padding-bottom: 0.5rem;
     }
+
     .cms-tab-btn {
       background: transparent;
       border: 1px solid transparent;
@@ -34,10 +36,12 @@
       white-space: nowrap;
       transition: all var(--transition-fast);
     }
+
     .cms-tab-btn:hover {
       color: var(--text-white);
       background-color: var(--bg-dark-gray);
     }
+
     .cms-tab-btn.active {
       background: rgba(212, 175, 55, 0.15);
       border-color: var(--gold-primary);
@@ -45,6 +49,7 @@
     }
   </style>
 </head>
+
 <body class="admin-layout">
 
   <!-- Sidebar -->
@@ -58,31 +63,44 @@
 
     <nav class="sidebar-nav">
       <div class="nav-section-title">Principal</div>
-      <a href="/admin/dashboard.html" class="sidebar-link"><i class="fa-solid fa-chart-line" aria-hidden="true"></i> <span>Dashboard</span></a>
-      <a href="/admin/reparaciones.html" class="sidebar-link"><i class="fa-solid fa-gears" aria-hidden="true"></i> <span>Reparaciones (OT)</span></a>
-      <a href="/admin/clientes.html" class="sidebar-link"><i class="fa-solid fa-users" aria-hidden="true"></i> <span>Clientes</span></a>
-      <a href="/admin/presupuestos.html" class="sidebar-link"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> <span>Presupuestos</span></a>
+      <a href="/admin/dashboard.html" class="sidebar-link"><i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+        <span>Dashboard</span></a>
+      <a href="/admin/reparaciones.html" class="sidebar-link"><i class="fa-solid fa-gears" aria-hidden="true"></i>
+        <span>Reparaciones (OT)</span></a>
+      <a href="/admin/clientes.html" class="sidebar-link"><i class="fa-solid fa-users" aria-hidden="true"></i>
+        <span>Clientes</span></a>
+      <a href="/admin/presupuestos.html" class="sidebar-link"><i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+        <span>Presupuestos</span></a>
 
       <div class="nav-section-title">Operaciones</div>
-      <a href="/admin/inventario.html" class="sidebar-link"><i class="fa-solid fa-boxes-stacked" aria-hidden="true"></i> <span>Inventario</span></a>
-      <a href="/admin/proveedores.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-industry" aria-hidden="true"></i> <span>Proveedores</span></a>
-      <a href="/admin/caja.html" class="sidebar-link role-finance-only"><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i> <span>Caja y Finanzas</span></a>
+      <a href="/admin/inventario.html" class="sidebar-link"><i class="fa-solid fa-boxes-stacked" aria-hidden="true"></i>
+        <span>Inventario</span></a>
+      <a href="/admin/proveedores.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-industry"
+          aria-hidden="true"></i> <span>Proveedores</span></a>
+      <a href="/admin/caja.html" class="sidebar-link role-finance-only"><i class="fa-solid fa-money-bill-wave"
+          aria-hidden="true"></i> <span>Caja y Finanzas</span></a>
 
-      <div class="nav-section-title">AdministraciÃ³n</div>
-      <a href="/admin/cms.html" class="sidebar-link active role-admin-only text-gold-bright" style="border: 1px dashed var(--gold-primary);">
+      <div class="nav-section-title">Administracion</div>
+      <a href="/admin/cms.html" class="sidebar-link active role-admin-only text-gold-bright"
+        style="border: 1px dashed var(--gold-primary);">
         <i class="fa-solid fa-globe" aria-hidden="true"></i> <span>Administrar Web (CMS)</span>
       </a>
-      <a href="/admin/reportes.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-chart-column" aria-hidden="true"></i> <span>Reportes</span></a>
-      <a href="/admin/empleados.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-user-gear" aria-hidden="true"></i> <span>Equipo TÃ©cnico</span></a>
-      <a href="/admin/configuracion.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-gears" aria-hidden="true"></i> <span>ConfiguraciÃ³n</span></a>
+      <a href="/admin/reportes.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-chart-column"
+          aria-hidden="true"></i> <span>Reportes</span></a>
+      <a href="/admin/empleados.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-user-gear"
+          aria-hidden="true"></i> <span>Equipo Técnico</span></a>
+      <a href="/admin/configuracion.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-gears"
+          aria-hidden="true"></i> <span>Configuracion</span></a>
     </nav>
 
     <div class="sidebar-footer">
-      <a href="/" target="_blank" class="btn btn-outline btn-sm" style="width: 100%; margin-bottom: 0.5rem; font-size: 0.78rem;">
-        <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Ver Sitio PÃºblico
+      <a href="/" target="_blank" class="btn btn-outline btn-sm"
+        style="width: 100%; margin-bottom: 0.5rem; font-size: 0.78rem;">
+        <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Ver Sitio Publico
       </a>
-      <button id="btn-logout" class="btn btn-secondary btn-sm" style="width: 100%; color: var(--color-danger); font-size: 0.78rem;">
-        Cerrar SesiÃ³n
+      <button id="btn-logout" class="btn btn-secondary btn-sm"
+        style="width: 100%; color: var(--color-danger); font-size: 0.78rem;">
+        Cerrar Sesión
       </button>
     </div>
   </aside>
@@ -91,11 +109,12 @@
   <main class="admin-main">
     <header class="admin-header">
       <div class="header-left">
-        <h2 class="page-title">Sistema CMS â€” AdministraciÃ³n del Sitio Web</h2>
+        <h2 class="page-title">Sistema CMS - Administracion del Sitio Web</h2>
       </div>
       <div class="header-right">
         <div style="position: relative;">
-          <button class="notification-bell" id="notif-bell"><i class="fa-solid fa-bell" aria-hidden="true"></i><span class="notification-badge hidden" id="notif-badge">0</span></button>
+          <button class="notification-bell" id="notif-bell"><i class="fa-solid fa-bell" aria-hidden="true"></i><span
+              class="notification-badge hidden" id="notif-badge">0</span></button>
           <div class="notifications-dropdown" id="notif-dropdown">
             <div class="notif-header"><strong class="text-gold-bright">Notificaciones</strong></div>
             <div class="notif-list" id="notif-list"></div>
@@ -117,24 +136,27 @@
         <div class="cms-publish-info">
           <i class="fa-solid fa-bolt" aria-hidden="true"></i>
           <div>
-            <strong class="text-gold-bright" style="font-size: 1rem;">AdministraciÃ³n Total sin CÃ³digo</strong>
-            <div class="text-muted" style="font-size: 0.8rem;">Cualquier cambio guardado actualiza Firestore y se refleja en el sitio web al publicar.</div>
+            <strong class="text-gold-bright" style="font-size: 1rem;">Administracion Total sin Codigo</strong>
+            <div class="text-muted" style="font-size: 0.8rem;">Cualquier cambio guardado actualiza Firestore y se
+              refleja en el sitio web al publicar.</div>
           </div>
         </div>
         <div style="display: flex; gap: 0.75rem;">
-          <a href="/" target="_blank" class="btn btn-secondary btn-sm"><i class="fa-solid fa-eye" aria-hidden="true"></i> Previsualizar Sitio</a>
-          <button id="btn-publish-all" class="btn btn-primary btn-sm"><i class="fa-solid fa-upload" aria-hidden="true"></i> Publicar Cambios en Vivo</button>
+          <a href="/" target="_blank" class="btn btn-secondary btn-sm"><i class="fa-solid fa-eye"
+              aria-hidden="true"></i> Previsualizar Sitio</a>
+          <button id="btn-publish-all" class="btn btn-primary btn-sm"><i class="fa-solid fa-upload"
+              aria-hidden="true"></i> Publicar Cambios en Vivo</button>
         </div>
       </div>
 
-      <!-- PestaÃ±as de SubmÃ³dulos del CMS -->
+      <!-- Pestanias de Submodulos del CMS -->
       <div class="cms-tabs">
-        <button type="button" class="cms-tab-btn active" data-tab="home">ðŸ  PÃ¡gina de Inicio</button>
-        <button type="button" class="cms-tab-btn" data-tab="services">âš™ï¸ Servicios (CRUD)</button>
-        <button type="button" class="cms-tab-btn" data-tab="gallery">ðŸ“· GalerÃ­a de Trabajos</button>
-        <button type="button" class="cms-tab-btn" data-tab="about">ðŸ‘¥ Nosotros</button>
-        <button type="button" class="cms-tab-btn" data-tab="faq">â“ Preguntas Frecuentes</button>
-        <button type="button" class="cms-tab-btn" data-tab="seo">ðŸ” ConfiguraciÃ³n SEO</button>
+        <button type="button" class="cms-tab-btn active" data-tab="home">Pagina de Inicio</button>
+        <button type="button" class="cms-tab-btn" data-tab="services">Servicios (CRUD)</button>
+        <button type="button" class="cms-tab-btn" data-tab="gallery">Galeria de Trabajos</button>
+        <button type="button" class="cms-tab-btn" data-tab="about">Nosotros</button>
+        <button type="button" class="cms-tab-btn" data-tab="faq">Preguntas Frecuentes</button>
+        <button type="button" class="cms-tab-btn" data-tab="seo">Configuracion SEO</button>
       </div>
 
       <!-- TAB 1: Inicio / Hero -->
@@ -145,15 +167,15 @@
           </div>
           <form id="cms-home-form">
             <div class="form-group">
-              <label class="form-label">TÃ­tulo Principal (H1)</label>
+              <label class="form-label">Titulo Principal (H1)</label>
               <input type="text" id="cms-home-title" class="form-control" required>
             </div>
             <div class="form-group">
-              <label class="form-label">SubtÃ­tulo Destacado</label>
+              <label class="form-label">Subtitulo Destacado</label>
               <input type="text" id="cms-home-subtitle" class="form-control">
             </div>
             <div class="form-group">
-              <label class="form-label">DescripciÃ³n Comercial</label>
+              <label class="form-label">Descripcion Comercial</label>
               <textarea id="cms-home-description" class="form-control" rows="3"></textarea>
             </div>
 
@@ -163,12 +185,12 @@
                 <input type="text" id="cms-home-heroImage" class="form-control" value="/assets/foto1.jpg">
               </div>
               <div class="form-group">
-                <label class="form-label">Texto BotÃ³n Principal</label>
+                <label class="form-label">Texto Boton Principal</label>
                 <input type="text" id="cms-home-btnText" class="form-control" value="Solicitar Presupuesto">
               </div>
             </div>
 
-            <h4 class="text-white" style="margin: 1.5rem 0 0.75rem;">EstadÃ­sticas de Experiencia (Contadores)</h4>
+            <h4 class="text-white" style="margin: 1.5rem 0 0.75rem;">Estadi­sticas de Experiencia (Contadores)</h4>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
               <div class="form-group">
                 <label class="form-label">Valor 1 / Etiqueta 1</label>
@@ -200,7 +222,7 @@
               </div>
             </div>
 
-            <button type="submit" class="btn btn-primary" style="margin-top: 1rem;">Guardar PÃ¡gina de Inicio</button>
+            <button type="submit" class="btn btn-primary" style="margin-top: 1rem;">Guardar Pagina de Inicio</button>
           </form>
         </div>
       </div>
@@ -208,7 +230,7 @@
       <!-- TAB 2: Servicios (CRUD) -->
       <div class="cms-tab-content hidden" id="cms-tab-services">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
-          <h3 class="text-gold-bright">CatÃ¡logo de Servicios Administrable</h3>
+          <h3 class="text-gold-bright">Catalogo de Servicios Administrable</h3>
           <button class="btn btn-primary btn-sm" onclick="openCreateCmsServiceModal()">+ Crear Servicio</button>
         </div>
 
@@ -219,7 +241,7 @@
                 <tr>
                   <th>Foto</th>
                   <th>Servicio</th>
-                  <th>CategorÃ­a</th>
+                  <th>Categori­a</th>
                   <th>Precio Publicado</th>
                   <th>Estado</th>
                   <th class="text-right">Acciones</th>
@@ -234,22 +256,23 @@
       <!-- TAB 3: GalerÃ­a (CRUD) -->
       <div class="cms-tab-content hidden" id="cms-tab-gallery">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
-          <h3 class="text-gold-bright">GalerÃ­a de Trabajos Realizados</h3>
-          <button class="btn btn-primary btn-sm" onclick="openAddCmsGalleryModal()">+ Agregar FotografÃ­a</button>
+          <h3 class="text-gold-bright">Galeri­a de Trabajos Realizados</h3>
+          <button class="btn btn-primary btn-sm" onclick="openAddCmsGalleryModal()">+ Agregar Fotografi­a</button>
         </div>
 
-        <div id="cms-gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.25rem;"></div>
+        <div id="cms-gallery-grid"
+          style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.25rem;"></div>
       </div>
 
       <!-- TAB 4: Nosotros -->
       <div class="cms-tab-content hidden" id="cms-tab-about">
         <div class="card" style="max-width: 850px;">
           <div class="card-header">
-            <h3 class="card-title text-gold-bright">Contenidos de SecciÃ³n Nosotros</h3>
+            <h3 class="card-title text-gold-bright">Contenidos de Seccion Nosotros</h3>
           </div>
           <form id="cms-about-form">
             <div class="form-group">
-              <label class="form-label">TÃ­tulo Institucional</label>
+              <label class="form-label">Titulo Institucional</label>
               <input type="text" id="cms-about-title" class="form-control" required>
             </div>
             <div class="form-group">
@@ -257,14 +280,14 @@
               <textarea id="cms-about-history" class="form-control" rows="4"></textarea>
             </div>
             <div class="form-group">
-              <label class="form-label">MisiÃ³n</label>
+              <label class="form-label">Mision</label>
               <textarea id="cms-about-mission" class="form-control" rows="2"></textarea>
             </div>
             <div class="form-group">
-              <label class="form-label">VisiÃ³n</label>
+              <label class="form-label">Vision</label>
               <textarea id="cms-about-vision" class="form-control" rows="2"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary" style="margin-top: 1rem;">Guardar SecciÃ³n Nosotros</button>
+            <button type="submit" class="btn btn-primary" style="margin-top: 1rem;">Guardar Seccion Nosotros</button>
           </form>
         </div>
       </div>
@@ -296,7 +319,8 @@
             </div>
             <div class="form-group">
               <label class="form-label">Palabras Clave (Keywords)</label>
-              <input type="text" id="cms-seo-keywords" class="form-control" placeholder="bombas hidraulicas, cremalleras, direccion asistida">
+              <input type="text" id="cms-seo-keywords" class="form-control"
+                placeholder="bombas hidraulicas, cremalleras, direccion asistida">
             </div>
             <button type="submit" class="btn btn-primary" style="margin-top: 1rem;">Guardar SEO</button>
           </form>
@@ -310,7 +334,8 @@
     <div class="modal-content" style="max-width: 650px;">
       <div class="modal-header">
         <h3 class="modal-title" id="cms-service-modal-title">Servicio</h3>
-        <button class="modal-close" onclick="document.getElementById('cms-service-modal').classList.remove('active')">&times;</button>
+        <button class="modal-close"
+          onclick="document.getElementById('cms-service-modal').classList.remove('active')">&times;</button>
       </div>
       <form id="cms-service-form">
         <div class="modal-body">
@@ -321,11 +346,11 @@
               <input type="text" id="cms-service-name" class="form-control" required>
             </div>
             <div class="form-group">
-              <label class="form-label">CategorÃ­a</label>
+              <label class="form-label">Categoria</label>
               <select id="cms-service-category" class="form-select">
-                <option value="Bombas">Bombas HidrÃ¡ulicas</option>
-                <option value="Cremalleras">Cremalleras de DirecciÃ³n</option>
-                <option value="DiagnÃ³stico">DiagnÃ³stico</option>
+                <option value="Bombas">Bombas Hidraulicas</option>
+                <option value="Cremalleras">Cremalleras de Direccion</option>
+                <option value="Diagnostico">Diagnostico</option>
                 <option value="Mantenimiento">Mantenimiento</option>
                 <option value="Componentes">Componentes</option>
               </select>
@@ -340,7 +365,7 @@
                 <option value="fijo">Precio Fijo</option>
                 <option value="hasta">Precio Hasta</option>
                 <option value="consultar">Precio a Consultar</option>
-                <option value="diagnostico">Sujeto a DiagnÃ³stico</option>
+                <option value="diagnostico">Sujeto a Diagnostico</option>
               </select>
             </div>
             <div class="form-group">
@@ -355,18 +380,19 @@
           </div>
 
           <div class="form-group">
-            <label class="form-label">DescripciÃ³n Corta (Tarjeta)</label>
+            <label class="form-label">Descripcion Corta (Tarjeta)</label>
             <textarea id="cms-service-shortDesc" class="form-control" rows="2"></textarea>
           </div>
 
           <div class="form-group">
-            <label class="form-label">DescripciÃ³n Completa</label>
+            <label class="form-label">Descripcion Completa</label>
             <textarea id="cms-service-fullDesc" class="form-control" rows="3"></textarea>
           </div>
 
           <div class="form-group">
-            <label class="form-label">CaracterÃ­sticas / ViÃ±etas (Una por lÃ­nea)</label>
-            <textarea id="cms-service-features" class="form-control" rows="3" placeholder="Prueba en banco&#10;Retenes vitÃ³n&#10;GarantÃ­a 6 meses"></textarea>
+            <label class="form-label">Caracteristicas / Viñetas (Una por linea)</label>
+            <textarea id="cms-service-features" class="form-control" rows="3"
+              placeholder="Prueba en banco&#10;Retenes viton&#10;Garantia 6 meses"></textarea>
           </div>
 
           <div class="form-group">
@@ -377,32 +403,35 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" onclick="document.getElementById('cms-service-modal').classList.remove('active')">Cancelar</button>
+          <button type="button" class="btn btn-secondary"
+            onclick="document.getElementById('cms-service-modal').classList.remove('active')">Cancelar</button>
           <button type="submit" class="btn btn-primary">Guardar Servicio</button>
         </div>
       </form>
     </div>
   </div>
 
-  <!-- Modal Agregar Foto GalerÃ­a CMS -->
+  <!-- Modal Agregar Foto Galeri­a CMS -->
   <div class="modal-backdrop" id="cms-gallery-modal">
     <div class="modal-content" style="max-width: 500px;">
       <div class="modal-header">
-        <h3 class="modal-title">Agregar FotografÃ­a a la GalerÃ­a</h3>
-        <button class="modal-close" onclick="document.getElementById('cms-gallery-modal').classList.remove('active')">&times;</button>
+        <h3 class="modal-title">Agregar Fotografía a la Galería</h3>
+        <button class="modal-close"
+          onclick="document.getElementById('cms-gallery-modal').classList.remove('active')">&times;</button>
       </div>
       <form id="cms-gallery-form">
         <div class="modal-body">
           <div class="form-group">
-            <label class="form-label">TÃ­tulo de la FotografÃ­a <span class="required">*</span></label>
-            <input type="text" id="cms-gallery-title" class="form-control" required placeholder="Ej: CalibraciÃ³n en Banco TrifÃ¡sico">
+            <label class="form-label">TÃitulo de la Fotografi­a <span class="required">*</span></label>
+            <input type="text" id="cms-gallery-title" class="form-control" required
+              placeholder="Ej: CalibraciÃ³n en Banco TrifÃ¡sico">
           </div>
           <div class="form-group">
-            <label class="form-label">CategorÃ­a</label>
+            <label class="form-label">Categori­a</label>
             <select id="cms-gallery-category" class="form-select">
-              <option value="bombas">Bombas HidrÃ¡ulicas</option>
+              <option value="bombas">Bombas Hidraulicas</option>
               <option value="cremalleras">Cremalleras de DirecciÃ³n</option>
-              <option value="diagnostico">DiagnÃ³stico y Pruebas</option>
+              <option value="diagnostico">Diagnostico y Pruebas</option>
               <option value="instalaciones">Instalaciones y Taller</option>
             </select>
           </div>
@@ -415,13 +444,14 @@
             <input type="text" id="cms-gallery-image-url" class="form-control" placeholder="/assets/foto1.jpg">
           </div>
           <div class="form-group">
-            <label class="form-label">DescripciÃ³n</label>
+            <label class="form-label">Descripcion</label>
             <input type="text" id="cms-gallery-desc" class="form-control">
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" onclick="document.getElementById('cms-gallery-modal').classList.remove('active')">Cancelar</button>
-          <button type="submit" class="btn btn-primary">Guardar en GalerÃ­a</button>
+          <button type="button" class="btn btn-secondary"
+            onclick="document.getElementById('cms-gallery-modal').classList.remove('active')">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Guardar en Galeria</button>
         </div>
       </form>
     </div>
@@ -432,7 +462,8 @@
     <div class="modal-content" style="max-width: 550px;">
       <div class="modal-header">
         <h3 class="modal-title">Nueva Pregunta Frecuente</h3>
-        <button class="modal-close" onclick="document.getElementById('cms-faq-modal').classList.remove('active')">&times;</button>
+        <button class="modal-close"
+          onclick="document.getElementById('cms-faq-modal').classList.remove('active')">&times;</button>
       </div>
       <form id="cms-faq-form">
         <div class="modal-body">
@@ -441,12 +472,12 @@
             <input type="text" id="cms-faq-question" class="form-control" required>
           </div>
           <div class="form-group">
-            <label class="form-label">CategorÃ­a</label>
+            <label class="form-label">Categori­a</label>
             <select id="cms-faq-category" class="form-select">
               <option value="Bombas">Bombas</option>
               <option value="Cremalleras">Cremalleras</option>
               <option value="Tiempos">Tiempos y Plazos</option>
-              <option value="GarantÃ­a">GarantÃ­a</option>
+              <option value="Garantia">Garantia</option>
               <option value="General">General</option>
             </select>
           </div>
@@ -456,7 +487,8 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" onclick="document.getElementById('cms-faq-modal').classList.remove('active')">Cancelar</button>
+          <button type="button" class="btn btn-secondary"
+            onclick="document.getElementById('cms-faq-modal').classList.remove('active')">Cancelar</button>
           <button type="submit" class="btn btn-primary">Guardar Pregunta</button>
         </div>
       </form>
@@ -469,6 +501,5 @@
   <script src="/js/admin.js"></script>
   <script src="/js/modules/cms.js"></script>
 </body>
+
 </html>
-
-
