@@ -1,19 +1,19 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Presupuestos de ReparaciÃ³n | Hidraulica del oeste A.B</title>
+  <title>Presupuestos y Cotizaciones | Hidraulica del oeste A.B</title>
   <link rel="icon" type="image/jpeg" href="/assets/logo.jpg">
-  <link rel="stylesheet" href="/css/variables.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="/vendor/fontawesome/css/all.min.css">
-  <link rel="stylesheet" href="/css/global.css">
-  <link rel="stylesheet" href="/css/components.css">
-  <link rel="stylesheet" href="/css/admin.css">
-  <link rel="stylesheet" href="/css/animations.css">
-  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/variables.css?v=3.2">
+  <link rel="stylesheet" href="/css/global.css?v=3.2">
+  <link rel="stylesheet" href="/css/components.css?v=3.2">
+  <link rel="stylesheet" href="/css/admin.css?v=3.2">
+  <link rel="stylesheet" href="/css/animations.css?v=3.2">
+  <link rel="stylesheet" href="/css/responsive.css?v=3.2">
 </head>
 
 <body class="admin-layout">
@@ -23,7 +23,7 @@
     <div class="sidebar-header">
       <a href="/admin/dashboard.html" class="sidebar-brand">
         <img src="/assets/logo.jpg" alt="Logo">
-        <span class="sidebar-brand-name">Bengoechea</span>
+        <span class="sidebar-brand-name">Hidraulica del oeste A.B</span>
       </a>
     </div>
 
@@ -46,7 +46,7 @@
       <a href="/admin/caja.html" class="sidebar-link role-finance-only"><i class="fa-solid fa-money-bill-wave"
           aria-hidden="true"></i> <span>Caja y Finanzas</span></a>
 
-      <div class="nav-section-title">Administracion</div>
+      <div class="nav-section-title">Administración</div>
       <a href="/admin/cms.html" class="sidebar-link role-admin-only text-gold-bright"
         style="border: 1px dashed rgba(212, 175, 55, 0.4);">
         <i class="fa-solid fa-globe" aria-hidden="true"></i> <span>Administrar Web (CMS)</span>
@@ -54,19 +54,19 @@
       <a href="/admin/reportes.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-chart-column"
           aria-hidden="true"></i> <span>Reportes</span></a>
       <a href="/admin/empleados.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-user-gear"
-          aria-hidden="true"></i> <span>Equipo Tecnico</span></a>
+          aria-hidden="true"></i> <span>Equipo Técnico</span></a>
       <a href="/admin/configuracion.html" class="sidebar-link role-admin-only"><i class="fa-solid fa-gears"
-          aria-hidden="true"></i> <span>Configuracion</span></a>
+          aria-hidden="true"></i> <span>Configuración</span></a>
     </nav>
 
     <div class="sidebar-footer">
       <a href="/" target="_blank" class="btn btn-outline btn-sm"
         style="width: 100%; margin-bottom: 0.5rem; font-size: 0.78rem;">
-        <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Ver Sitio Publico
+        <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Ver Sitio Público
       </a>
       <button id="btn-logout" class="btn btn-secondary btn-sm"
         style="width: 100%; color: var(--color-danger); font-size: 0.78rem;">
-        Cerrar Sesion
+        Cerrar Sesión
       </button>
     </div>
   </aside>
@@ -97,136 +97,225 @@
     </header>
 
     <div class="admin-content">
-      <!-- Toolbar -->
-      <div class="admin-toolbar">
-        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; flex-grow: 1;">
-          <div class="toolbar-search">
-            <span><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></span>
-            <input type="text" id="search-budgets" placeholder="Buscar por nÃºmero PRE, cliente o componente...">
+      <!-- Pestañas de Navegación -->
+      <div class="admin-tabs">
+        <button type="button" class="admin-tab-btn active" id="tab-btn-inquiries" onclick="switchBudgetTab('inquiries')">
+          <i class="fa-solid fa-inbox" aria-hidden="true"></i> Solicitudes Web Recibidas
+          <span class="badge badge-gold" id="quotes-badge">0</span>
+        </button>
+        <button type="button" class="admin-tab-btn" id="tab-btn-formal" onclick="switchBudgetTab('formal')">
+          <i class="fa-solid fa-file-invoice-dollar" aria-hidden="true"></i> Presupuestos Emitidos (Taller)
+          <span class="badge badge-secondary" id="formal-budgets-badge">0</span>
+        </button>
+      </div>
+
+      <!-- ==========================================
+           SECCIÓN 1: Solicitudes Web Recibidas
+           ========================================== -->
+      <div id="section-inquiries">
+        <!-- Toolbar Solicitudes Web -->
+        <div class="admin-toolbar">
+          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; flex-grow: 1;">
+            <div class="toolbar-search">
+              <span><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></span>
+              <input type="text" id="search-inquiries" placeholder="Buscar por código, cliente, teléfono, vehículo...">
+            </div>
+            <select id="filter-inquiry-status" class="form-select" style="max-width: 220px;">
+              <option value="">-- Todos los Estados --</option>
+              <option value="Nueva consulta">Nueva consulta</option>
+              <option value="En revisión">En revisión</option>
+              <option value="Presupuestado">Presupuestado</option>
+              <option value="Aprobada">Aprobada</option>
+              <option value="Rechazada">Rechazada</option>
+            </select>
           </div>
-          <select id="filter-budget-status" class="form-select" style="max-width: 200px;">
-            <option value="">-- Todos los Estados --</option>
-            <option value="Pendiente">Pendiente</option>
-            <option value="Aprobado">Aprobado</option>
-            <option value="Rechazado">Rechazado</option>
-            <option value="Anulado">Anulado</option>
-          </select>
+
+          <div class="toolbar-actions">
+            <button type="button" class="btn btn-secondary btn-sm" onclick="loadInquiries()" title="Actualizar">
+              <i class="fa-solid fa-rotate-right" aria-hidden="true"></i> Actualizar
+            </button>
+          </div>
         </div>
 
-        <div class="toolbar-actions">
-          <button class="btn btn-primary btn-sm" onclick="openCreateBudgetModal()">
-            + Nuevo Presupuesto
-          </button>
+        <!-- Tabla de Solicitudes Web -->
+        <div class="card">
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>N° Solicitud</th>
+                  <th>Cliente</th>
+                  <th>Contacto</th>
+                  <th>Vehículo & Falla</th>
+                  <th>Fotos</th>
+                  <th>Fecha</th>
+                  <th>Estado</th>
+                  <th class="text-right">Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="inquiries-table-body"></tbody>
+            </table>
+          </div>
         </div>
       </div>
 
-      <!-- Tabla de Presupuestos -->
-      <div class="card">
-        <div class="table-responsive">
-          <table class="table">
-            <thead>
-              <tr>
-                <th>NÃºmero</th>
-                <th>Cliente</th>
-                <th>Componente</th>
-                <th>Importe Total</th>
-                <th>Estado</th>
-                <th>Fecha EmisiÃ³n</th>
-                <th class="text-right">Acciones</th>
-              </tr>
-            </thead>
-            <tbody id="budgets-table-body"></tbody>
-          </table>
+      <!-- ==========================================
+           SECCIÓN 2: Presupuestos Formales (Taller)
+           ========================================== -->
+      <div id="section-formal" style="display: none;">
+        <!-- Toolbar Presupuestos Formales -->
+        <div class="admin-toolbar">
+          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; flex-grow: 1;">
+            <div class="toolbar-search">
+              <span><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></span>
+              <input type="text" id="search-budgets" placeholder="Buscar por número PRE, cliente o componente...">
+            </div>
+            <select id="filter-budget-status" class="form-select" style="max-width: 200px;">
+              <option value="">-- Todos los Estados --</option>
+              <option value="Pendiente">Pendiente</option>
+              <option value="Aprobado">Aprobado</option>
+              <option value="Rechazado">Rechazado</option>
+              <option value="Anulado">Anulado</option>
+            </select>
+          </div>
+
+          <div class="toolbar-actions">
+            <button class="btn btn-primary btn-sm" onclick="openCreateBudgetModal()">
+              + Nuevo Presupuesto
+            </button>
+          </div>
+        </div>
+
+        <!-- Tabla de Presupuestos Formales -->
+        <div class="card">
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Número</th>
+                  <th>Cliente</th>
+                  <th>Componente</th>
+                  <th>Importe Total</th>
+                  <th>Estado</th>
+                  <th>Fecha Emisión</th>
+                  <th class="text-right">Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="budgets-table-body"></tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
   </main>
 
-  <!-- Modal Crear / Editar Presupuesto -->
+  <!-- ==========================================
+       MODAL 1: Crear / Editar Presupuesto Formal
+       ========================================== -->
   <div class="modal-backdrop" id="budget-modal">
     <div class="modal-content" style="max-width: 780px;">
       <div class="modal-header">
-        <h3 class="modal-title" id="budget-modal-title">Nuevo Presupuesto Tecnico</h3>
+        <h3 class="modal-title" id="budget-modal-title">Nuevo Presupuesto Técnico</h3>
         <button class="modal-close"
           onclick="document.getElementById('budget-modal').classList.remove('active')">&times;</button>
       </div>
       <form id="budget-form">
+        <input type="hidden" id="budget-id">
+        <input type="hidden" id="budget-inquiryId">
         <div class="modal-body">
-          <input type="hidden" id="budget-id">
-
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
             <div class="form-group">
-              <label class="form-label">Cliente <span class="required">*</span></label>
-              <select id="budget-clientId" class="form-select" required></select>
+              <label class="form-label">Cliente (*)</label>
+              <select id="budget-clientId" class="form-select" required>
+                <option value="">-- Seleccionar Cliente --</option>
+              </select>
             </div>
             <div class="form-group">
-              <label class="form-label">Orden de Trabajo (Opcional)</label>
-              <select id="budget-repairId" class="form-select"></select>
-            </div>
-          </div>
-
-          <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 1rem;">
-            <div class="form-group">
-              <label class="form-label">Componente / Pieza</label>
-              <input type="text" id="budget-componentType" class="form-control" value="Bomba / Cremallera HidrÃ¡ulica">
-            </div>
-            <div class="form-group">
-              <label class="form-label">Marca</label>
-              <input type="text" id="budget-brand" class="form-control" placeholder="Ej: Ford">
-            </div>
-            <div class="form-group">
-              <label class="form-label">Modelo</label>
-              <input type="text" id="budget-model" class="form-control" placeholder="Ej: Ranger">
+              <label class="form-label">Vincular a Orden de Trabajo</label>
+              <select id="budget-repairId" class="form-select">
+                <option value="">-- Ninguna (Presupuesto previo) --</option>
+              </select>
             </div>
           </div>
 
-          <!-- Tabla DinÃ¡mica de Ã tems -->
+          <div class="form-row" style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label">Tipo de Componente (*)</label>
+              <input type="text" id="budget-componentType" class="form-control"
+                placeholder="Ej: Cremallera Hidráulica Asistida" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Marca Vehículo</label>
+              <input type="text" id="budget-brand" class="form-control" placeholder="Ej: Toyota">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Modelo Vehículo</label>
+              <input type="text" id="budget-model" class="form-control" placeholder="Ej: Hilux 2018">
+            </div>
+          </div>
+
+          <!-- Tabla Dinámica de Ítems -->
+          <div style="margin: 1.5rem 0;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <h4 style="font-size: 0.95rem; margin: 0; color: var(--gold-bright);">Ítems del Presupuesto (Mano de Obra y Repuestos)</h4>
+              <button type="button" class="btn btn-outline btn-sm" onclick="addItemRow()">+ Agregar Ítem</button>
+            </div>
+            <div
+              style="display: grid; grid-template-columns: 3fr 1fr 1.5fr 1.5fr 40px; gap: 0.5rem; font-size: 0.75rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; padding: 0 0.5rem;">
+              <div>Concepto / Trabajo</div>
+              <div class="text-center">Cant.</div>
+              <div class="text-right">Precio Unit. ($)</div>
+              <div class="text-right">Subtotal ($)</div>
+              <div></div>
+            </div>
+            <div id="budget-items-container" style="margin-top: 0.5rem;"></div>
+          </div>
+
+          <!-- Totales y Resumen -->
           <div
-            style="margin: 1rem 0; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1rem; background: var(--bg-primary);">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
-              <strong class="text-gold-bright" style="font-size: 0.95rem;">Detalle de Trabajos y Repuestos</strong>
-              <button type="button" class="btn btn-outline btn-sm" onclick="addItemRow()">+ Agregar item</button>
+            style="background: var(--bg-dark-gray); border-radius: var(--radius-md); padding: 1.25rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+            <div>
+              <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+                <div class="form-group" style="margin-bottom: 0;">
+                  <label class="form-label" style="font-size: 0.78rem;">Descuento ($)</label>
+                  <input type="number" id="budget-discount" class="form-control form-control-sm" value="0" min="0">
+                </div>
+                <div class="form-group" style="margin-bottom: 0;">
+                  <label class="form-label" style="font-size: 0.78rem;">IVA (%)</label>
+                  <input type="number" id="budget-taxPercent" class="form-control form-control-sm" value="0" min="0" max="100">
+                </div>
+              </div>
+              <div class="form-group" style="margin-top: 0.75rem; margin-bottom: 0;">
+                <label class="form-label" style="font-size: 0.78rem;">Garantía Ofrecida</label>
+                <input type="text" id="budget-warranty" class="form-control form-control-sm"
+                  value="6 meses con prueba hidráulica en banco y precinto de seguridad">
+              </div>
             </div>
 
-            <div id="budget-items-container"></div>
-
-            <!-- Descuento y Totales -->
-            <div style="display: flex; justify-content: flex-end; margin-top: 1.25rem;">
-              <div style="width: 280px; display: flex; flex-direction: column; gap: 0.5rem;">
-                <div style="display: flex; justify-content: space-between; font-size: 0.9rem;">
-                  <span class="text-muted">Subtotal:</span>
-                  <strong id="budget-subtotal-disp" class="text-white">$ 0</strong>
-                </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem;">
-                  <span class="text-muted">Descuento ($):</span>
-                  <input type="number" id="budget-discount" class="form-control form-control-sm text-right"
-                    style="width: 100px;" value="0" min="0">
-                </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem;">
-                  <span class="text-muted">IVA (%):</span>
-                  <input type="number" id="budget-taxPercent" class="form-control form-control-sm text-right"
-                    style="width: 100px;" value="21" min="0">
-                </div>
-                <div
-                  style="display: flex; justify-content: space-between; font-size: 1.2rem; font-weight: 700; border-top: 1px solid var(--border-color); padding-top: 0.5rem;">
-                  <span class="text-gold">TOTAL:</span>
-                  <strong id="budget-total-disp" class="text-gold-bright">$ 0</strong>
-                </div>
+            <div style="display: flex; flex-direction: column; justify-content: center; align-items: flex-end; gap: 0.5rem;">
+              <div style="color: var(--text-muted); font-size: 0.85rem;">
+                Subtotal: <span id="summary-subtotal" style="font-weight: 600; color: var(--text-white);">$ 0</span>
+              </div>
+              <div style="color: var(--text-muted); font-size: 0.85rem;">
+                Descuento: <span id="summary-discount" style="font-weight: 600; color: var(--color-danger);">- $ 0</span>
+              </div>
+              <div style="color: var(--text-muted); font-size: 0.85rem;">
+                Impuestos: <span id="summary-tax" style="font-weight: 600; color: var(--text-white);">$ 0</span>
+              </div>
+              <div
+                style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; color: var(--gold-bright); border-top: 1px solid var(--border-color); padding-top: 0.5rem; margin-top: 0.25rem;">
+                TOTAL: <span id="summary-total">$ 0</span>
               </div>
             </div>
           </div>
 
-          <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 1rem;">
+          <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
             <div class="form-group">
               <label class="form-label">Validez de la Oferta</label>
-              <select id="budget-validDays" class="form-select">
-                <option value="15">15 Dias corridos</option>
-                <option value="30">30 Dias corridos</option>
-                <option value="7">7 Dias corridos</option>
-              </select>
+              <input type="text" id="budget-validityDays" class="form-control" value="15 días corridos">
             </div>
             <div class="form-group">
-              <label class="form-label">Condiciones Particulares u Observaciones</label>
+              <label class="form-label">Observaciones Internas</label>
               <input type="text" id="budget-notes" class="form-control"
                 placeholder="Ej: Sujeto a que la barra no requiera cromado duro adicional.">
             </div>
@@ -242,7 +331,58 @@
     </div>
   </div>
 
-  <!-- Modal Estado de Presupuesto -->
+  <!-- ==========================================
+       MODAL 2: Detalle Completo de Solicitud Web
+       ========================================== -->
+  <div class="modal-backdrop" id="inquiry-detail-modal">
+    <div class="modal-content" style="max-width: 680px;">
+      <div class="modal-header">
+        <h3 class="modal-title"><i class="fa-solid fa-inbox text-gold-bright" aria-hidden="true"></i> Detalle de Solicitud Web</h3>
+        <button class="modal-close" onclick="document.getElementById('inquiry-detail-modal').classList.remove('active')">&times;</button>
+      </div>
+      <div class="modal-body" id="inquiry-detail-content"></div>
+      <div class="modal-footer" id="inquiry-detail-footer"></div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       MODAL 3: Estado de Solicitud Web
+       ========================================== -->
+  <div class="modal-backdrop" id="inquiry-status-modal">
+    <div class="modal-content" style="max-width: 440px;">
+      <div class="modal-header">
+        <h3 class="modal-title">Actualizar Estado de Solicitud</h3>
+        <button class="modal-close" onclick="document.getElementById('inquiry-status-modal').classList.remove('active')">&times;</button>
+      </div>
+      <form id="inquiry-status-form">
+        <input type="hidden" id="inquiry-status-id">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label">Estado de la Consulta</label>
+            <select id="inquiry-status-select" class="form-select">
+              <option value="Nueva consulta">Nueva consulta</option>
+              <option value="En revisión">En revisión técnica</option>
+              <option value="Presupuestado">Presupuestado (Presupuesto enviado)</option>
+              <option value="Aprobada">Aprobada (Cliente dio conformidad)</option>
+              <option value="Rechazada">Rechazada</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Notas Internas</label>
+            <textarea id="inquiry-status-notes" class="form-control" rows="2" placeholder="Notas sobre el contacto con el cliente..."></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="document.getElementById('inquiry-status-modal').classList.remove('active')">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Guardar Estado</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       MODAL 4: Estado de Presupuesto Formal
+       ========================================== -->
   <div class="modal-backdrop" id="budget-status-modal">
     <div class="modal-content" style="max-width: 440px;">
       <div class="modal-header">
@@ -271,11 +411,21 @@
     </div>
   </div>
 
-  <script src="/js/api.js"></script>
-  <script src="/js/notifications.js"></script>
-  <script src="/js/auth.js"></script>
-  <script src="/js/admin.js"></script>
-  <script src="/js/modules/budgets.js"></script>
+  <!-- ==========================================
+       MODAL 5: Lightbox para Fotos Recibidas
+       ========================================== -->
+  <div class="modal-backdrop" id="inquiry-photo-modal" onclick="this.classList.remove('active')">
+    <div class="modal-content" style="max-width: 800px; background: transparent; box-shadow: none; border: none; text-align: center; position: relative;">
+      <button class="modal-close" style="position: absolute; top: -15px; right: -15px; background: #000; border-radius: 50%; width: 36px; height: 36px; color: #fff; z-index: 10;">&times;</button>
+      <img id="inquiry-photo-img" src="" alt="Foto Adjunta" style="max-width: 100%; max-height: 80vh; border-radius: 8px; border: 2px solid var(--gold-primary); box-shadow: 0 0 25px rgba(0,0,0,0.8);">
+    </div>
+  </div>
+
+  <script src="/js/api.js?v=3.2"></script>
+  <script src="/js/notifications.js?v=3.2"></script>
+  <script src="/js/auth.js?v=3.2"></script>
+  <script src="/js/admin.js?v=3.2"></script>
+  <script src="/js/modules/budgets.js?v=3.2"></script>
 </body>
 
 </html>

@@ -59,6 +59,132 @@ router.get('/', async (req, res, next) => {
 });
 
 /**
+ * GET /api/budgets/inquiries
+ * Listar solicitudes de presupuesto enviadas desde el portal público
+ */
+router.get('/inquiries', async (req, res, next) => {
+  try {
+    const { status, search, limit } = req.query;
+    let inquiries = await getCollection('quotes', {
+      orderBy: 'createdAt',
+      orderDirection: 'desc',
+      limit: limit ? Number(limit) : 200
+    });
+
+    if (status) {
+      inquiries = inquiries.filter(q => (q.status || '').toLowerCase() === status.toLowerCase());
+    }
+
+    if (search) {
+      const q = search.toLowerCase().trim();
+      inquiries = inquiries.filter(item =>
+        (item.inquiryNumber && item.inquiryNumber.toLowerCase().includes(q)) ||
+        (item.trackingCode && item.trackingCode.toLowerCase().includes(q)) ||
+        (item.name && item.name.toLowerCase().includes(q)) ||
+        (item.phone && item.phone.toLowerCase().includes(q)) ||
+        (item.repairType && item.repairType.toLowerCase().includes(q)) ||
+        (item.brand && item.brand.toLowerCase().includes(q)) ||
+        (item.model && item.model.toLowerCase().includes(q))
+      );
+    }
+
+    res.json({ success: true, count: inquiries.length, data: inquiries });
+  } catch (err) {
+    next(err);
+  }
+});
+
+/**
+ * GET /api/budgets/inquiries/:id
+ * Detalle de una solicitud web específica
+ */
+router.get('/inquiries/:id', async (req, res, next) => {
+  try {
+    const inquiry = await getDocument('quotes', req.params.id);
+    if (!inquiry) {
+      return res.status(404).json({ success: false, error: 'Solicitud no encontrada.' });
+    }
+    res.json({ success: true, data: inquiry });
+  } catch (err) {
+    next(err);
+  }
+});
+
+/**
+ * PUT /api/budgets/inquiries/:id/status
+ * Actualizar el estado de una solicitud web
+ */
+router.put('/inquiries/:id/status', async (req, res, next) => {
+  try {
+    const { status, notes } = req.body;
+    if (!status) {
+      return res.status(400).json({ success: false, error: 'El estado es obligatorio.' });
+    }
+    const updatePayload = { status };
+    if (notes !== undefined) updatePayload.adminNotes = notes;
+    const updated = await updateDocument('quotes', req.params.id, updatePayload);
+    res.json({ success: true, message: 'Estado actualizado correctamente.', data: updated });
+  } catch (err) {
+    next(err);
+  }
+});
+
+/**
+ * POST /api/budgets/inquiries/:id/convert
+ * Convertir o vincular una solicitud web a un cliente y preparar presupuesto
+ */
+router.post('/inquiries/:id/convert', async (req, res, next) => {
+  try {
+    const inquiry = await getDocument('quotes', req.params.id);
+    if (!inquiry) {
+      return res.status(404).json({ success: false, error: 'Solicitud no encontrada.' });
+    }
+
+    // Buscar o registrar cliente
+    let client = null;
+    const existing = await queryDocuments('clients', { phone: inquiry.phone });
+    if (existing && existing.length > 0) {
+      client = existing[0];
+    } else {
+      client = await addDocument('clients', {
+        name: inquiry.name,
+        phone: inquiry.phone,
+        email: inquiry.email || '',
+        address: '',
+        notes: `Cliente creado a partir de solicitud web ${inquiry.inquiryNumber || inquiry.trackingCode}`,
+        type: 'Particular',
+        tags: ['web-lead']
+      });
+    }
+
+    // Marcar la solicitud como 'En revisión' o 'Presupuestado'
+    await updateDocument('quotes', req.params.id, { status: 'En revisión' });
+
+    res.json({
+      success: true,
+      message: 'Solicitud vinculada correctamente.',
+      client,
+      inquiry
+    });
+  } catch (err) {
+    next(err);
+  }
+});
+
+/**
+ * DELETE /api/budgets/inquiries/:id
+ * Eliminar una solicitud web
+ */
+router.delete('/inquiries/:id', async (req, res, next) => {
+  try {
+    await deleteDocument('quotes', req.params.id);
+    res.json({ success: true, message: 'Solicitud eliminada.' });
+  } catch (err) {
+    next(err);
+  }
+});
+
+/**
  * GET /api/budgets/:id
  */
 router.get('/:id', async (req, res, next) => {

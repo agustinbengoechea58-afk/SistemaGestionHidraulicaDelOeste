@@ -165,7 +165,7 @@ async function sendTemplateMessage(toPhone, templateName, components = [], langu
  * Automatización: Confirmación inmediata de consulta recibida
  */
 async function sendAutoReplyQuoteReceived(data = {}) {
-  const businessName = process.env.APP_NAME || 'Bengoechea Hidráulica & Cremalleras';
+  const businessName = process.env.APP_NAME || 'Hidraulica del oeste A.B & Cremalleras';
   const text = 
 `¡Hola, ${data.name || 'estimado/a'}! Gracias por comunicarte con ${businessName}.
 
@@ -188,7 +188,7 @@ ${process.env.APP_URL || 'http://localhost:3000'}/seguimiento.html?code=${data.i
  * Automatización: Presupuesto emitido listo para revisión
  */
 async function sendAutoNotificationBudgetReady(data = {}) {
-  const businessName = process.env.APP_NAME || 'Bengoechea Hidráulica';
+  const businessName = process.env.APP_NAME || 'Hidraulica del oeste A.B';
   const trackingUrl = `${process.env.APP_URL || 'http://localhost:3000'}/seguimiento.html?code=${data.budgetNumber || data.orderNumber}`;
 
   const text =

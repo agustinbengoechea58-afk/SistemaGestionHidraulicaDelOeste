@@ -75,6 +75,24 @@ async function getCollection(collectionName, options = {}) {
       snapshot.forEach(doc => {
         docs.push({ id: doc.id, ...doc.data() });
       });
+
+      if (docs.length > 0 || Object.keys(options).length > 0) {
+        return docs;
+      }
+
+      // Si la colección en Firestore está completamente vacía y no había filtros, auto-sincronizar con respaldo local
+      const localStore = loadLocalCollection(collectionName);
+      const localEntries = Object.entries(localStore);
+      if (localEntries.length > 0) {
+        for (const [id, data] of localEntries) {
+          try {
+            await db.collection(collectionName).doc(String(id)).set({ ...data, id }, { merge: true });
+            docs.push({ id, ...data });
+          } catch (e) {}
+        }
+        return docs;
+      }
+
       return docs;
     } catch (err) {
       console.warn(`Firestore getCollection falló para '${collectionName}', usando respaldo:`, err.message);
@@ -134,7 +152,6 @@ async function getDocument(collectionName, docId) {
       if (doc.exists) {
         return { id: doc.id, ...doc.data() };
       }
-      return null;
     } catch (err) {
       console.warn(`Firestore getDocument falló para '${collectionName}/${docId}':`, err.message);
     }
@@ -142,6 +159,9 @@ async function getDocument(collectionName, docId) {
 
   const store = loadLocalCollection(collectionName);
   if (store[docId]) {
+    if (isInitialized && db) {
+      db.collection(collectionName).doc(String(docId)).set({ ...store[docId], id: docId }, { merge: true }).catch(() => {});
+    }
     return { id: docId, ...store[docId] };
   }
   return null;

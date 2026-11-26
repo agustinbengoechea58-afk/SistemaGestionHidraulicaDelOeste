@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (typeof API !== 'undefined') {
     API.get('/api/public/config').then(res => {
       if (res && res.success && res.data && res.data.name) {
-        document.querySelectorAll('.sidebar-brand-name').forEach(el => el.textContent = res.data.name.split(' ')[0] || res.data.name);
+        document.querySelectorAll('.sidebar-brand-name').forEach(el => el.textContent = res.data.name);
       }
     }).catch(() => {});
   }

@@ -467,3 +467,74 @@
   font-size: 1.5rem;
 }
 
+/* ==========================================================================
+   Admin Tabs & Web Inquiries UI
+   ========================================================================== */
+.admin-tabs {
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.admin-tab-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-muted);
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.92rem;
+  cursor: pointer;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all var(--transition-fast);
+}
+
+.admin-tab-btn:hover {
+  color: var(--text-white);
+  background-color: var(--bg-dark-gray);
+}
+
+.admin-tab-btn.active {
+  background: rgba(212, 175, 55, 0.15);
+  border-color: var(--gold-primary);
+  color: var(--gold-bright);
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.2);
+}
+
+.photo-thumb-grid {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.photo-thumb-item {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  background: #0d0d11;
+  transition: transform 0.2s, border-color 0.2s;
+  display: inline-block;
+}
+
+.photo-thumb-item:hover {
+  transform: scale(1.12);
+  border-color: var(--gold-bright);
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+}
+
+.photo-thumb-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+

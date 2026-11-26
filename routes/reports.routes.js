@@ -35,7 +35,7 @@ router.get('/dashboard', async (req, res, next) => {
     );
 
     // 2. Solicitudes web nuevas
-    const newQuotes = quotes.filter(q => q.status === 'Nueva solicitud');
+    const newQuotes = quotes.filter(q => q.status === 'Nueva solicitud' || q.status === 'Nueva consulta');
 
     // 3. Finanzas del mes actual
     const now = new Date();

@@ -124,7 +124,7 @@ function generateBudgetPDF(budget, company = {}) {
 
       // Pie de Página
       doc.fontSize(8).fillColor('#999999').font('Helvetica')
-         .text(`Documento emitido por Bengoechea Hidráulica - Presupuesto Técnico Interno - No válido como factura fiscal AFIP/ARCA`, 40, 770, { align: 'center', width: 515 });
+         .text(`Documento emitido por Hidraulica del oeste A.B - Presupuesto Técnico Interno - No válido como factura fiscal AFIP/ARCA`, 40, 770, { align: 'center', width: 515 });
 
       doc.end();
     } catch (err) {

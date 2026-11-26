@@ -349,6 +349,48 @@ router.post('/smart-quote', upload.array('photos', 5), async (req, res, next) =>
 
     const doc = await addDocument('quotes', quoteData);
 
+    // Sincronizar cliente potencial en colección de clientes para el panel administrativo
+    try {
+      const cleanPhone = (quoteData.phone || '').trim();
+      if (cleanPhone) {
+        const existingClients = await queryDocuments('clients', { phone: cleanPhone });
+        if (existingClients.length === 0) {
+          await addDocument('clients', {
+            name: quoteData.name,
+            phone: cleanPhone,
+            email: quoteData.email || '',
+            address: '',
+            notes: `Originado desde solicitud web ${trackingCode} (${quoteData.repairType || ''})`,
+            type: 'Particular',
+            tags: ['web-lead']
+          });
+        }
+      }
+    } catch (e) {
+      console.warn('Auto-registro de cliente desde quote-request:', e.message);
+    }
+
+    // Sincronizar cliente potencial en colección de clientes para el panel administrativo
+    try {
+      const cleanPhone = (quoteData.phone || '').trim();
+      if (cleanPhone) {
+        const existingClients = await queryDocuments('clients', { phone: cleanPhone });
+        if (existingClients.length === 0) {
+          await addDocument('clients', {
+            name: quoteData.name,
+            phone: cleanPhone,
+            email: quoteData.email || '',
+            address: '',
+            notes: `Originado desde solicitud web ${inquiryNumber} (${quoteData.repairType || ''})`,
+            type: 'Particular',
+            tags: ['web-lead']
+          });
+        }
+      }
+    } catch (e) {
+      console.warn('Auto-registro de cliente desde smart-quote:', e.message);
+    }
+
     // Si es cliente no registrado, registrar en guest_customers para seguimiento CRM
     if (isGuest) {
       await addDocument('guest_customers', {
@@ -434,6 +476,48 @@ router.post('/quote-request', upload.array('photos', 5), validateQuoteRequest, a
     };
 
     const doc = await addDocument('quotes', quoteData);
+
+    // Sincronizar cliente potencial en colección de clientes para el panel administrativo
+    try {
+      const cleanPhone = (quoteData.phone || '').trim();
+      if (cleanPhone) {
+        const existingClients = await queryDocuments('clients', { phone: cleanPhone });
+        if (existingClients.length === 0) {
+          await addDocument('clients', {
+            name: quoteData.name,
+            phone: cleanPhone,
+            email: quoteData.email || '',
+            address: '',
+            notes: `Originado desde solicitud web ${trackingCode} (${quoteData.repairType || ''})`,
+            type: 'Particular',
+            tags: ['web-lead']
+          });
+        }
+      }
+    } catch (e) {
+      console.warn('Auto-registro de cliente desde quote-request:', e.message);
+    }
+
+    // Sincronizar cliente potencial en colección de clientes para el panel administrativo
+    try {
+      const cleanPhone = (quoteData.phone || '').trim();
+      if (cleanPhone) {
+        const existingClients = await queryDocuments('clients', { phone: cleanPhone });
+        if (existingClients.length === 0) {
+          await addDocument('clients', {
+            name: quoteData.name,
+            phone: cleanPhone,
+            email: quoteData.email || '',
+            address: '',
+            notes: `Originado desde solicitud web ${inquiryNumber} (${quoteData.repairType || ''})`,
+            type: 'Particular',
+            tags: ['web-lead']
+          });
+        }
+      }
+    } catch (e) {
+      console.warn('Auto-registro de cliente desde smart-quote:', e.message);
+    }
 
     await sendAutoReplyQuoteReceived({
       name: quoteData.name,

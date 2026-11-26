@@ -51,7 +51,7 @@ function generateWhatsAppLink(phoneNumber, message) {
 }
 
 function buildWhatsAppMessage(type, data = {}) {
-  const companyName = data.companyName || 'Bengoechea Hidráulica & Cremalleras';
+  const companyName = data.companyName || 'Hidraulica del oeste A.B & Cremalleras';
 
   switch (type) {
     case 'quote_received':

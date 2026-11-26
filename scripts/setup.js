@@ -39,7 +39,7 @@ async function runSetup() {
 
   // 4.1 Configuración General
   await setDocument('site_settings', 'main', {
-    businessName: 'Bengoechea Hidráulica & Cremalleras',
+    businessName: 'Hidraulica del oeste A.B & Cremalleras',
     tagline: 'Laboratorio de Alta Precisión en Bombas Hidráulicas y Cremalleras de Dirección',
     currency: 'ARS',
     currencySymbol: '$',

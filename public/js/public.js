@@ -93,10 +93,10 @@ async function loadPublicConfig() {
       });
 
       // Actualizar título del documento dinámicamente con el nombre desde .env
-      if (document.title.includes('Bengoechea Hidráulica') || document.title.includes('Hidraulica del oeste') || document.title.includes('Bengoechea')) {
+      if (document.title.includes('Hidraulica del oeste A.B') || document.title.includes('Hidraulica del oeste') || document.title.includes('Bengoechea')) {
         document.title = document.title
-          .replace('Bengoechea Hidráulica & Cremalleras', c.name)
-          .replace('Bengoechea Hidráulica', c.name)
+          .replace('Hidraulica del oeste A.B & Cremalleras', c.name)
+          .replace('Hidraulica del oeste A.B', c.name)
           .replace('Bengoechea', c.name);
       }
 
