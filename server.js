@@ -1,3 +1,4 @@
+
 /**
  * Servidor Principal - Plataforma Web Empresarial y ERP Hidráulico
  * Hidraulica del oeste A.B & Cremalleras de Dirección
@@ -32,13 +33,14 @@ const settingsRoutes = require('./routes/settings.routes');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-// Configuración para Render
-app.set('trust proxy', 1);
 
+// IMPORTANTE: Render funciona detrás de un proxy.
+// Debe configurarse antes de express-rate-limit.
+app.set('trust proxy', 1);
 
 // Middlewares de Seguridad y Rendimiento
 app.use(helmet({
-  contentSecurityPolicy: false, // Permitir fuentes, Chart.js y Lucide desde CDN
+  contentSecurityPolicy: false,
   crossOriginEmbedderPolicy: false
 }));
 
@@ -54,14 +56,14 @@ app.use(express.urlencoded({ extended: true, limit: '15mb' }));
 
 // Limitador de tasa contra spam en endpoints públicos
 const publicLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutos
-  max: 300, // 300 peticiones
+  windowMs: 15 * 60 * 1000,
+  max: 300,
   message: { success: false, error: 'Demasiadas solicitudes. Intente más tarde.' }
 });
 
 const quoteRequestLimiter = rateLimit({
-  windowMs: 60 * 60 * 1000, // 1 hora
-  max: 20, // Máximo 20 presupuestos por IP
+  windowMs: 60 * 60 * 1000,
+  max: 20,
   message: { success: false, error: 'Límite de solicitudes de cotización alcanzado temporalmente.' }
 });
 
@@ -69,8 +71,11 @@ const quoteRequestLimiter = rateLimit({
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/uploads', express.static(path.join(__dirname, 'public', 'uploads')));
 app.use('/assets', express.static(path.join(__dirname, 'public', 'assets')));
+
 // Servir Font Awesome localmente desde node_modules
-app.use('/vendor/fontawesome', express.static(path.join(__dirname, 'node_modules', '@fortawesome', 'fontawesome-free')));
+app.use('/vendor/fontawesome', express.static(
+  path.join(__dirname, 'node_modules', '@fortawesome', 'fontawesome-free')
+));
 
 // Rutas de SEO
 app.get('/robots.txt', (req, res) => {
@@ -131,6 +136,7 @@ app.use('/api/settings', settingsRoutes);
 app.get('/api/health', (req, res) => {
   const firebaseStatus = getStatus();
   const assetsStatus = verifyAssetsExist(__dirname);
+
   res.json({
     status: 'ONLINE',
     timestamp: new Date().toISOString(),
@@ -158,9 +164,9 @@ const server = app.listen(PORT, () => {
   const assetsCheck = verifyAssetsExist(__dirname);
   const totalAssets = Object.keys(assetsCheck).length;
   const verifiedAssets = Object.values(assetsCheck).filter(a => a.exists).length;
+
   console.log(`ASSETS VERIFICADOS: ${verifiedAssets}/${totalAssets} imágenes presentes.`);
   console.log('================================================================');
 });
 
 module.exports = { app, server };
-
