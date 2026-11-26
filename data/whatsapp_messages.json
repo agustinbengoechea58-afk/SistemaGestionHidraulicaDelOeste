@@ -1,0 +1,122 @@
+{
+  "1795556495993-dekmdk8": {
+    "recipientPhone": "0111545678900",
+    "type": "text",
+    "direction": "outbound",
+    "messageBody": "¡Hola, Rodrigo Mercado! Gracias por comunicarte con Hidraulica del oeste A.B.\n\nRecibimos correctamente tu solicitud de presupuesto.\n\nNumero de consulta: CONS-000001\nVehiculo: peugeot 206 xs\nServicio solicitado: Bomba Hidráulica\n\nNuestro equipo técnico evaluará tu caso para brindarte la cotización más precisa.\nPodés realizar el seguimiento de tu solicitud ingresando a:\nhttp://localhost:3000/seguimiento.html?code=CONS-000001\n\n¡Gracias por confiar en nosotros!",
+    "status": "manual_fallback",
+    "createdAt": "2026-11-24T21:41:35.993Z",
+    "note": "WhatsApp Cloud API no configurado en .env (se proporciona link wa.me para envío manual).",
+    "manualLink": "https://wa.me/0111545678900?text=%C2%A1Hola%2C%20Rodrigo%20Mercado!%20Gracias%20por%20comunicarte%20con%20Hidraulica%20del%20oeste%20A.B.%0A%0ARecibimos%20correctamente%20tu%20solicitud%20de%20presupuesto.%0A%0ANumero%20de%20consulta%3A%20CONS-000001%0AVehiculo%3A%20peugeot%20206%20xs%0AServicio%20solicitado%3A%20Bomba%20Hidr%C3%A1ulica%0A%0ANuestro%20equipo%20t%C3%A9cnico%20evaluar%C3%A1%20tu%20caso%20para%20brindarte%20la%20cotizaci%C3%B3n%20m%C3%A1s%20precisa.%0APod%C3%A9s%20realizar%20el%20seguimiento%20de%20tu%20solicitud%20ingresando%20a%3A%0Ahttp%3A%2F%2Flocalhost%3A3000%2Fseguimiento.html%3Fcode%3DCONS-000001%0A%0A%C2%A1Gracias%20por%20confiar%20en%20nosotros!",
+    "updatedAt": "2026-11-24T21:41:35.993Z",
+    "id": "1795556495993-dekmdk8"
+  },
+  "1795557042398-jten59d": {
+    "recipientPhone": "0111545678900",
+    "type": "text",
+    "direction": "outbound",
+    "messageBody": "¡Hola, Rodrigo Mercado! Gracias por comunicarte con Hidraulica del oeste A.B.\n\nRecibimos correctamente tu solicitud de presupuesto.\n\nNumero de consulta: CONS-000002\nVehiculo: peugeot 206 xs\nServicio solicitado: Bomba Hidráulica\n\nNuestro equipo técnico evaluará tu caso para brindarte la cotización más precisa.\nPodés realizar el seguimiento de tu solicitud ingresando a:\nhttp://localhost:3000/seguimiento.html?code=CONS-000002\n\n¡Gracias por confiar en nosotros!",
+    "status": "manual_fallback",
+    "createdAt": "2026-11-24T21:50:42.398Z",
+    "note": "WhatsApp Cloud API no configurado en .env (se proporciona link wa.me para envío manual).",
+    "manualLink": "https://wa.me/0111545678900?text=%C2%A1Hola%2C%20Rodrigo%20Mercado!%20Gracias%20por%20comunicarte%20con%20Hidraulica%20del%20oeste%20A.B.%0A%0ARecibimos%20correctamente%20tu%20solicitud%20de%20presupuesto.%0A%0ANumero%20de%20consulta%3A%20CONS-000002%0AVehiculo%3A%20peugeot%20206%20xs%0AServicio%20solicitado%3A%20Bomba%20Hidr%C3%A1ulica%0A%0ANuestro%20equipo%20t%C3%A9cnico%20evaluar%C3%A1%20tu%20caso%20para%20brindarte%20la%20cotizaci%C3%B3n%20m%C3%A1s%20precisa.%0APod%C3%A9s%20realizar%20el%20seguimiento%20de%20tu%20solicitud%20ingresando%20a%3A%0Ahttp%3A%2F%2Flocalhost%3A3000%2Fseguimiento.html%3Fcode%3DCONS-000002%0A%0A%C2%A1Gracias%20por%20confiar%20en%20nosotros!",
+    "updatedAt": "2026-11-24T21:50:42.398Z",
+    "id": "1795557042398-jten59d"
+  },
+  "1795557107917-w757i75": {
+    "recipientPhone": "0111545678900",
+    "type": "text",
+    "direction": "outbound",
+    "messageBody": "¡Hola, Rodrigo Mercado! Gracias por comunicarte con Hidraulica del oeste A.B.\n\nRecibimos correctamente tu solicitud de presupuesto.\n\nNumero de consulta: CONS-000003\nVehiculo: peugeot 206 xs\nServicio solicitado: Mantenimiento y Flushing\n\nNuestro equipo técnico evaluará tu caso para brindarte la cotización más precisa.\nPodés realizar el seguimiento de tu solicitud ingresando a:\nhttp://localhost:3000/seguimiento.html?code=CONS-000003\n\n¡Gracias por confiar en nosotros!",
+    "status": "manual_fallback",
+    "createdAt": "2026-11-24T21:51:47.917Z",
+    "note": "WhatsApp Cloud API no configurado en .env (se proporciona link wa.me para envío manual).",
+    "manualLink": "https://wa.me/0111545678900?text=%C2%A1Hola%2C%20Rodrigo%20Mercado!%20Gracias%20por%20comunicarte%20con%20Hidraulica%20del%20oeste%20A.B.%0A%0ARecibimos%20correctamente%20tu%20solicitud%20de%20presupuesto.%0A%0ANumero%20de%20consulta%3A%20CONS-000003%0AVehiculo%3A%20peugeot%20206%20xs%0AServicio%20solicitado%3A%20Mantenimiento%20y%20Flushing%0A%0ANuestro%20equipo%20t%C3%A9cnico%20evaluar%C3%A1%20tu%20caso%20para%20brindarte%20la%20cotizaci%C3%B3n%20m%C3%A1s%20precisa.%0APod%C3%A9s%20realizar%20el%20seguimiento%20de%20tu%20solicitud%20ingresando%20a%3A%0Ahttp%3A%2F%2Flocalhost%3A3000%2Fseguimiento.html%3Fcode%3DCONS-000003%0A%0A%C2%A1Gracias%20por%20confiar%20en%20nosotros!",
+    "updatedAt": "2026-11-24T21:51:47.917Z",
+    "id": "1795557107917-w757i75"
+  },
+  "1795557650811-ueb6qz9": {
+    "recipientPhone": "0111545678900",
+    "type": "text",
+    "direction": "outbound",
+    "messageBody": "¡Hola, Rodrigo Mercado! Gracias por comunicarte con Hidraulica del oeste A.B.\n\nRecibimos correctamente tu solicitud de presupuesto.\n\nNumero de consulta: CONS-000004\nVehiculo: peugeot 206 xs\nServicio solicitado: Bomba Hidráulica\n\nNuestro equipo técnico evaluará tu caso para brindarte la cotización más precisa.\nPodés realizar el seguimiento de tu solicitud ingresando a:\nhttp://localhost:3000/seguimiento.html?code=CONS-000004\n\n¡Gracias por confiar en nosotros!",
+    "status": "manual_fallback",
+    "createdAt": "2026-11-24T22:00:50.811Z",
+    "note": "WhatsApp Cloud API no configurado en .env (se proporciona link wa.me para envío manual).",
+    "manualLink": "https://wa.me/0111545678900?text=%C2%A1Hola%2C%20Rodrigo%20Mercado!%20Gracias%20por%20comunicarte%20con%20Hidraulica%20del%20oeste%20A.B.%0A%0ARecibimos%20correctamente%20tu%20solicitud%20de%20presupuesto.%0A%0ANumero%20de%20consulta%3A%20CONS-000004%0AVehiculo%3A%20peugeot%20206%20xs%0AServicio%20solicitado%3A%20Bomba%20Hidr%C3%A1ulica%0A%0ANuestro%20equipo%20t%C3%A9cnico%20evaluar%C3%A1%20tu%20caso%20para%20brindarte%20la%20cotizaci%C3%B3n%20m%C3%A1s%20precisa.%0APod%C3%A9s%20realizar%20el%20seguimiento%20de%20tu%20solicitud%20ingresando%20a%3A%0Ahttp%3A%2F%2Flocalhost%3A3000%2Fseguimiento.html%3Fcode%3DCONS-000004%0A%0A%C2%A1Gracias%20por%20confiar%20en%20nosotros!",
+    "updatedAt": "2026-11-24T22:00:50.811Z",
+    "id": "1795557650811-ueb6qz9"
+  },
+  "1795557768396-4stfsmh": {
+    "recipientPhone": "0111545678900",
+    "type": "text",
+    "direction": "outbound",
+    "messageBody": "¡Hola, Rodrigo Mercado! Gracias por comunicarte con Hidraulica del oeste A.B.\n\nRecibimos correctamente tu solicitud de presupuesto.\n\nNumero de consulta: CONS-000001\nVehiculo: peugeot 206 xs\nServicio solicitado: Bomba Hidráulica\n\nNuestro equipo técnico evaluará tu caso para brindarte la cotización más precisa.\nPodés realizar el seguimiento de tu solicitud ingresando a:\nhttp://localhost:3000/seguimiento.html?code=CONS-000001\n\n¡Gracias por confiar en nosotros!",
+    "status": "manual_fallback",
+    "createdAt": "2026-11-24T22:02:48.396Z",
+    "note": "WhatsApp Cloud API no configurado en .env (se proporciona link wa.me para envío manual).",
+    "manualLink": "https://wa.me/0111545678900?text=%C2%A1Hola%2C%20Rodrigo%20Mercado!%20Gracias%20por%20comunicarte%20con%20Hidraulica%20del%20oeste%20A.B.%0A%0ARecibimos%20correctamente%20tu%20solicitud%20de%20presupuesto.%0A%0ANumero%20de%20consulta%3A%20CONS-000001%0AVehiculo%3A%20peugeot%20206%20xs%0AServicio%20solicitado%3A%20Bomba%20Hidr%C3%A1ulica%0A%0ANuestro%20equipo%20t%C3%A9cnico%20evaluar%C3%A1%20tu%20caso%20para%20brindarte%20la%20cotizaci%C3%B3n%20m%C3%A1s%20precisa.%0APod%C3%A9s%20realizar%20el%20seguimiento%20de%20tu%20solicitud%20ingresando%20a%3A%0Ahttp%3A%2F%2Flocalhost%3A3000%2Fseguimiento.html%3Fcode%3DCONS-000001%0A%0A%C2%A1Gracias%20por%20confiar%20en%20nosotros!",
+    "updatedAt": "2026-11-24T22:02:48.396Z",
+    "id": "1795557768396-4stfsmh"
+  },
+  "1795557963877-z7f00vn": {
+    "recipientPhone": "0111545678900",
+    "type": "text",
+    "direction": "outbound",
+    "messageBody": "¡Hola, Rodrigo Mercado! Gracias por comunicarte con Hidraulica del oeste A.B.\n\nRecibimos correctamente tu solicitud de presupuesto.\n\nNumero de consulta: CONS-000002\nVehiculo: peugeot 206 xs\nServicio solicitado: Bomba Hidráulica\n\nNuestro equipo técnico evaluará tu caso para brindarte la cotización más precisa.\nPodés realizar el seguimiento de tu solicitud ingresando a:\nhttp://localhost:3000/seguimiento.html?code=CONS-000002\n\n¡Gracias por confiar en nosotros!",
+    "status": "manual_fallback",
+    "createdAt": "2026-11-24T22:06:03.877Z",
+    "note": "WhatsApp Cloud API no configurado en .env (se proporciona link wa.me para envío manual).",
+    "manualLink": "https://wa.me/0111545678900?text=%C2%A1Hola%2C%20Rodrigo%20Mercado!%20Gracias%20por%20comunicarte%20con%20Hidraulica%20del%20oeste%20A.B.%0A%0ARecibimos%20correctamente%20tu%20solicitud%20de%20presupuesto.%0A%0ANumero%20de%20consulta%3A%20CONS-000002%0AVehiculo%3A%20peugeot%20206%20xs%0AServicio%20solicitado%3A%20Bomba%20Hidr%C3%A1ulica%0A%0ANuestro%20equipo%20t%C3%A9cnico%20evaluar%C3%A1%20tu%20caso%20para%20brindarte%20la%20cotizaci%C3%B3n%20m%C3%A1s%20precisa.%0APod%C3%A9s%20realizar%20el%20seguimiento%20de%20tu%20solicitud%20ingresando%20a%3A%0Ahttp%3A%2F%2Flocalhost%3A3000%2Fseguimiento.html%3Fcode%3DCONS-000002%0A%0A%C2%A1Gracias%20por%20confiar%20en%20nosotros!",
+    "updatedAt": "2026-11-24T22:06:03.877Z",
+    "id": "1795557963877-z7f00vn"
+  },
+  "1795558008727-eltuofw": {
+    "recipientPhone": "0111545678900",
+    "type": "text",
+    "direction": "outbound",
+    "messageBody": "¡Hola, Rodrigo Mercado! Gracias por comunicarte con Hidraulica del oeste A.B.\n\nRecibimos correctamente tu solicitud de presupuesto.\n\nNumero de consulta: CONS-000003\nVehiculo: peugeot 206 xs\nServicio solicitado: Cremallera de Dirección\n\nNuestro equipo técnico evaluará tu caso para brindarte la cotización más precisa.\nPodés realizar el seguimiento de tu solicitud ingresando a:\nhttp://localhost:3000/seguimiento.html?code=CONS-000003\n\n¡Gracias por confiar en nosotros!",
+    "status": "manual_fallback",
+    "createdAt": "2026-11-24T22:06:48.727Z",
+    "note": "WhatsApp Cloud API no configurado en .env (se proporciona link wa.me para envío manual).",
+    "manualLink": "https://wa.me/0111545678900?text=%C2%A1Hola%2C%20Rodrigo%20Mercado!%20Gracias%20por%20comunicarte%20con%20Hidraulica%20del%20oeste%20A.B.%0A%0ARecibimos%20correctamente%20tu%20solicitud%20de%20presupuesto.%0A%0ANumero%20de%20consulta%3A%20CONS-000003%0AVehiculo%3A%20peugeot%20206%20xs%0AServicio%20solicitado%3A%20Cremallera%20de%20Direcci%C3%B3n%0A%0ANuestro%20equipo%20t%C3%A9cnico%20evaluar%C3%A1%20tu%20caso%20para%20brindarte%20la%20cotizaci%C3%B3n%20m%C3%A1s%20precisa.%0APod%C3%A9s%20realizar%20el%20seguimiento%20de%20tu%20solicitud%20ingresando%20a%3A%0Ahttp%3A%2F%2Flocalhost%3A3000%2Fseguimiento.html%3Fcode%3DCONS-000003%0A%0A%C2%A1Gracias%20por%20confiar%20en%20nosotros!",
+    "updatedAt": "2026-11-24T22:06:48.727Z",
+    "id": "1795558008727-eltuofw"
+  },
+  "1795558749942-yyi850b": {
+    "recipientPhone": "0111545678900",
+    "type": "text",
+    "direction": "outbound",
+    "messageBody": "¡Hola, Rodrigo Mercado! Gracias por comunicarte con Hidraulica del oeste A.B.\n\nRecibimos correctamente tu solicitud de presupuesto.\n\nNumero de consulta: CONS-000004\nVehiculo: peugeot 206 xs\nServicio solicitado: Bomba Hidráulica\n\nNuestro equipo técnico evaluará tu caso para brindarte la cotización más precisa.\nPodés realizar el seguimiento de tu solicitud ingresando a:\nhttp://localhost:3000/seguimiento.html?code=CONS-000004\n\n¡Gracias por confiar en nosotros!",
+    "status": "manual_fallback",
+    "createdAt": "2026-11-24T22:19:09.941Z",
+    "note": "WhatsApp Cloud API no configurado en .env (se proporciona link wa.me para envío manual).",
+    "manualLink": "https://wa.me/0111545678900?text=%C2%A1Hola%2C%20Rodrigo%20Mercado!%20Gracias%20por%20comunicarte%20con%20Hidraulica%20del%20oeste%20A.B.%0A%0ARecibimos%20correctamente%20tu%20solicitud%20de%20presupuesto.%0A%0ANumero%20de%20consulta%3A%20CONS-000004%0AVehiculo%3A%20peugeot%20206%20xs%0AServicio%20solicitado%3A%20Bomba%20Hidr%C3%A1ulica%0A%0ANuestro%20equipo%20t%C3%A9cnico%20evaluar%C3%A1%20tu%20caso%20para%20brindarte%20la%20cotizaci%C3%B3n%20m%C3%A1s%20precisa.%0APod%C3%A9s%20realizar%20el%20seguimiento%20de%20tu%20solicitud%20ingresando%20a%3A%0Ahttp%3A%2F%2Flocalhost%3A3000%2Fseguimiento.html%3Fcode%3DCONS-000004%0A%0A%C2%A1Gracias%20por%20confiar%20en%20nosotros!",
+    "updatedAt": "2026-11-24T22:19:09.942Z",
+    "id": "1795558749942-yyi850b"
+  },
+  "1795560205121-d8oi5vw": {
+    "recipientPhone": "0111545678900",
+    "type": "text",
+    "direction": "outbound",
+    "messageBody": "¡Hola, Rodrigo Mercado! Gracias por comunicarte con Hidraulica del oeste A.B.\n\nRecibimos correctamente tu solicitud de presupuesto.\n\nNumero de consulta: CONS-000005\nVehiculo: peugeot 206 xs\nServicio solicitado: Bomba Hidráulica\n\nNuestro equipo técnico evaluará tu caso para brindarte la cotización más precisa.\nPodés realizar el seguimiento de tu solicitud ingresando a:\nhttp://localhost:3000/seguimiento.html?code=CONS-000005\n\n¡Gracias por confiar en nosotros!",
+    "status": "manual_fallback",
+    "createdAt": "2026-11-24T22:43:25.121Z",
+    "note": "WhatsApp Cloud API no configurado en .env (se proporciona link wa.me para envío manual).",
+    "manualLink": "https://wa.me/0111545678900?text=%C2%A1Hola%2C%20Rodrigo%20Mercado!%20Gracias%20por%20comunicarte%20con%20Hidraulica%20del%20oeste%20A.B.%0A%0ARecibimos%20correctamente%20tu%20solicitud%20de%20presupuesto.%0A%0ANumero%20de%20consulta%3A%20CONS-000005%0AVehiculo%3A%20peugeot%20206%20xs%0AServicio%20solicitado%3A%20Bomba%20Hidr%C3%A1ulica%0A%0ANuestro%20equipo%20t%C3%A9cnico%20evaluar%C3%A1%20tu%20caso%20para%20brindarte%20la%20cotizaci%C3%B3n%20m%C3%A1s%20precisa.%0APod%C3%A9s%20realizar%20el%20seguimiento%20de%20tu%20solicitud%20ingresando%20a%3A%0Ahttp%3A%2F%2Flocalhost%3A3000%2Fseguimiento.html%3Fcode%3DCONS-000005%0A%0A%C2%A1Gracias%20por%20confiar%20en%20nosotros!",
+    "updatedAt": "2026-11-24T22:43:25.121Z",
+    "id": "1795560205121-d8oi5vw"
+  },
+  "1795649398740-mlhv6tt": {
+    "recipientPhone": "0111545678900",
+    "type": "text",
+    "direction": "outbound",
+    "messageBody": "¡Hola, Rodrigo Mercado! Gracias por comunicarte con Hidraulica del oeste A.B.\n\nRecibimos correctamente tu solicitud de presupuesto.\n\nNumero de consulta: CONS-000006\nVehiculo: renault megane\nServicio solicitado: Bomba Hidráulica\n\nNuestro equipo técnico evaluará tu caso para brindarte la cotización más precisa.\nPodés realizar el seguimiento de tu solicitud ingresando a:\nhttp://localhost:3000/seguimiento.html?code=CONS-000006\n\n¡Gracias por confiar en nosotros!",
+    "status": "manual_fallback",
+    "createdAt": "2026-11-25T23:29:58.739Z",
+    "note": "WhatsApp Cloud API no configurado en .env (se proporciona link wa.me para envío manual).",
+    "manualLink": "https://wa.me/0111545678900?text=%C2%A1Hola%2C%20Rodrigo%20Mercado!%20Gracias%20por%20comunicarte%20con%20Hidraulica%20del%20oeste%20A.B.%0A%0ARecibimos%20correctamente%20tu%20solicitud%20de%20presupuesto.%0A%0ANumero%20de%20consulta%3A%20CONS-000006%0AVehiculo%3A%20renault%20megane%0AServicio%20solicitado%3A%20Bomba%20Hidr%C3%A1ulica%0A%0ANuestro%20equipo%20t%C3%A9cnico%20evaluar%C3%A1%20tu%20caso%20para%20brindarte%20la%20cotizaci%C3%B3n%20m%C3%A1s%20precisa.%0APod%C3%A9s%20realizar%20el%20seguimiento%20de%20tu%20solicitud%20ingresando%20a%3A%0Ahttp%3A%2F%2Flocalhost%3A3000%2Fseguimiento.html%3Fcode%3DCONS-000006%0A%0A%C2%A1Gracias%20por%20confiar%20en%20nosotros!",
+    "updatedAt": "2026-11-25T23:29:58.740Z",
+    "id": "1795649398740-mlhv6tt"
+  }
+}

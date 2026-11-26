@@ -1,20 +1,20 @@
 {
   "main": {
-    "phone": "+54 9 11 4567-8900",
-    "whatsapp": "+54 9 11 2345-6789",
+    "phone": "0111545678900",
+    "whatsapp": "Argentina",
     "email": "contacto@hidraulicabengoechea.com",
     "address": "Av. Industrial 4550, Zona Taller y Laboratorio",
     "city": "Buenos Aires",
     "province": "Buenos Aires, Argentina",
-    "hours": "Lunes a Viernes de 8:00 a 18:00 hs | Sábados de 8:30 a 12:30 hs",
-    "mapUrl": "https://maps.google.com/?q=Buenos+Aires",
+    "hours": "Lunes a Viernes de 8:00 a 17:00 hs | Sábados de 8:30 a 12:30 hs",
+    "mapUrl": "",
     "socials": {
-      "facebook": "https://facebook.com",
-      "instagram": "https://instagram.com",
-      "tiktok": "https://tiktok.com"
+      "facebook": "",
+      "instagram": "",
+      "tiktok": ""
     },
-    "updatedAt": "2026-11-19T00:00:45.212Z",
-    "createdAt": "2026-11-19T00:00:45.212Z",
+    "updatedAt": "2026-11-26T00:10:51.764Z",
+    "createdAt": "2026-11-26T00:10:51.764Z",
     "id": "main"
   }
 }

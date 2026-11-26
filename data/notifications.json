@@ -18,5 +18,105 @@
     "createdAt": "2026-11-24T19:29:59.089Z",
     "updatedAt": "2026-11-24T19:29:59.089Z",
     "id": "1795045826622-8k24gpn"
+  },
+  "1795556496197-f3qyyc6": {
+    "title": "Nueva Solicitud de Presupuesto",
+    "message": "Solicitud CONS-000001 recibida de Rodrigo Mercado para Bomba Hidráulica.",
+    "type": "info",
+    "link": "/admin/presupuestos.html",
+    "read": false,
+    "createdAt": "2026-11-24T21:41:36.197Z",
+    "updatedAt": "2026-11-24T21:41:36.197Z",
+    "id": "1795556496197-f3qyyc6"
+  },
+  "1795557042600-vtof9y5": {
+    "title": "Nueva Solicitud de Presupuesto",
+    "message": "Solicitud CONS-000002 recibida de Rodrigo Mercado para Bomba Hidráulica.",
+    "type": "info",
+    "link": "/admin/presupuestos.html",
+    "read": false,
+    "createdAt": "2026-11-24T21:50:42.600Z",
+    "updatedAt": "2026-11-24T21:50:42.600Z",
+    "id": "1795557042600-vtof9y5"
+  },
+  "1795557108144-rzalo8w": {
+    "title": "Nueva Solicitud de Presupuesto",
+    "message": "Solicitud CONS-000003 recibida de Rodrigo Mercado para Mantenimiento y Flushing.",
+    "type": "info",
+    "link": "/admin/presupuestos.html",
+    "read": false,
+    "createdAt": "2026-11-24T21:51:48.144Z",
+    "updatedAt": "2026-11-24T21:51:48.144Z",
+    "id": "1795557108144-rzalo8w"
+  },
+  "1795557651019-gmhar2s": {
+    "title": "Nueva Solicitud de Presupuesto",
+    "message": "Solicitud CONS-000004 recibida de Rodrigo Mercado para Bomba Hidráulica.",
+    "type": "info",
+    "link": "/admin/presupuestos.html",
+    "read": false,
+    "createdAt": "2026-11-24T22:00:51.019Z",
+    "updatedAt": "2026-11-24T22:00:51.019Z",
+    "id": "1795557651019-gmhar2s"
+  },
+  "1795557769025-9wwbywq": {
+    "title": "Nueva Solicitud de Presupuesto",
+    "message": "Solicitud CONS-000001 recibida de Rodrigo Mercado para Bomba Hidráulica.",
+    "type": "info",
+    "link": "/admin/presupuestos.html",
+    "read": true,
+    "createdAt": "2026-11-25T23:29:13.127Z",
+    "updatedAt": "2026-11-25T23:29:13.127Z",
+    "id": "1795557769025-9wwbywq"
+  },
+  "1795557964593-1trkbrn": {
+    "title": "Nueva Solicitud de Presupuesto",
+    "message": "Solicitud CONS-000002 recibida de Rodrigo Mercado para Bomba Hidráulica.",
+    "type": "info",
+    "link": "/admin/presupuestos.html",
+    "read": false,
+    "createdAt": "2026-11-24T22:06:04.593Z",
+    "updatedAt": "2026-11-24T22:06:04.593Z",
+    "id": "1795557964593-1trkbrn"
+  },
+  "1795558009328-vkao3f4": {
+    "title": "Nueva Solicitud de Presupuesto",
+    "message": "Solicitud CONS-000003 recibida de Rodrigo Mercado para Cremallera de Dirección.",
+    "type": "info",
+    "link": "/admin/presupuestos.html",
+    "read": false,
+    "createdAt": "2026-11-24T22:06:49.328Z",
+    "updatedAt": "2026-11-24T22:06:49.328Z",
+    "id": "1795558009328-vkao3f4"
+  },
+  "1795558750664-axr3ov8": {
+    "title": "Nueva Solicitud de Presupuesto",
+    "message": "Solicitud CONS-000004 recibida de Rodrigo Mercado para Bomba Hidráulica.",
+    "type": "info",
+    "link": "/admin/presupuestos.html",
+    "read": true,
+    "createdAt": "2026-11-25T23:26:36.869Z",
+    "updatedAt": "2026-11-25T23:26:36.869Z",
+    "id": "1795558750664-axr3ov8"
+  },
+  "1795560205754-7yoj7z6": {
+    "title": "Nueva Solicitud de Presupuesto",
+    "message": "Solicitud CONS-000005 recibida de Rodrigo Mercado para Bomba Hidráulica.",
+    "type": "info",
+    "link": "/admin/presupuestos.html",
+    "read": true,
+    "createdAt": "2026-11-25T23:26:17.322Z",
+    "updatedAt": "2026-11-25T23:26:17.322Z",
+    "id": "1795560205754-7yoj7z6"
+  },
+  "1795649398995-ts1tafm": {
+    "title": "Nueva Solicitud de Presupuesto",
+    "message": "Solicitud CONS-000006 recibida de Rodrigo Mercado para Bomba Hidráulica.",
+    "type": "info",
+    "link": "/admin/presupuestos.html",
+    "read": true,
+    "createdAt": "2026-11-26T00:08:28.375Z",
+    "updatedAt": "2026-11-26T00:08:28.375Z",
+    "id": "1795649398995-ts1tafm"
   }
 }
